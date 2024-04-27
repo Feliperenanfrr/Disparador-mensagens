@@ -1,0 +1,233 @@
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.exe
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.deps.json
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.runtimeconfig.json
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\RestSharp.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Google.Protobuf.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\ZstdNet.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.Streams.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\BouncyCastle.Crypto.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Ubiety.Dns.Core.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Hash.xxHash.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.xml
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.AssemblyReference.cache
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.frmEnviaZap.resources
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.GenerateResource.cache
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.GeneratedMSBuildEditorConfig.editorconfig
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfoInputs.cache
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfo.cs
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CopyComplete
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Gweb.WhatsApp.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.exe
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.deps.json
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.runtimeconfig.json
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\RestSharp.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Google.Protobuf.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\ZstdNet.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.Streams.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\BouncyCastle.Crypto.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Ubiety.Dns.Core.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Hash.xxHash.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.xml
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.AssemblyReference.cache
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.frmEnviaZap.resources
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.GenerateResource.cache
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfoInputs.cache
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfo.cs
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CopyComplete
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Gweb.WhatsApp.dll
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
+D:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.exe
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.deps.json
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.runtimeconfig.json
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\RestSharp.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Google.Protobuf.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\ZstdNet.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.Streams.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\BouncyCastle.Crypto.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Ubiety.Dns.Core.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Hash.xxHash.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.xml
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.AssemblyReference.cache
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.frmEnviaZap.resources
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.GenerateResource.cache
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfoInputs.cache
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfo.cs
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CopyComplete
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Gweb.WhatsApp.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.exe
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.deps.json
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.runtimeconfig.json
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\RestSharp.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Google.Protobuf.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\ZstdNet.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\BouncyCastle.Crypto.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Ubiety.Dns.Core.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Hash.xxHash.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.xml
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.AssemblyReference.cache
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.frmEnviaZap.resources
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.GenerateResource.cache
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfoInputs.cache
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfo.cs
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.Wha.ED09C985.Up2Date
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Gweb.WhatsApp.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.AssemblyReference.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.exe
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.deps.json
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.runtimeconfig.json
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\RestSharp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Google.Protobuf.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\ZstdNet.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\BouncyCastle.Crypto.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Ubiety.Dns.Core.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Hash.xxHash.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.xml
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.FormUnderChat.resources
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.frmEnviaZap.resources
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.GenerateResource.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfoInputs.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfo.cs
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.Wha.ED09C985.Up2Date
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp (1)\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.FormUnderChat.resources
+C:\Users\guepp\Desktop\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Newtonsoft.Json.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.exe
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.deps.json
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.runtimeconfig.json
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\Newtonsoft.Json.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\RestSharp.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\Google.Protobuf.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\ZstdNet.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\BouncyCastle.Crypto.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\Ubiety.Dns.Core.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Hash.xxHash.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.xml
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.AssemblyReference.cache
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.FormUnderChat.resources
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.frmEnviaZap.resources
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.GenerateResource.cache
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfoInputs.cache
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfo.cs
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.Wha.ED09C985.Up2Date
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Gweb.WhatsApp.dll
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
+C:\Users\guepp\Desktop\GWeb.WhatsApp2\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.AssemblyReference.cache
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Gweb.WhatsApp.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.exe
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.deps.json
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.runtimeconfig.json
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Newtonsoft.Json.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\RestSharp.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Google.Protobuf.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\ZstdNet.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\BouncyCastle.Crypto.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Ubiety.Dns.Core.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Hash.xxHash.dll
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.xml
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.FormUnderChat.resources
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.frmEnviaZap.resources
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.GenerateResource.cache
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfoInputs.cache
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfo.cs
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.Wha.ED09C985.Up2Date
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
+C:\Users\felipe\Downloads\GWeb.WhatsApp\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.exe
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.deps.json
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.runtimeconfig.json
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Newtonsoft.Json.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\RestSharp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Google.Protobuf.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\ZstdNet.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\BouncyCastle.Crypto.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\Ubiety.Dns.Core.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Hash.xxHash.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.xml
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.AssemblyReference.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.FormUnderChat.resources
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.frmEnviaZap.resources
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.GenerateResource.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfoInputs.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfo.cs
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.Wha.ED09C985.Up2Date
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\GWeb.WhatsApp\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll

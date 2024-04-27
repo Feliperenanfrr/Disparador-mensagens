@@ -1,0 +1,15 @@
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\Gweb.WhatsApp.exe
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\Gweb.WhatsApp.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\Gweb.WhatsApp.deps.json
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\Gweb.WhatsApp.runtimeconfig.json
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\Gweb.WhatsApp.pdb
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\RestSharp.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\MySql.Data.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\Google.Protobuf.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\ZstdNet.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\K4os.Compression.LZ4.Streams.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\BouncyCastle.Crypto.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\Ubiety.Dns.Core.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\K4os.Compression.LZ4.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\K4os.Hash.xxHash.dll
+D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\Final\MySql.Data.xml

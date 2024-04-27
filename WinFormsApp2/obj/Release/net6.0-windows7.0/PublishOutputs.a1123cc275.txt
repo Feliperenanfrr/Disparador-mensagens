@@ -1,0 +1,15 @@
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\Gweb.WhatsApp.exe
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\Gweb.WhatsApp.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\Gweb.WhatsApp.deps.json
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\Gweb.WhatsApp.runtimeconfig.json
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\Gweb.WhatsApp.pdb
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\RestSharp.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\MySql.Data.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\Google.Protobuf.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\ZstdNet.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\K4os.Compression.LZ4.Streams.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\BouncyCastle.Crypto.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\Ubiety.Dns.Core.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\K4os.Compression.LZ4.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\K4os.Hash.xxHash.dll
+E:\OneDrive\Fontes Gpd.Net\GWeb.WhatsApp\Final\MySql.Data.xml
