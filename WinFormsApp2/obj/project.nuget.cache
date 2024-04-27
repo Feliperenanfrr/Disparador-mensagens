@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Jd6wWamanz6ZXROL03MA6O/yySe6I//2CDznXGVGqu9oSwEIM3mWmf6cNBvcnm4N0DL0W8EGmJiY9YjcpKDj7Q==",
+  "dgSpecHash": "O42Hb5VcU5RduoBfZetXiuvIzZE8yASclUZoIk7bIQDFZsWyUQgS29KwQJU8aFANXGSDIHA3NJHH5KorA6ElxA==",
   "success": true,
   "projectFilePath": "C:\\Users\\felipe\\OneDrive\\Área de Trabalho\\GWeb.WhatsApp\\WinFormsApp2\\Gweb.WhatsApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\felipe\\.nuget\\packages\\libphonenumber-csharp\\8.13.35\\libphonenumber-csharp.8.13.35.nupkg.sha512",
     "C:\\Users\\felipe\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\felipe\\.nuget\\packages\\restsharp\\106.3.1\\restsharp.106.3.1.nupkg.sha512"
   ],

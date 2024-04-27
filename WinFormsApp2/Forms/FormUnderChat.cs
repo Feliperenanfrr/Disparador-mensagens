@@ -11,6 +11,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Windows.Forms;
 using Gweb.WhatsApp;
 using Newtonsoft.Json;
+using PhoneNumbers;
+using Gweb.WhatsApp.Util;
 
 
 namespace WinFormsApp2
@@ -22,6 +24,9 @@ namespace WinFormsApp2
         private DataSet bdDataSet; //MySQL
         private string CNPJ;
 
+
+        ConexaoAPI api = new ConexaoAPI();
+
         public FormUnderChat()
         {
             InitializeComponent();
@@ -31,7 +36,6 @@ namespace WinFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             var client = new RestClient(txtLink.Text);
             var txt = new string(txtMensagem.Text);
 
@@ -57,132 +61,96 @@ namespace WinFormsApp2
         {
             Close();
         }
-
-        private string obterToken(string email, string senha)
-        {
-            var client = new RestClient("https://api.underchat.com.br/");
-            var request = new RestRequest("/user/auth", Method.POST);
-
-            //string email = textEmail.Text;
-            //string senha = textSenha.Text;
-
-            var login = new
-            {
-                username = email,
-                password = senha
-            };
-
-            request.AddJsonBody(login);
-
-            IRestResponse response = client.Execute(request);
-
-            if (response.ErrorException != null)
-            {
-                MessageBox.Show($"Erro ao fazer a solicitação: {response.ErrorException.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-            else
-            {
-                dynamic responseObject = JsonConvert.DeserializeObject<dynamic>(response.Content);
-                string token = responseObject.data.token;
-
-                return token;
-            }
-        }
-
         private void btnAtivar_Click(object sender, EventArgs e)
         {
+            XmlDocument document = new XmlDocument();
+            document.Load("Config.Xml");
+            XmlNodeList livros = document.SelectNodes("/geral/empresa/CNPJ");
+            CNPJ = livros.Item(0).InnerText;
 
-            /*
-                        XmlDocument document = new XmlDocument();
-                        document.Load("Config.Xml");
-                        XmlNodeList livros = document.SelectNodes("/geral/empresa/CNPJ");
-                        CNPJ = livros.Item(0).InnerText;
+            if (CNPJ == "")
+            {
+                var result = MessageBox.Show("Não existe um CNPJ Ativo!", "ERRO!",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                Close();
 
-                        if (CNPJ == "")
-                        {
-                            var result = MessageBox.Show("Não existe um CNPJ Ativo!", "ERRO!",
-                                             MessageBoxButtons.OK,
-                                             MessageBoxIcon.Error);
-                            Close();
+            }
 
-                        }
+            FormUnderChat.ActiveForm.Text = "Monitorador UnderChat - CNPJ:" + CNPJ;
 
-                        FormUnderChat.ActiveForm.Text = "Monitorador UnderChat - CNPJ:" + CNPJ;
+            if (btnAtivar.Text == "Desativar")
+            {
+                btnAtivar.Text = "Ativar";
+                btnSair.Enabled = true;
+                //btnEnvia.Enabled = true;
+                //btnEnvia2.Enabled = true;
+                tmMonitora.Enabled = false;
+                bdConn.Close();
+                return;
+            }
 
-                        if (btnAtivar.Text == "Desativar")
-                        {
-                            btnAtivar.Text = "Ativar";
-                            btnSair.Enabled = true;
-                            //btnEnvia.Enabled = true;
-                            //btnEnvia2.Enabled = true;
-                            tmMonitora.Enabled = false;
-                            bdConn.Close();
-                            return;
-                        }
+            var builder = new MySqlConnectionStringBuilder
+            {
+                Server = txtServer.Text,
+                Database = "gueppardo",
+                UserID = txtUsuario.Text,
+                Password = txtSenha.Text,
+                CharacterSet = "latin"
+            };
 
-                        var builder = new MySqlConnectionStringBuilder
-                        {
-                            Server = txtServer.Text,
-                            Database = "gueppardo",
-                            UserID = txtUsuario.Text,
-                            Password = txtSenha.Text,
-                            CharacterSet = "latin"
-                        };
+            //Definição do dataset
+            bdDataSet = new DataSet();
 
-                        //Definição do dataset
-                        bdDataSet = new DataSet();
+            //Define string de conexão
+            bdConn = new MySqlConnection(builder.ConnectionString);
 
-                        //Define string de conexão
-                        bdConn = new MySqlConnection(builder.ConnectionString);
+            //Abre conexão 1
+            try
+            {
+                bdConn.Open();
+                btnAtivar.Text = "Desativar";
+                btnSair.Enabled = false;
+                //btnEnvia.Enabled = false;
+                //btnEnvia2.Enabled = false;
+            }
+            catch
+            {
 
-                        //Abre conexão 1
-                        try
-                        {
-                            bdConn.Open();
-                            btnAtivar.Text = "Desativar";
-                            btnSair.Enabled = false;
-                            //btnEnvia.Enabled = false;
-                            //btnEnvia2.Enabled = false;
-                        }
-                        catch
-                        {
+                if (bdConn.State != ConnectionState.Open)
+                {
+                    MessageBox.Show("Impossível estabelecer uma conexão");
+                    Close();
+                }
 
-                            if (bdConn.State != ConnectionState.Open)
-                            {
-                                MessageBox.Show("Impossível estabelecer uma conexão");
-                                Close();
-                            }
+                btnAtivar.Text = "Desativar";
+                btnSair.Enabled = false;
+                //btnEnvia.Enabled = false;
+                //btnEnvia2.Enabled = false;
 
-                            btnAtivar.Text = "Desativar";
-                            btnSair.Enabled = false;
-                            //btnEnvia.Enabled = false;
-                            //btnEnvia2.Enabled = false;
+            }
 
-                        }
+            //Buscando Link e Chave e consulta CNPJ
+            MySqlCommand cmd = new MySqlCommand("Select * from gueppardo.mensagem_uc where CNPJ = '" + CNPJ + "'", bdConn);
+            MySqlDataReader reader = cmd.ExecuteReader();
 
-                        //Buscando Link e Chave e consulta CNPJ
-                        MySqlCommand cmd = new MySqlCommand("Select * from gueppardo.mensagem_uc where CNPJ = '" + CNPJ + "'", bdConn);
-                        MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                txtLink.Text = reader["Link"].ToString();
+                txtChave.Text = reader["Chave"].ToString();
+            }
 
-                        while (reader.Read())
-                        {
-                            txtLink.Text = reader["Link"].ToString();
-                            txtChave.Text = reader["Chave"].ToString();
-                        }
+            if (txtChave.Text == "")
+            {
+                var result = MessageBox.Show("Não existe um CNPJ cadastrado no site de controle Gueppardo.Net!", "ERRO!",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                Close();
 
-                        if (txtChave.Text == "")
-                        {
-                            var result = MessageBox.Show("Não existe um CNPJ cadastrado no site de controle Gueppardo.Net!", "ERRO!",
-                                             MessageBoxButtons.OK,
-                                             MessageBoxIcon.Error);
-                            Close();
+            }
 
-                        }
-
-                        bdConn.Close();
-                        tmMonitora.Enabled = true;
-            */
+            bdConn.Close();
+            tmMonitora.Enabled = true;
         }
 
         private void tmMonitora_Tick(object sender, EventArgs e)

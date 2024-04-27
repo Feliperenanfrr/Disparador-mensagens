@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "libphonenumber-csharp/8.13.35": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/PhoneNumbers.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/PhoneNumbers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -27,6 +40,25 @@
     }
   },
   "libraries": {
+    "libphonenumber-csharp/8.13.35": {
+      "sha512": "rXypFUPEk78nFzR8MphT23vv09yhDf7BR/TImmY55K2WxYORbszMKowb6DFpkWdUNQFjjchd4vaJ5KjFjN2O1w==",
+      "type": "package",
+      "path": "libphonenumber-csharp/8.13.35",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net6.0/PhoneNumbers.dll",
+        "lib/net6.0/PhoneNumbers.xml",
+        "lib/net7.0/PhoneNumbers.dll",
+        "lib/net7.0/PhoneNumbers.xml",
+        "lib/netstandard2.0/PhoneNumbers.dll",
+        "lib/netstandard2.0/PhoneNumbers.xml",
+        "libphonenumber-csharp.8.13.35.nupkg.sha512",
+        "libphonenumber-csharp.nuspec"
+      ]
+    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -74,7 +106,8 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "Newtonsoft.Json >= 13.0.3",
-      "RestSharp >= 106.3.1"
+      "RestSharp >= 106.3.1",
+      "libphonenumber-csharp >= 8.13.35"
     ]
   },
   "packageFolders": {
@@ -133,6 +166,10 @@
           "RestSharp": {
             "target": "Package",
             "version": "[106.3.1, )"
+          },
+          "libphonenumber-csharp": {
+            "target": "Package",
+            "version": "[8.13.35, )"
           }
         },
         "imports": [

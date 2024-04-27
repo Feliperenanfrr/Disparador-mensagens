@@ -4,7 +4,7 @@
     <_LastSelectedProfileId>D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="frmEnviaZap.cs">
+    <Compile Update="Forms\frmEnviaZap.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
