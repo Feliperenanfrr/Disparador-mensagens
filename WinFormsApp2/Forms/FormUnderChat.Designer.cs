@@ -60,6 +60,20 @@
             textEmail = new TextBox();
             textSenha = new TextBox();
             labelSenha = new Label();
+            buttonEnviarMensagem = new Button();
+            textIdLoja = new TextBox();
+            labelIdLoja = new Label();
+            labelIdSetor = new Label();
+            labelIdCanal = new Label();
+            textIdSetor = new TextBox();
+            textIdCanal = new TextBox();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            labelContatoNome = new Label();
+            labelContatoSobrenome = new Label();
+            labelContatoNumero = new Label();
+            label11 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,7 +84,7 @@
             txtMensagem.Name = "txtMensagem";
             txtMensagem.Size = new Size(161, 27);
             txtMensagem.TabIndex = 1;
-            txtMensagem.Text = "Bom dia Cliente";
+            txtMensagem.Text = "Olá usuário, isso é um teste!";
             // 
             // txtFone
             // 
@@ -279,10 +293,10 @@
             // 
             // txtErros
             // 
-            txtErros.Location = new Point(660, 38);
+            txtErros.Location = new Point(940, 38);
             txtErros.Multiline = true;
             txtErros.Name = "txtErros";
-            txtErros.Size = new Size(594, 642);
+            txtErros.Size = new Size(314, 642);
             txtErros.TabIndex = 12;
             txtErros.Text = "Area de Mensagens";
             // 
@@ -341,17 +355,152 @@
             // labelSenha
             // 
             labelSenha.AutoSize = true;
-            labelSenha.Location = new Point(6, 233);
+            labelSenha.Location = new Point(6, 240);
             labelSenha.Name = "labelSenha";
             labelSenha.Size = new Size(123, 20);
             labelSenha.TabIndex = 22;
             labelSenha.Text = "Senha UnderChat";
+            // 
+            // buttonEnviarMensagem
+            // 
+            buttonEnviarMensagem.Location = new Point(380, 342);
+            buttonEnviarMensagem.Name = "buttonEnviarMensagem";
+            buttonEnviarMensagem.Size = new Size(130, 45);
+            buttonEnviarMensagem.TabIndex = 23;
+            buttonEnviarMensagem.Text = "Enviar";
+            buttonEnviarMensagem.UseVisualStyleBackColor = true;
+            buttonEnviarMensagem.Click += buttonEnviarMensagem_Click;
+            // 
+            // textIdLoja
+            // 
+            textIdLoja.Location = new Point(135, 277);
+            textIdLoja.Name = "textIdLoja";
+            textIdLoja.Size = new Size(125, 27);
+            textIdLoja.TabIndex = 24;
+            textIdLoja.Text = "832";
+            // 
+            // labelIdLoja
+            // 
+            labelIdLoja.AutoSize = true;
+            labelIdLoja.Location = new Point(51, 277);
+            labelIdLoja.Name = "labelIdLoja";
+            labelIdLoja.Size = new Size(78, 20);
+            labelIdLoja.TabIndex = 25;
+            labelIdLoja.Text = "Id da Loja:";
+            // 
+            // labelIdSetor
+            // 
+            labelIdSetor.AutoSize = true;
+            labelIdSetor.Location = new Point(47, 323);
+            labelIdSetor.Name = "labelIdSetor";
+            labelIdSetor.Size = new Size(86, 20);
+            labelIdSetor.TabIndex = 26;
+            labelIdSetor.Text = "Id do Setor:";
+            // 
+            // labelIdCanal
+            // 
+            labelIdCanal.AutoSize = true;
+            labelIdCanal.Location = new Point(43, 360);
+            labelIdCanal.Name = "labelIdCanal";
+            labelIdCanal.Size = new Size(86, 20);
+            labelIdCanal.TabIndex = 27;
+            labelIdCanal.Text = "Id do canal:";
+            // 
+            // textIdSetor
+            // 
+            textIdSetor.Location = new Point(135, 316);
+            textIdSetor.Name = "textIdSetor";
+            textIdSetor.Size = new Size(125, 27);
+            textIdSetor.TabIndex = 28;
+            textIdSetor.Text = "4389";
+            // 
+            // textIdCanal
+            // 
+            textIdCanal.Location = new Point(134, 360);
+            textIdCanal.Name = "textIdCanal";
+            textIdCanal.Size = new Size(125, 27);
+            textIdCanal.TabIndex = 29;
+            textIdCanal.Text = "1215";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(705, 237);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(125, 27);
+            textBox1.TabIndex = 30;
+            textBox1.Text = "Felipe";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(705, 270);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(125, 27);
+            textBox2.TabIndex = 31;
+            textBox2.Text = "Renan";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(705, 303);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(125, 27);
+            textBox3.TabIndex = 32;
+            textBox3.Text = "81415600";
+            // 
+            // labelContatoNome
+            // 
+            labelContatoNome.AutoSize = true;
+            labelContatoNome.Location = new Point(640, 240);
+            labelContatoNome.Name = "labelContatoNome";
+            labelContatoNome.Size = new Size(53, 20);
+            labelContatoNome.TabIndex = 33;
+            labelContatoNome.Text = "Nome:";
+            // 
+            // labelContatoSobrenome
+            // 
+            labelContatoSobrenome.AutoSize = true;
+            labelContatoSobrenome.Location = new Point(604, 273);
+            labelContatoSobrenome.Name = "labelContatoSobrenome";
+            labelContatoSobrenome.Size = new Size(89, 20);
+            labelContatoSobrenome.TabIndex = 34;
+            labelContatoSobrenome.Text = "Sobrenome:";
+            // 
+            // labelContatoNumero
+            // 
+            labelContatoNumero.AutoSize = true;
+            labelContatoNumero.Location = new Point(627, 306);
+            labelContatoNumero.Name = "labelContatoNumero";
+            labelContatoNumero.Size = new Size(66, 20);
+            labelContatoNumero.TabIndex = 35;
+            labelContatoNumero.Text = "Numero:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(561, 207);
+            label11.Name = "label11";
+            label11.Size = new Size(132, 20);
+            label11.TabIndex = 36;
+            label11.Text = "Dados do contato:";
             // 
             // FormUnderChat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1266, 694);
+            Controls.Add(label11);
+            Controls.Add(labelContatoNumero);
+            Controls.Add(labelContatoSobrenome);
+            Controls.Add(labelContatoNome);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(textIdCanal);
+            Controls.Add(textIdSetor);
+            Controls.Add(labelIdCanal);
+            Controls.Add(labelIdSetor);
+            Controls.Add(labelIdLoja);
+            Controls.Add(textIdLoja);
+            Controls.Add(buttonEnviarMensagem);
             Controls.Add(labelSenha);
             Controls.Add(textSenha);
             Controls.Add(textEmail);
@@ -404,10 +553,23 @@
         private Label label10;
         private TextBox txtImagem;
         private Button button2;
-        private Label label11;
+        private Label labelIdLoja;
         private TextBox textEmail;
         private TextBox textSenha;
         private Label labelEmail;
         private Label labelSenha;
+        private Button buttonEnviarMensagem;
+        private TextBox textIdLoja;
+        private Label labelIdSetor;
+        private Label labelIdCanal;
+        private TextBox textIdSetor;
+        private TextBox textIdCanal;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private Label labelContatoNome;
+        private Label labelContatoSobrenome;
+        private Label labelContatoNumero;
+        private Label label11;
     }
 }

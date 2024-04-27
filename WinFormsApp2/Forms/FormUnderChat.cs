@@ -63,6 +63,7 @@ namespace WinFormsApp2
         }
         private void btnAtivar_Click(object sender, EventArgs e)
         {
+
             XmlDocument document = new XmlDocument();
             document.Load("Config.Xml");
             XmlNodeList livros = document.SelectNodes("/geral/empresa/CNPJ");
@@ -578,6 +579,15 @@ namespace WinFormsApp2
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void buttonEnviarMensagem_Click(object sender, EventArgs e)
+        {
+            string email = textEmail.Text;
+            string senha = textSenha.Text;
+            dynamic token = api.ObterToken(email, senha);
+
 
         }
     }
