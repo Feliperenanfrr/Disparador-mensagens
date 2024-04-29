@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WinFormsApp2"
+    "\\WinFormsApp2",
+    "\\WinFormsApp2\\Forms",
+    "\\WinFormsApp2\\Util"
   ],
-  "SelectedNode": "\\Gweb.WhatsApp.sln",
+  "SelectedNode": "\\WinFormsApp2\\Forms\\frmEnviaZap.cs",
   "PreviewInSolutionExplorer": false
 }

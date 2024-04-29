@@ -57,8 +57,9 @@ namespace Gweb.WhatsApp.Util
             {
                 //dynamic data = JsonConvert.DeserializeObject(response.Content);
                 //var contato = data[0];
-                var contato = response.Content;
-                if (contato != null) return contato;
+                string contato = response.Content;
+                //if (contato != null) return contato;
+                return contato;
             }
 
             var phoneNumberUtil = PhoneNumberUtil.GetInstance();
@@ -84,6 +85,11 @@ namespace Gweb.WhatsApp.Util
 
             return null;
         }
+
+        /*public string obterIdContato()
+        {
+            var contato = buscarContatoPorNumero();
+        }*/
 
         public static dynamic BuscarContatoPorId(string idLoja, string id, string token)
         {
@@ -124,6 +130,10 @@ namespace Gweb.WhatsApp.Util
                 }
             }
         }
+
+
+
+        
 
 
 

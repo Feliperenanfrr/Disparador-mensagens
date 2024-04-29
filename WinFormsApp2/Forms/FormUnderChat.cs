@@ -588,14 +588,19 @@ namespace WinFormsApp2
 
             string email = textEmail.Text;
             string senha = textSenha.Text;
-            dynamic token = xonexaoAPI.ObterToken(email, senha);
+            dynamic token = conexaoAPI.ObterToken(email, senha);
 
             string idLoja = textIdLoja.Text;
             string numero = textContatoNumero.Text;
 
-            dynamic contato = conexaoAPI.buscarContatoPorNumero(idLoja, numero, token);
+            string contato = conexaoAPI.buscarContatoPorNumero(idLoja, numero, token);
 
-            textTeste.Text = contato;
+            Root contato1 = JsonConvert.DeserializeObject<Root>(contato);
+
+            foreach(Contato item in contato1.data) {
+                textTeste.Text = item.ToString();
+            }
+
         }
     }
 
