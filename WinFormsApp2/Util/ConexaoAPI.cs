@@ -43,7 +43,7 @@ namespace Gweb.WhatsApp.Util
             }
         }
 
-        public dynamic BuscarContatoPorNumero(string idLoja, string numero, string token, int tentativas = 0)
+        public dynamic buscarContatoPorNumero(string idLoja, string numero, string token, int tentativas = 0)
         {
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"/store/{idLoja}/contact", Method.GET);
@@ -55,8 +55,9 @@ namespace Gweb.WhatsApp.Util
 
             if (response.IsSuccessful)
             {
-                dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(response.Content);
-                var contato = data[0];
+                //dynamic data = JsonConvert.DeserializeObject(response.Content);
+                //var contato = data[0];
+                var contato = response.Content;
                 if (contato != null) return contato;
             }
 
@@ -71,13 +72,13 @@ namespace Gweb.WhatsApp.Util
                 {
                     var semNoveDigitos = phoneNumberUtil.Format(numeroBrasil, PhoneNumberFormat.RFC3966);
                     semNoveDigitos = semNoveDigitos.Replace("tel:", "");
-                    return BuscarContatoPorNumero(idLoja, semNoveDigitos, token, 1);
+                    return buscarContatoPorNumero(idLoja, semNoveDigitos, token, 1);
                 }
                 else
                 {
                     var comNoveDigitos = phoneNumberUtil.Format(numeroBrasil, PhoneNumberFormat.RFC3966);
                     comNoveDigitos = comNoveDigitos.Replace("tel:", "");
-                    return BuscarContatoPorNumero(idLoja, comNoveDigitos, token, 1);
+                    return buscarContatoPorNumero(idLoja, comNoveDigitos, token, 1);
                 }
             }
 
@@ -96,9 +97,8 @@ namespace Gweb.WhatsApp.Util
 
             if (response.IsSuccessful)
             {
-                dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(response.Content);
-                var contato = data[0];
-                return contato;
+                var contato = response.Content;
+                if (contato != null) return contato;
             }
 
             return null;

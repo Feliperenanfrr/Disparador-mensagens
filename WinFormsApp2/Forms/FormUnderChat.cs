@@ -25,7 +25,7 @@ namespace WinFormsApp2
         private string CNPJ;
 
 
-        ConexaoAPI api = new ConexaoAPI();
+        ConexaoAPI xonexaoAPI = new ConexaoAPI();
 
         public FormUnderChat()
         {
@@ -228,7 +228,7 @@ namespace WinFormsApp2
 
             IRestResponse response = client.Execute(request);
 
-            txtErros.Text = response.Content + txtErros.Text;
+            textTeste.Text = response.Content + textTeste.Text;
 
             Console.WriteLine(response.Content);
 
@@ -332,7 +332,7 @@ namespace WinFormsApp2
 
             IRestResponse response = client.Execute(request);
 
-            txtErros.Text = response.Content + txtErros.Text;
+            textTeste.Text = response.Content + textTeste.Text;
 
             Console.WriteLine(response.Content);
 
@@ -438,7 +438,7 @@ namespace WinFormsApp2
 
             IRestResponse response = client.Execute(request);
 
-            txtErros.Text = response.Content + txtErros.Text;
+            textTeste.Text = response.Content + textTeste.Text;
 
             Console.WriteLine(response.Content);
 
@@ -584,11 +584,18 @@ namespace WinFormsApp2
 
         private void buttonEnviarMensagem_Click(object sender, EventArgs e)
         {
+            ConexaoAPI conexaoAPI = new ConexaoAPI();
+
             string email = textEmail.Text;
             string senha = textSenha.Text;
-            dynamic token = api.ObterToken(email, senha);
+            dynamic token = xonexaoAPI.ObterToken(email, senha);
 
+            string idLoja = textIdLoja.Text;
+            string numero = textContatoNumero.Text;
 
+            dynamic contato = conexaoAPI.buscarContatoPorNumero(idLoja, numero, token);
+
+            textTeste.Text = contato;
         }
     }
 

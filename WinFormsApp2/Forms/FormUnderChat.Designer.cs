@@ -52,7 +52,7 @@
             label6 = new Label();
             label7 = new Label();
             txtEmpresa = new TextBox();
-            txtErros = new TextBox();
+            textTeste = new TextBox();
             label10 = new Label();
             txtImagem = new TextBox();
             button2 = new Button();
@@ -67,9 +67,9 @@
             labelIdCanal = new Label();
             textIdSetor = new TextBox();
             textIdCanal = new TextBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            textContatoNome = new TextBox();
+            textContatoSobrenome = new TextBox();
+            textContatoNumero = new TextBox();
             labelContatoNome = new Label();
             labelContatoSobrenome = new Label();
             labelContatoNumero = new Label();
@@ -291,14 +291,14 @@
             txtEmpresa.TabIndex = 10;
             txtEmpresa.Text = "Gueppardo";
             // 
-            // txtErros
+            // textTeste
             // 
-            txtErros.Location = new Point(940, 38);
-            txtErros.Multiline = true;
-            txtErros.Name = "txtErros";
-            txtErros.Size = new Size(314, 642);
-            txtErros.TabIndex = 12;
-            txtErros.Text = "Area de Mensagens";
+            textTeste.Location = new Point(940, 38);
+            textTeste.Multiline = true;
+            textTeste.Name = "textTeste";
+            textTeste.Size = new Size(314, 642);
+            textTeste.TabIndex = 12;
+            textTeste.Text = "Area de Mensagens";
             // 
             // label10
             // 
@@ -422,29 +422,29 @@
             textIdCanal.TabIndex = 29;
             textIdCanal.Text = "1215";
             // 
-            // textBox1
+            // textContatoNome
             // 
-            textBox1.Location = new Point(705, 237);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 30;
-            textBox1.Text = "Felipe";
+            textContatoNome.Location = new Point(705, 237);
+            textContatoNome.Name = "textContatoNome";
+            textContatoNome.Size = new Size(125, 27);
+            textContatoNome.TabIndex = 30;
+            textContatoNome.Text = "Felipe";
             // 
-            // textBox2
+            // textContatoSobrenome
             // 
-            textBox2.Location = new Point(705, 270);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 31;
-            textBox2.Text = "Renan";
+            textContatoSobrenome.Location = new Point(705, 270);
+            textContatoSobrenome.Name = "textContatoSobrenome";
+            textContatoSobrenome.Size = new Size(125, 27);
+            textContatoSobrenome.TabIndex = 31;
+            textContatoSobrenome.Text = "Renan";
             // 
-            // textBox3
+            // textContatoNumero
             // 
-            textBox3.Location = new Point(705, 303);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 32;
-            textBox3.Text = "81415600";
+            textContatoNumero.Location = new Point(705, 303);
+            textContatoNumero.Name = "textContatoNumero";
+            textContatoNumero.Size = new Size(125, 27);
+            textContatoNumero.TabIndex = 32;
+            textContatoNumero.Text = "81415600";
             // 
             // labelContatoNome
             // 
@@ -491,9 +491,9 @@
             Controls.Add(labelContatoNumero);
             Controls.Add(labelContatoSobrenome);
             Controls.Add(labelContatoNome);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textContatoNumero);
+            Controls.Add(textContatoSobrenome);
+            Controls.Add(textContatoNome);
             Controls.Add(textIdCanal);
             Controls.Add(textIdSetor);
             Controls.Add(labelIdCanal);
@@ -508,7 +508,7 @@
             Controls.Add(button2);
             Controls.Add(txtImagem);
             Controls.Add(label10);
-            Controls.Add(txtErros);
+            Controls.Add(textTeste);
             Controls.Add(txtEmpresa);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -549,7 +549,7 @@
         private TextBox txtLink;
         private Label label9;
         private TextBox txtChave;
-        private TextBox txtErros;
+        private TextBox textTeste;
         private Label label10;
         private TextBox txtImagem;
         private Button button2;
@@ -564,9 +564,9 @@
         private Label labelIdCanal;
         private TextBox textIdSetor;
         private TextBox textIdCanal;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox textContatoNome;
+        private TextBox textContatoSobrenome;
+        private TextBox textContatoNumero;
         private Label labelContatoNome;
         private Label labelContatoSobrenome;
         private Label labelContatoNumero;
