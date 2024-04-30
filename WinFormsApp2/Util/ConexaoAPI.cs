@@ -126,19 +126,20 @@ namespace Gweb.WhatsApp.Util
             }
         }
 
-        public void enviarMensagem(string idLoja, Contato contato, string idSetor, string idCanal, string mensagem, string token)
+        public void enviarMensagem(string idLoja, Contato contato, int idSetor, string idCanal, string mensagem, string token)
         {
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"/store/{idLoja}/conversation/new", Method.POST);
 
             var body = new
             {
-                contact = contato,
+                contact = contato.id,
                 sector = idSetor,
                 channel = idCanal
             };
 
             request.AddJsonBody(body);
+            request.AddHeader("Authorization", "Bearer " + token);
 
             IRestResponse response = client.Execute(request);
 
