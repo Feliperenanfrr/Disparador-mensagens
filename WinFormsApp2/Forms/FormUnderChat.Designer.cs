@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnderChat));
-            txtMensagem = new TextBox();
+            textMensagem = new TextBox();
             txtFone = new TextBox();
             groupBox1 = new GroupBox();
             txtChave = new TextBox();
@@ -77,14 +77,14 @@
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // txtMensagem
+            // textMensagem
             // 
-            txtMensagem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMensagem.Location = new Point(80, 34);
-            txtMensagem.Name = "txtMensagem";
-            txtMensagem.Size = new Size(161, 27);
-            txtMensagem.TabIndex = 1;
-            txtMensagem.Text = "Olá usuário, isso é um teste!";
+            textMensagem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textMensagem.Location = new Point(80, 34);
+            textMensagem.Name = "textMensagem";
+            textMensagem.Size = new Size(161, 27);
+            textMensagem.TabIndex = 1;
+            textMensagem.Text = "Olá usuário, isso é um teste!";
             // 
             // txtFone
             // 
@@ -348,6 +348,7 @@
             // 
             textSenha.Location = new Point(134, 233);
             textSenha.Name = "textSenha";
+            textSenha.PasswordChar = '*';
             textSenha.Size = new Size(125, 27);
             textSenha.TabIndex = 20;
             textSenha.Text = "1664";
@@ -515,7 +516,7 @@
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Controls.Add(txtFone);
-            Controls.Add(txtMensagem);
+            Controls.Add(textMensagem);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormUnderChat";
             StartPosition = FormStartPosition.CenterScreen;
@@ -527,7 +528,7 @@
         }
 
         #endregion
-        private TextBox txtMensagem;
+        private TextBox textMensagem;
         private TextBox txtFone;
         private GroupBox groupBox1;
         private Label label1;

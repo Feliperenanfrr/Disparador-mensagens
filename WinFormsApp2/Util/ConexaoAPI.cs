@@ -86,11 +86,6 @@ namespace Gweb.WhatsApp.Util
             return null;
         }
 
-        /*public string obterIdContato()
-        {
-            var contato = buscarContatoPorNumero();
-        }*/
-
         public static dynamic BuscarContatoPorId(string idLoja, string id, string token)
         {
             var client = new RestClient("https://api.example.com");
@@ -131,10 +126,38 @@ namespace Gweb.WhatsApp.Util
             }
         }
 
+        public void enviarMensagem(string idLoja, Contato contato, string idSetor, string idCanal, string mensagem, string token)
+        {
+            var client = new RestClient("https://api.underchat.com.br/");
+            var request = new RestRequest($"/store/{idLoja}/conversation/new", Method.POST);
 
+            var body = new
+            {
+                contact = contato,
+                sector = idSetor,
+                channel = idCanal
+            };
 
-        
+            request.AddJsonBody(body);
 
+            IRestResponse response = client.Execute(request);
+
+            if (response.IsSuccessful)
+            {
+                dynamic responseData = JsonConvert.DeserializeObject<dynamic>(response.Content);
+                string conversationId = responseData.data.id;
+
+                var messageBody = new
+                {
+                    message = mensagem
+                };
+
+                var messageRequest = new RestRequest($"/store/{idLoja}/conversation/{conversationId}/message", Method.POST);
+                messageRequest.AddJsonBody(messageBody);
+
+                IRestResponse messageResponse = client.Execute(messageRequest);
+            }
+        }
 
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp2
 {
-    partial class frmEnviaZap
+    partial class FormWhatsApp
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnviaZap));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWhatsApp));
             btnEnvia = new Button();
             txtMensagem = new TextBox();
             txtFone = new TextBox();

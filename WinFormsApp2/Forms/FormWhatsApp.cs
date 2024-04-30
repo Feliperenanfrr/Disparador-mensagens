@@ -14,10 +14,10 @@ using Gweb.WhatsApp;
 
 namespace WinFormsApp2
 {
-    public partial class frmEnviaZap : Form
+    public partial class FormWhatsApp : Form
 
     {
-        public frmEnviaZap()
+        public FormWhatsApp()
         {
             InitializeComponent();
             imgFoto.ImageLocation = txtImagem.Text;
@@ -77,7 +77,7 @@ namespace WinFormsApp2
 
             }
 
-            frmEnviaZap.ActiveForm.Text = "Monitorador WhatsAPP - CNPJ:" + CNPJ;
+            FormWhatsApp.ActiveForm.Text = "Monitorador WhatsAPP - CNPJ:" + CNPJ;
 
             if (btnAtivar.Text == "Desativar")
             {

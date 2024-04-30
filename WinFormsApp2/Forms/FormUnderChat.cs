@@ -37,7 +37,7 @@ namespace WinFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             var client = new RestClient(txtLink.Text);
-            var txt = new string(txtMensagem.Text);
+            var txt = new string(textMensagem.Text);
 
             client.Timeout = -1;
 
@@ -559,7 +559,7 @@ namespace WinFormsApp2
                 " + "\n" +
                 @"}";
 
-            body = body.Replace("MENSAGEM", txtMensagem.Text);
+            body = body.Replace("MENSAGEM", textMensagem.Text);
             body = body.Replace("TELEFONE", txtFone.Text);
             body = body.Replace("FOTO", txtImagem.Text);
 
@@ -591,17 +591,28 @@ namespace WinFormsApp2
             dynamic token = conexaoAPI.ObterToken(email, senha);
 
             string idLoja = textIdLoja.Text;
+            string idSetor = textIdSetor.Text;
+            string idCanal = textIdCanal.Text;
             string numero = textContatoNumero.Text;
 
-            string contato = conexaoAPI.buscarContatoPorNumero(idLoja, numero, token);
+            string mensagem = textMensagem.Text;
 
-            Root contato1 = JsonConvert.DeserializeObject<Root>(contato);
+            string respostaAPI = conexaoAPI.buscarContatoPorNumero(idLoja, numero, token);
 
-            foreach(Contato item in contato1.data) {
+            Root listaDeContatos = JsonConvert.DeserializeObject<Root>(respostaAPI);
+
+            Contato contato = listaDeContatos.data[0];
+
+            foreach(Contato item in listaDeContatos.data) {
                 textTeste.Text = item.ToString();
             }
 
+            conexaoAPI.enviarMensagem(idLoja, contato, idSetor, idCanal, mensagem, token);
+
+
         }
+
+
     }
 
 }
