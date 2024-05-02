@@ -158,7 +158,7 @@ namespace WinFormsApp2
         {
 
             bdConn.Open();
-            MySqlCommand cmd = new MySqlCommand("Select * from gueppardo.mensagem where Enviada = 0 and CNPJ = '" + CNPJ + "'", bdConn);
+            MySqlCommand cmd = new MySqlCommand($"Select * from gueppardo.mensagem where Enviada = 0 and CNPJ = '{CNPJ}' and API = 0", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())

@@ -162,7 +162,7 @@
             btnAtivar.Name = "btnAtivar";
             btnAtivar.Size = new Size(318, 84);
             btnAtivar.TabIndex = 10;
-            btnAtivar.Text = "Obter token";
+            btnAtivar.Text = "Ativar";
             btnAtivar.UseVisualStyleBackColor = true;
             btnAtivar.Click += btnAtivar_Click;
             // 
