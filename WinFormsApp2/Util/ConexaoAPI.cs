@@ -126,7 +126,7 @@ namespace Gweb.WhatsApp.Util
             }
         }
 
-        public void enviarMensagem(string idLoja, Contato contato, int idSetor, string idCanal, string mensagem, string token)
+        public int criarAtendimento(string idLoja, Contato contato, int idSetor, string idCanal, string mensagem, string token)
         {
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"/store/{idLoja}/conversation/new", Method.POST);
@@ -145,20 +145,19 @@ namespace Gweb.WhatsApp.Util
 
             if (response.IsSuccessful)
             {
-                dynamic responseData = JsonConvert.DeserializeObject<dynamic>(response.Content);
-                string conversationId = responseData.data.id;
+                
+                dynamic responseObject = JsonConvert.DeserializeObject<dynamic>(response.Content);
+                int idAtendimento = responseObject.data.id;
 
-                var messageBody = new
-                {
-                    message = mensagem
-                };
-
-                var messageRequest = new RestRequest($"/store/{idLoja}/conversation/{conversationId}/message", Method.POST);
-                messageRequest.AddJsonBody(messageBody);
-
-                IRestResponse messageResponse = client.Execute(messageRequest);
+                return idAtendimento;
+            }
+            else
+            {
+                return 0;
             }
         }
+
+
 
 
     }
