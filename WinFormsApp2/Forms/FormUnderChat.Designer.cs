@@ -30,8 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnderChat));
-            textMensagem = new TextBox();
-            txtFone = new TextBox();
             groupBox1 = new GroupBox();
             btnAtivar = new Button();
             txtPorta = new TextBox();
@@ -43,14 +41,8 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            label1 = new Label();
             tmMonitora = new System.Windows.Forms.Timer(components);
-            label6 = new Label();
-            label7 = new Label();
-            txtEmpresa = new TextBox();
             textTeste = new TextBox();
-            label10 = new Label();
-            txtImagem = new TextBox();
             button2 = new Button();
             labelEmail = new Label();
             textEmail = new TextBox();
@@ -69,25 +61,9 @@
             labelContatoSobrenome = new Label();
             labelContatoNumero = new Label();
             label11 = new Label();
+            label1 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
-            // 
-            // textMensagem
-            // 
-            textMensagem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textMensagem.Location = new Point(80, 34);
-            textMensagem.Name = "textMensagem";
-            textMensagem.Size = new Size(161, 27);
-            textMensagem.TabIndex = 1;
-            textMensagem.Text = "Olá usuário, isso é um teste!";
-            // 
-            // txtFone
-            // 
-            txtFone.Location = new Point(325, 71);
-            txtFone.Name = "txtFone";
-            txtFone.Size = new Size(161, 27);
-            txtFone.TabIndex = 2;
-            txtFone.Text = "5583999982407";
             // 
             // groupBox1
             // 
@@ -101,6 +77,7 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(button2);
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.Location = new Point(15, 405);
             groupBox1.Name = "groupBox1";
@@ -204,85 +181,34 @@
             label2.TabIndex = 0;
             label2.Text = "Servidor:";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(274, 78);
-            label1.Name = "label1";
-            label1.Size = new Size(44, 20);
-            label1.TabIndex = 4;
-            label1.Text = "Fone:";
-            // 
             // tmMonitora
             // 
             tmMonitora.Interval = 1000;
             tmMonitora.Tick += tmMonitora_Tick;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(29, 37);
-            label6.Name = "label6";
-            label6.Size = new Size(48, 20);
-            label6.TabIndex = 8;
-            label6.Text = "Texto:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(6, 78);
-            label7.Name = "label7";
-            label7.Size = new Size(69, 20);
-            label7.TabIndex = 9;
-            label7.Text = "Empresa:";
-            // 
-            // txtEmpresa
-            // 
-            txtEmpresa.Location = new Point(81, 72);
-            txtEmpresa.Name = "txtEmpresa";
-            txtEmpresa.Size = new Size(160, 27);
-            txtEmpresa.TabIndex = 10;
-            txtEmpresa.Text = "Gueppardo";
-            // 
             // textTeste
             // 
-            textTeste.Location = new Point(940, 38);
+            textTeste.Location = new Point(744, 8);
             textTeste.Multiline = true;
             textTeste.Name = "textTeste";
-            textTeste.Size = new Size(314, 642);
+            textTeste.Size = new Size(501, 642);
             textTeste.TabIndex = 12;
             textTeste.Text = "Area de Mensagens";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(258, 37);
-            label10.Name = "label10";
-            label10.Size = new Size(67, 20);
-            label10.TabIndex = 14;
-            label10.Text = "Imagem:";
-            // 
-            // txtImagem
-            // 
-            txtImagem.Location = new Point(328, 34);
-            txtImagem.Name = "txtImagem";
-            txtImagem.Size = new Size(320, 27);
-            txtImagem.TabIndex = 15;
-            txtImagem.Text = "https://www.gueppardo.net/imagens/gpd.jpg";
-            // 
             // button2
             // 
-            button2.Location = new Point(43, 124);
+            button2.Location = new Point(295, 179);
             button2.Name = "button2";
-            button2.Size = new Size(198, 36);
+            button2.Size = new Size(318, 52);
             button2.TabIndex = 17;
             button2.Text = "WhatsApp";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.Location = new Point(6, 197);
+            labelEmail.Location = new Point(15, 45);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(123, 20);
             labelEmail.TabIndex = 18;
@@ -290,15 +216,15 @@
             // 
             // textEmail
             // 
-            textEmail.Location = new Point(135, 190);
+            textEmail.Location = new Point(145, 42);
             textEmail.Name = "textEmail";
-            textEmail.Size = new Size(333, 27);
+            textEmail.Size = new Size(237, 27);
             textEmail.TabIndex = 19;
             textEmail.Text = "felipeferreira3146@gmail.com";
             // 
             // textSenha
             // 
-            textSenha.Location = new Point(134, 233);
+            textSenha.Location = new Point(144, 85);
             textSenha.Name = "textSenha";
             textSenha.PasswordChar = '*';
             textSenha.Size = new Size(125, 27);
@@ -308,7 +234,7 @@
             // labelSenha
             // 
             labelSenha.AutoSize = true;
-            labelSenha.Location = new Point(6, 240);
+            labelSenha.Location = new Point(15, 88);
             labelSenha.Name = "labelSenha";
             labelSenha.Size = new Size(123, 20);
             labelSenha.TabIndex = 22;
@@ -316,7 +242,7 @@
             // 
             // textIdLoja
             // 
-            textIdLoja.Location = new Point(135, 277);
+            textIdLoja.Location = new Point(145, 129);
             textIdLoja.Name = "textIdLoja";
             textIdLoja.Size = new Size(125, 27);
             textIdLoja.TabIndex = 24;
@@ -325,7 +251,7 @@
             // labelIdLoja
             // 
             labelIdLoja.AutoSize = true;
-            labelIdLoja.Location = new Point(51, 277);
+            labelIdLoja.Location = new Point(60, 125);
             labelIdLoja.Name = "labelIdLoja";
             labelIdLoja.Size = new Size(78, 20);
             labelIdLoja.TabIndex = 25;
@@ -334,7 +260,7 @@
             // labelIdSetor
             // 
             labelIdSetor.AutoSize = true;
-            labelIdSetor.Location = new Point(47, 323);
+            labelIdSetor.Location = new Point(56, 171);
             labelIdSetor.Name = "labelIdSetor";
             labelIdSetor.Size = new Size(86, 20);
             labelIdSetor.TabIndex = 26;
@@ -343,7 +269,7 @@
             // labelIdCanal
             // 
             labelIdCanal.AutoSize = true;
-            labelIdCanal.Location = new Point(43, 360);
+            labelIdCanal.Location = new Point(52, 208);
             labelIdCanal.Name = "labelIdCanal";
             labelIdCanal.Size = new Size(86, 20);
             labelIdCanal.TabIndex = 27;
@@ -351,7 +277,7 @@
             // 
             // textIdSetor
             // 
-            textIdSetor.Location = new Point(135, 316);
+            textIdSetor.Location = new Point(145, 168);
             textIdSetor.Name = "textIdSetor";
             textIdSetor.Size = new Size(125, 27);
             textIdSetor.TabIndex = 28;
@@ -359,7 +285,7 @@
             // 
             // textIdCanal
             // 
-            textIdCanal.Location = new Point(134, 360);
+            textIdCanal.Location = new Point(144, 212);
             textIdCanal.Name = "textIdCanal";
             textIdCanal.Size = new Size(125, 27);
             textIdCanal.TabIndex = 29;
@@ -367,7 +293,7 @@
             // 
             // textContatoNome
             // 
-            textContatoNome.Location = new Point(705, 237);
+            textContatoNome.Location = new Point(552, 49);
             textContatoNome.Name = "textContatoNome";
             textContatoNome.Size = new Size(125, 27);
             textContatoNome.TabIndex = 30;
@@ -375,7 +301,7 @@
             // 
             // textContatoSobrenome
             // 
-            textContatoSobrenome.Location = new Point(705, 270);
+            textContatoSobrenome.Location = new Point(552, 82);
             textContatoSobrenome.Name = "textContatoSobrenome";
             textContatoSobrenome.Size = new Size(125, 27);
             textContatoSobrenome.TabIndex = 31;
@@ -383,7 +309,7 @@
             // 
             // textContatoNumero
             // 
-            textContatoNumero.Location = new Point(705, 303);
+            textContatoNumero.Location = new Point(552, 115);
             textContatoNumero.Name = "textContatoNumero";
             textContatoNumero.Size = new Size(125, 27);
             textContatoNumero.TabIndex = 32;
@@ -392,7 +318,7 @@
             // labelContatoNome
             // 
             labelContatoNome.AutoSize = true;
-            labelContatoNome.Location = new Point(640, 240);
+            labelContatoNome.Location = new Point(487, 52);
             labelContatoNome.Name = "labelContatoNome";
             labelContatoNome.Size = new Size(53, 20);
             labelContatoNome.TabIndex = 33;
@@ -401,7 +327,7 @@
             // labelContatoSobrenome
             // 
             labelContatoSobrenome.AutoSize = true;
-            labelContatoSobrenome.Location = new Point(604, 273);
+            labelContatoSobrenome.Location = new Point(451, 85);
             labelContatoSobrenome.Name = "labelContatoSobrenome";
             labelContatoSobrenome.Size = new Size(89, 20);
             labelContatoSobrenome.TabIndex = 34;
@@ -410,7 +336,7 @@
             // labelContatoNumero
             // 
             labelContatoNumero.AutoSize = true;
-            labelContatoNumero.Location = new Point(627, 306);
+            labelContatoNumero.Location = new Point(474, 118);
             labelContatoNumero.Name = "labelContatoNumero";
             labelContatoNumero.Size = new Size(66, 20);
             labelContatoNumero.TabIndex = 35;
@@ -419,17 +345,27 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(561, 207);
+            label11.Location = new Point(408, 19);
             label11.Name = "label11";
             label11.Size = new Size(132, 20);
             label11.TabIndex = 36;
             label11.Text = "Dados do contato:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(26, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(116, 20);
+            label1.TabIndex = 37;
+            label1.Text = "Dados de envio:";
             // 
             // FormUnderChat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1266, 694);
+            Controls.Add(label1);
             Controls.Add(label11);
             Controls.Add(labelContatoNumero);
             Controls.Add(labelContatoSobrenome);
@@ -447,17 +383,8 @@
             Controls.Add(textSenha);
             Controls.Add(textEmail);
             Controls.Add(labelEmail);
-            Controls.Add(button2);
-            Controls.Add(txtImagem);
-            Controls.Add(label10);
             Controls.Add(textTeste);
-            Controls.Add(txtEmpresa);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label1);
             Controls.Add(groupBox1);
-            Controls.Add(txtFone);
-            Controls.Add(textMensagem);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormUnderChat";
             StartPosition = FormStartPosition.CenterScreen;
@@ -469,10 +396,7 @@
         }
 
         #endregion
-        private TextBox textMensagem;
-        private TextBox txtFone;
         private GroupBox groupBox1;
-        private Label label1;
         private Button btnSair;
         private Label label2;
         private Label label5;
@@ -484,12 +408,7 @@
         private TextBox txtServer;
         private TextBox txtPorta;
         private Button btnAtivar;
-        private Label label6;
-        private Label label7;
-        private TextBox txtEmpresa;
         private TextBox textTeste;
-        private Label label10;
-        private TextBox txtImagem;
         private Button button2;
         private Label labelIdLoja;
         private TextBox textEmail;
@@ -508,5 +427,6 @@
         private Label labelContatoSobrenome;
         private Label labelContatoNumero;
         private Label label11;
+        private Label label1;
     }
 }
