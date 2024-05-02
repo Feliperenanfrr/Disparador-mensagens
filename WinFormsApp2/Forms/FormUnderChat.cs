@@ -171,14 +171,13 @@ namespace WinFormsApp2
             var sSenha = dadosLoja["Senha"].ToString();
             var sIdLoja = dadosLoja["IdLoja"].ToString();
             var sIdCanal = dadosLoja["IdCanal"].ToString();
-            var sIdSetor = dadosLoja["IdSetor"].ToString();
+            var sIdSetor = dadosLoja["IdSetor"];
 
             bdConn.Close();
 
             bdConn.Open();
             MySqlCommand cmd = new MySqlCommand($"Select * from gueppardo.mensagem_testes where Enviada = 0 and CNPJ = '{CNPJ}' and API = 1", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
-            reader.Read();
 
             while (reader.Read())
             {
@@ -215,7 +214,7 @@ namespace WinFormsApp2
                 textTeste.Text = textTeste.Text + $"Mensagem: Código: {sCodigo} - Número: {sFone} - Tipo: {sTipo}";
 
                 bdConn.Open();
-                MySqlCommand cmd2 = new MySqlCommand($"Update gueppardo.mensagem_testes set Enviada = 1 where Codigo = {sCodigo} and CNPJ = {CNPJ}", bdConn);
+                MySqlCommand cmd2 = new MySqlCommand($"Update gueppardo.mensagem_testes set Enviada = 1 where Codigo = {sCodigo} and CNPJ = ' {CNPJ} '", bdConn);
                 cmd2.ExecuteNonQuery();
                 bdConn.Close();
 
@@ -609,7 +608,7 @@ namespace WinFormsApp2
             string idCanal = textIdCanal.Text;
             string numero = textContatoNumero.Text;
             string mensagem = textMensagem.Text;
-            string idSetor = textIdSetor.Text;
+            //string idSetor = textIdSetor.Text;
 
             ConexaoAPI conexaoAPI = new ConexaoAPI();
 
@@ -625,9 +624,9 @@ namespace WinFormsApp2
                 textTeste.Text = item.ToString();
             }
 
-            int idAtendimento = conexaoAPI.criarAtendimento(idLoja, contato, idSetor, idCanal, mensagem, token);
+            //int idAtendimento = conexaoAPI.criarAtendimento(idLoja, contato, idSetor, idCanal, mensagem, token);
 
-            conexaoAPI.enviarMensagem(mensagem, idLoja, idAtendimento, token);
+            //conexaoAPI.enviarMensagem(mensagem, idLoja, idAtendimento, token);
         }
 
 

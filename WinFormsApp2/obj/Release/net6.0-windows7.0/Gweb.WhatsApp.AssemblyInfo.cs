@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gweb.WhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c4e99515e050520c33089173048554314744c4a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2f0ef18bc0e2f9254f590c7e944f9cd9b101280")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gweb.WhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gweb.WhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

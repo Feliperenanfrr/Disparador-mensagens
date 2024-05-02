@@ -126,7 +126,7 @@ namespace Gweb.WhatsApp.Util
             }
         }
 
-        public int criarAtendimento(string idLoja, Contato contato, string idSetor, string idCanal, string mensagem, string token)
+        public int criarAtendimento(string idLoja, Contato contato, dynamic idSetor, string idCanal, string mensagem, string token)
         {
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"/store/{idLoja}/conversation/new", Method.POST);
