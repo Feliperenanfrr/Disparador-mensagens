@@ -35,28 +35,6 @@ namespace WinFormsApp2
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //var client = new RestClient(txtLink.Text);
-            var txt = new string(textMensagem.Text);
-
-            //client.Timeout = -1;
-
-            var request = new RestRequest(Method.POST);
-
-            //request.AddHeader("Authorization", txtChave.Text);
-
-            request.AddHeader("Content-Type", "application/json");
-
-            var body = "{ \r\n\n\"messaging_product\":\"whatsapp\",\r\n\n \"to\": \"" + txtFone.Text + "\", \r\n\n\"type\": \"text\",\r\n\n\"text\": {\r\n\n\"body\":\"" + txt + "\"\r\n\n}\r\n\n}";
-
-            request.AddParameter("application/json", body, ParameterType.RequestBody);
-
-            //IRestResponse response = client.Execute(request);
-
-            //Console.WriteLine(response.Content);
-
-        }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
