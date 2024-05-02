@@ -11,6 +11,10 @@
       "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\util\\conexaoapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|c:\\users\\guepp\\desktop\\gweb-underchat\\winformsapp2\\forms\\formunderchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\forms\\formunderchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\winformsapp2\\util\\atendimento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\util\\atendimento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\winformsapp2\\forms\\formwhatsapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\forms\\formwhatsapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\winformsapp2\\forms\\formunderchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\forms\\formunderchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\winformsapp2\\util\\contato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,8 +38,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormUnderChat.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\FormUnderChat.cs",
+              "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\FormUnderChat.cs",
+              "ToolTip": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\FormUnderChat.cs [Projeto]",
+              "RelativeToolTip": "WinFormsApp2\\Forms\\FormUnderChat.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T19:43:34.978Z",
+              "EditorCaption": " [Projeto]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -48,7 +60,7 @@
               "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\FormUnderChat.cs",
               "ToolTip": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\FormUnderChat.cs",
               "RelativeToolTip": "WinFormsApp2\\Forms\\FormUnderChat.cs",
-              "ViewState": "AQIAAKAAAAAAAAAAAAAYwKEAAAAIAAAA",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAswLUAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-30T12:27:32.924Z",
               "EditorCaption": ""
@@ -61,14 +73,14 @@
               "RelativeDocumentMoniker": "WinFormsApp2\\Util\\ConexaoAPI.cs",
               "ToolTip": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Util\\ConexaoAPI.cs",
               "RelativeToolTip": "WinFormsApp2\\Util\\ConexaoAPI.cs",
-              "ViewState": "AQIAAJsAAAAAAAAAAAAYwK4AAAAIAAAA",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAgwK4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-30T17:24:39.423Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "FormWhatsApp.cs",
               "DocumentMoniker": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\FormWhatsApp.cs",
               "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\FormWhatsApp.cs",
@@ -76,36 +88,22 @@
               "RelativeToolTip": "WinFormsApp2\\Forms\\FormWhatsApp.cs",
               "ViewState": "AQIAAMIAAAAAAAAAAAAAAO4AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T18:00:40.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T18:00:40.009Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FormWhatsApp.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\FormWhatsApp.cs",
               "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\FormWhatsApp.cs",
               "ToolTip": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\FormWhatsApp.cs [Projeto]",
               "RelativeToolTip": "WinFormsApp2\\Forms\\FormWhatsApp.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T18:00:37.186Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2024-05-02T18:00:37.186Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormUnderChat.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\FormUnderChat.cs",
-              "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\FormUnderChat.cs",
-              "ToolTip": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\FormUnderChat.cs [Projeto]",
-              "RelativeToolTip": "WinFormsApp2\\Forms\\FormUnderChat.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T12:23:50.729Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Atendimento.cs",
               "DocumentMoniker": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Util\\Atendimento.cs",
               "RelativeDocumentMoniker": "WinFormsApp2\\Util\\Atendimento.cs",
@@ -113,8 +111,7 @@
               "RelativeToolTip": "WinFormsApp2\\Util\\Atendimento.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T12:03:27.416Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T12:03:27.416Z"
             },
             {
               "$type": "Document",

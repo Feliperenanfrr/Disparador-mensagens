@@ -33,10 +33,6 @@
             textMensagem = new TextBox();
             txtFone = new TextBox();
             groupBox1 = new GroupBox();
-            txtChave = new TextBox();
-            txtLink = new TextBox();
-            label9 = new Label();
-            label8 = new Label();
             btnAtivar = new Button();
             txtPorta = new TextBox();
             txtSenha = new TextBox();
@@ -60,7 +56,6 @@
             textEmail = new TextBox();
             textSenha = new TextBox();
             labelSenha = new Label();
-            buttonEnviarMensagem = new Button();
             textIdLoja = new TextBox();
             labelIdLoja = new Label();
             labelIdSetor = new Label();
@@ -96,10 +91,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(txtChave);
-            groupBox1.Controls.Add(txtLink);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(btnAtivar);
             groupBox1.Controls.Add(txtPorta);
             groupBox1.Controls.Add(txtSenha);
@@ -117,43 +108,6 @@
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Monitorador";
-            // 
-            // txtChave
-            // 
-            txtChave.Enabled = false;
-            txtChave.ForeColor = Color.Maroon;
-            txtChave.Location = new Point(97, 222);
-            txtChave.Name = "txtChave";
-            txtChave.Size = new Size(516, 27);
-            txtChave.TabIndex = 13;
-            // 
-            // txtLink
-            // 
-            txtLink.Enabled = false;
-            txtLink.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            txtLink.ForeColor = Color.Maroon;
-            txtLink.Location = new Point(99, 185);
-            txtLink.Name = "txtLink";
-            txtLink.Size = new Size(514, 27);
-            txtLink.TabIndex = 11;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(24, 229);
-            label9.Name = "label9";
-            label9.Size = new Size(55, 20);
-            label9.TabIndex = 12;
-            label9.Text = "Chave:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(36, 192);
-            label8.Name = "label8";
-            label8.Size = new Size(43, 20);
-            label8.TabIndex = 11;
-            label8.Text = "Link:";
             // 
             // btnAtivar
             // 
@@ -249,7 +203,6 @@
             label2.Size = new Size(73, 20);
             label2.TabIndex = 0;
             label2.Text = "Servidor:";
-            label2.Click += label2_Click;
             // 
             // label1
             // 
@@ -325,7 +278,6 @@
             button2.TabIndex = 17;
             button2.Text = "WhatsApp";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // labelEmail
             // 
@@ -361,16 +313,6 @@
             labelSenha.Size = new Size(123, 20);
             labelSenha.TabIndex = 22;
             labelSenha.Text = "Senha UnderChat";
-            // 
-            // buttonEnviarMensagem
-            // 
-            buttonEnviarMensagem.Location = new Point(380, 342);
-            buttonEnviarMensagem.Name = "buttonEnviarMensagem";
-            buttonEnviarMensagem.Size = new Size(130, 45);
-            buttonEnviarMensagem.TabIndex = 23;
-            buttonEnviarMensagem.Text = "Enviar";
-            buttonEnviarMensagem.UseVisualStyleBackColor = true;
-            buttonEnviarMensagem.Click += buttonEnviarMensagem_Click;
             // 
             // textIdLoja
             // 
@@ -501,7 +443,6 @@
             Controls.Add(labelIdSetor);
             Controls.Add(labelIdLoja);
             Controls.Add(textIdLoja);
-            Controls.Add(buttonEnviarMensagem);
             Controls.Add(labelSenha);
             Controls.Add(textSenha);
             Controls.Add(textEmail);
@@ -546,10 +487,6 @@
         private Label label6;
         private Label label7;
         private TextBox txtEmpresa;
-        private Label label8;
-        private TextBox txtLink;
-        private Label label9;
-        private TextBox txtChave;
         private TextBox textTeste;
         private Label label10;
         private TextBox txtImagem;
@@ -559,7 +496,6 @@
         private TextBox textSenha;
         private Label labelEmail;
         private Label labelSenha;
-        private Button buttonEnviarMensagem;
         private TextBox textIdLoja;
         private Label labelIdSetor;
         private Label labelIdCanal;

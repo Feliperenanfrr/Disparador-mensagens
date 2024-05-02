@@ -37,14 +37,14 @@ namespace WinFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var client = new RestClient(txtLink.Text);
+            //var client = new RestClient(txtLink.Text);
             var txt = new string(textMensagem.Text);
 
-            client.Timeout = -1;
+            //client.Timeout = -1;
 
             var request = new RestRequest(Method.POST);
 
-            request.AddHeader("Authorization", txtChave.Text);
+            //request.AddHeader("Authorization", txtChave.Text);
 
             request.AddHeader("Content-Type", "application/json");
 
@@ -52,9 +52,9 @@ namespace WinFormsApp2
 
             request.AddParameter("application/json", body, ParameterType.RequestBody);
 
-            IRestResponse response = client.Execute(request);
+            //IRestResponse response = client.Execute(request);
 
-            Console.WriteLine(response.Content);
+            //Console.WriteLine(response.Content);
 
         }
 
@@ -201,11 +201,6 @@ namespace WinFormsApp2
 
                 Contato contato = listaDeContatos.data[0];
 
-                /*foreach (Contato item in listaDeContatos.data)
-                {
-                    textTeste.Text = item.ToString();
-                }*/
-
                 int idAtendimento = conexaoAPI.criarAtendimento(sIdLoja, contato, sIdSetor, sIdCanal, sMens, token);
 
                 conexaoAPI.enviarMensagem(sMens, sIdLoja, idAtendimento, token);
@@ -214,8 +209,8 @@ namespace WinFormsApp2
                 textTeste.Text = textTeste.Text + $"Mensagem: Código: {sCodigo} - Número: {sFone} - Tipo: {sTipo}";
 
                 bdConn.Open();
-                MySqlCommand cmd2 = new MySqlCommand($"Update gueppardo.mensagem_testes set Enviada = 1 where Codigo = {sCodigo} and CNPJ = ' {CNPJ} '", bdConn);
-                cmd2.ExecuteNonQuery();
+                MySqlCommand marcarComoEnviada = new MySqlCommand($"Update gueppardo.mensagem_testes set Enviada = 1 where Codigo = {sCodigo} and CNPJ = '{CNPJ}'", bdConn);
+                marcarComoEnviada.ExecuteNonQuery();
                 bdConn.Close();
 
                 return;
@@ -226,381 +221,8 @@ namespace WinFormsApp2
 
         }
 
-        private void EnviaMensagem(string sMens, string sTipo, string sFone, string sCodigo)
-        {
-
-            var client = new RestClient(txtLink.Text);
-            var txt = new string(sMens);
-
-            client.Timeout = -1;
-
-            var request = new RestRequest(Method.POST);
-
-            request.AddHeader("Authorization", txtChave.Text);
-
-            request.AddHeader("Content-Type", "application/json");
-
-            var body = "{\r\n\n\"messaging_product\":\"whatsapp\",\r\n\n\"to\":\"" + sFone + "\", \r\n\n\"type\":\"template\",\r\n\n\"template\":{\r\n\n\"name\":\"" + sTipo + "\",\r\n\n\"language\": { \r\n\n\"code\":\"en_US\" \r\n\n},\r\n\n\r\n\n\"components\": [\r\n\n{\r\n\n\"type\": \"body\",\r\n\n\"parameters\": [\r\n\n{\r\n\n\"type\": \"text\",\r\n\n\"text\":\"" + txt + "\"\r\n\n}\r\n\n]\r\n\n}\r\n\n]\r\n\n}\r\n\n}";
-
-            request.AddParameter("application/json", body, ParameterType.RequestBody);
-
-            IRestResponse response = client.Execute(request);
-
-            textTeste.Text = response.Content + textTeste.Text;
-
-            Console.WriteLine(response.Content);
-
-            //Grava como Enviado
-            bdConn.Open();
-            MySqlCommand cmd2 = new MySqlCommand("Update gueppardo.mensagem set Enviada = 1, Retorno = '" + response.StatusDescription + "' where Codigo = " + sCodigo + " and CNPJ = '" + CNPJ + "'", bdConn);
-            cmd2.ExecuteNonQuery();
-            bdConn.Close();
-
-        }
-
-        private void EnviaMensagemImagem(string sMens, string sTipo, string sFone, string sCodigo, string sFoto)
-        {
-
-            var client = new RestClient(txtLink.Text);
-            var txt = new string(sMens);
-
-            client.Timeout = -1;
-
-            var request = new RestRequest(Method.POST);
-
-            request.AddHeader("Authorization", txtChave.Text);
-
-            request.AddHeader("Content-Type", "application/json");
-
-            var body = @"{
-                " + "\n" +
-                @"""messaging_product"": ""whatsapp"", 
-                " + "\n" +
-                @"""to"": ""TELEFONE"", 
-                " + "\n" +
-                @"""type"": ""template"", 
-                " + "\n" +
-                @"""template"": { 
-                " + "\n" +
-                @"    ""name"": ""cliente_imagem_full"",
-                " + "\n" +
-                @"    ""language"": { 
-                " + "\n" +
-                @"        ""code"": ""en_US"" 
-                " + "\n" +
-                @"    },
-                " + "\n" +
-                @"
-                " + "\n" +
-                @"""components"": [
-                " + "\n" +
-                @"
-                " + "\n" +
-                @"            {
-                " + "\n" +
-                @"                ""type"": ""header"",
-                " + "\n" +
-                @"                ""parameters"": [
-                " + "\n" +
-                @"                    {
-                " + "\n" +
-                @"                        ""type"": ""image"",
-                " + "\n" +
-                @"                        ""image"": {
-                " + "\n" +
-                @"                          ""link"" : ""FOTO""
-                " + "\n" +
-                @"                        }
-                " + "\n" +
-                @"                    }
-                " + "\n" +
-                @"                ]
-                " + "\n" +
-                @"            },
-                " + "\n" +
-                @"    {
-                " + "\n" +
-                @"        ""type"": ""body"",
-                " + "\n" +
-                @"        ""parameters"": [
-                " + "\n" +
-                @"            {
-                " + "\n" +
-                @"                ""type"": ""text"",
-                " + "\n" +
-                @"                ""text"": ""MENSAGEM""
-                " + "\n" +
-                @"            }
-                " + "\n" +
-                @"        ]
-                " + "\n" +
-                @"    }
-                " + "\n" +
-                @"]
-                " + "\n" +
-                @"}
-                " + "\n" +
-                @"}";
-
-            body = body.Replace("MENSAGEM", sMens);
-            body = body.Replace("TELEFONE", sFone);
-            body = body.Replace("FOTO", sFoto);
-
-            request.AddParameter("application/json", body, ParameterType.RequestBody);
-
-            IRestResponse response = client.Execute(request);
-
-            textTeste.Text = response.Content + textTeste.Text;
-
-            Console.WriteLine(response.Content);
-
-            //Grava como Enviado
-            bdConn.Open();
-            MySqlCommand cmd2 = new MySqlCommand("Update gueppardo.mensagem set Enviada = 1, Retorno = '" + response.StatusDescription + "' where Codigo = " + sCodigo + " and CNPJ = '" + CNPJ + "'", bdConn);
-            cmd2.ExecuteNonQuery();
-            bdConn.Close();
-
-        }
-
-        private void EnviaMensagemPDF(string sMens, string sTipo, string sFone, string sCodigo, string sFoto)
-        {
-
-            var client = new RestClient(txtLink.Text);
-            var txt = new string(sMens);
-
-            client.Timeout = -1;
-
-            var request = new RestRequest(Method.POST);
-
-            request.AddHeader("Authorization", txtChave.Text);
-
-            request.AddHeader("Content-Type", "application/json");
-
-            var body = @"{
-                " + "\n" +
-                @"""messaging_product"": ""whatsapp"", 
-                " + "\n" +
-                @"""to"": ""TELEFONE"", 
-                " + "\n" +
-                @"""type"": ""template"", 
-                " + "\n" +
-                @"""template"": { 
-                " + "\n" +
-                @"    ""name"": ""cliente_pdf_cupom"",
-                " + "\n" +
-                @"    ""language"": { 
-                " + "\n" +
-                @"        ""code"": ""en_US"" 
-                " + "\n" +
-                @"    },
-                " + "\n" +
-                @"
-                " + "\n" +
-                @"""components"": [
-                " + "\n" +
-                @"
-                " + "\n" +
-                @"            {
-                " + "\n" +
-                @"                ""type"": ""header"",
-                " + "\n" +
-                @"                ""parameters"": [
-                " + "\n" +
-                @"                    {
-                " + "\n" +
-                @"                        ""type"": ""document"",
-                " + "\n" +
-                @"                        ""document"": {
-                " + "\n" +
-                @"                          ""link"" : ""FOTO"",
-                " + "\n" +
-                @"                          ""filename"" : ""Cupom""
-                " + "\n" +
-                @"                        }
-                " + "\n" +
-                @"                    }
-                " + "\n" +
-                @"                ]
-                " + "\n" +
-                @"            },
-                " + "\n" +
-                @"    {
-                " + "\n" +
-                @"        ""type"": ""body"",
-                " + "\n" +
-                @"        ""parameters"": [
-                " + "\n" +
-                @"            {
-                " + "\n" +
-                @"                ""type"": ""text"",
-                " + "\n" +
-                @"                ""text"": ""MENSAGEM""
-                " + "\n" +
-                @"            }
-                " + "\n" +
-                @"        ]
-                " + "\n" +
-                @"    }
-                " + "\n" +
-                @"]
-                " + "\n" +
-                @"}
-                " + "\n" +
-                @"}";
-
-            body = body.Replace("MENSAGEM", sMens);
-            body = body.Replace("TELEFONE", sFone);
-            body = body.Replace("FOTO", sFoto);
-
-            request.AddParameter("application/json", body, ParameterType.RequestBody);
-
-            IRestResponse response = client.Execute(request);
-
-            textTeste.Text = response.Content + textTeste.Text;
-
-            Console.WriteLine(response.Content);
-
-            //Grava como Enviado
-            bdConn.Open();
-            MySqlCommand cmd2 = new MySqlCommand("Update gueppardo.mensagem set Enviada = 1, Retorno = '" + response.StatusDescription + "' where Codigo = " + sCodigo + " and CNPJ = '" + CNPJ + "'", bdConn);
-            cmd2.ExecuteNonQuery();
-            bdConn.Close();
-
-        }
-
-
-        private void btnEnvia2_Click(object sender, EventArgs e)
-        {
-
-            var client = new RestClient(txtLink.Text);
-            var txt = new string(txtEmpresa.Text);
-
-            client.Timeout = -1;
-
-            var request = new RestRequest(Method.POST);
-
-            request.AddHeader("Authorization", txtChave.Text);
-
-            request.AddHeader("Content-Type", "application/json");
-
-            var body = "{\r\n\n\"messaging_product\":\"whatsapp\",\r\n\n\"to\":\"" + txtFone.Text + "\", \r\n\n\"type\":\"template\",\r\n\n\"template\":{\r\n\n\"name\":\"cliente_compra\",\r\n\n\"language\": { \r\n\n\"code\":\"en_US\" \r\n\n},\r\n\n\r\n\n\"components\": [\r\n\n{\r\n\n\"type\": \"body\",\r\n\n\"parameters\": [\r\n\n{\r\n\n\"type\": \"text\",\r\n\n\"text\":\"" + txt + "\"\r\n\n}\r\n\n]\r\n\n}\r\n\n]\r\n\n}\r\n\n}";
-
-            request.AddParameter("application/json", body, ParameterType.RequestBody);
-
-            IRestResponse response = client.Execute(request);
-
-            Console.WriteLine(response.Content);
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            var client = new RestClient(txtLink.Text);
-            var txt = new string(txtEmpresa.Text);
-
-            client.Timeout = -1;
-
-            var request = new RestRequest(Method.POST);
-
-            request.AddHeader("Authorization", txtChave.Text);
-
-            request.AddHeader("Content-Type", "application/json");
-
-
-            var body = @"{
-                " + "\n" +
-                @"""messaging_product"": ""whatsapp"", 
-                " + "\n" +
-                @"""to"": ""TELEFONE"", 
-                " + "\n" +
-                @"""type"": ""template"", 
-                " + "\n" +
-                @"""template"": { 
-                " + "\n" +
-                @"    ""name"": ""cliente_imagem"",
-                " + "\n" +
-                @"    ""language"": { 
-                " + "\n" +
-                @"        ""code"": ""en_US"" 
-                " + "\n" +
-                @"    },
-                " + "\n" +
-                @"
-                " + "\n" +
-                @"""components"": [
-                " + "\n" +
-                @"
-                " + "\n" +
-                @"            {
-                " + "\n" +
-                @"                ""type"": ""header"",
-                " + "\n" +
-                @"                ""parameters"": [
-                " + "\n" +
-                @"                    {
-                " + "\n" +
-                @"                        ""type"": ""image"",
-                " + "\n" +
-                @"                        ""image"": {
-                " + "\n" +
-                @"                          ""link"" : ""FOTO""
-                " + "\n" +
-                @"                        }
-                " + "\n" +
-                @"                    }
-                " + "\n" +
-                @"                ]
-                " + "\n" +
-                @"            },
-                " + "\n" +
-                @"    {
-                " + "\n" +
-                @"        ""type"": ""body"",
-                " + "\n" +
-                @"        ""parameters"": [
-                " + "\n" +
-                @"            {
-                " + "\n" +
-                @"                ""type"": ""text"",
-                " + "\n" +
-                @"                ""text"": ""MENSAGEM""
-                " + "\n" +
-                @"            }
-                " + "\n" +
-                @"        ]
-                " + "\n" +
-                @"    }
-                " + "\n" +
-                @"]
-                " + "\n" +
-                @"}
-                " + "\n" +
-                @"}";
-
-            body = body.Replace("MENSAGEM", textMensagem.Text);
-            body = body.Replace("TELEFONE", txtFone.Text);
-            body = body.Replace("FOTO", txtImagem.Text);
-
-
-            request.AddParameter("application/json", body, ParameterType.RequestBody);
-
-            IRestResponse response = client.Execute(request);
-
-            Console.WriteLine(response.Content);
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonEnviarMensagem_Click(object sender, EventArgs e)
+   
+        /*private void buttonEnviarMensagem_Click(object sender, EventArgs e)
         {
             string email = textEmail.Text;
             string senha = textSenha.Text;
@@ -627,7 +249,7 @@ namespace WinFormsApp2
             //int idAtendimento = conexaoAPI.criarAtendimento(idLoja, contato, idSetor, idCanal, mensagem, token);
 
             //conexaoAPI.enviarMensagem(mensagem, idLoja, idAtendimento, token);
-        }
+        }*/
 
 
     }
