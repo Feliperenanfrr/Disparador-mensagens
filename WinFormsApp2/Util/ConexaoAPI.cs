@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PhoneNumbers;
 using RestSharp;
 using System;
@@ -167,14 +168,31 @@ namespace Gweb.WhatsApp.Util
            
         }
 
-        public void enviarMensagem(string mensagem, string idLoja, int meta, string token)
+        public void enviarMensagem(string mensagem, string idLoja, int idAtendimento, string token)
         {
             var client = new RestClient("https://api.underchat.com.br/");
-            var request = new RestRequest($"/store/{idLoja}/conversation/{meta}/message", Method.POST);
+            var request = new RestRequest($"/store/{idLoja}/conversation/{idAtendimento}/message", Method.POST);
 
             var body = new
             {
                 message = mensagem
+            };
+
+            request.AddJsonBody(body);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            IRestResponse response = client.Execute(request);
+
+        }
+
+        public void finalizarAtendimento(string idLoja, int idAtendimento, string token)
+        {
+            var client = new RestClient("https://api.underchat.com.br/");
+            var request = new RestRequest($"/store/${idLoja}/conversation/${idAtendimento}/finish", Method.POST);
+
+            var body = new
+            {
+                sendFinishMessage = false
             };
 
             request.AddJsonBody(body);
