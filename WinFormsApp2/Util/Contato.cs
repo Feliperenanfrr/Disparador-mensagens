@@ -28,7 +28,7 @@ namespace Gweb.WhatsApp.Util
         }
     }
 
-    public class Root
+    public class RootContato
     {
         public int code { get; set; }
         public string status { get; set; }

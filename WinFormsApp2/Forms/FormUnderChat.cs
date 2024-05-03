@@ -175,13 +175,13 @@ namespace WinFormsApp2
 
                 string respostaAPI = conexaoAPI.buscarContatoPorNumero(sIdLoja, sFone, token);
 
-                Root listaDeContatos = JsonConvert.DeserializeObject<Root>(respostaAPI);
+                RootContato listaDeContatos = JsonConvert.DeserializeObject<RootContato>(respostaAPI);
 
                 Contato contato = listaDeContatos.data[0];
 
-                int idAtendimento = conexaoAPI.criarAtendimento(sIdLoja, contato, sIdSetor, sIdCanal, sMens, token);
+                int iniciarAtendimento = conexaoAPI.criarAtendimento(sIdLoja, contato, sIdSetor, sIdCanal, sMens, token);
 
-                conexaoAPI.enviarMensagem(sMens, sIdLoja, idAtendimento, token);
+                conexaoAPI.enviarMensagem(sMens, sIdLoja, iniciarAtendimento, token);
 
                 textTeste.Text = textTeste.Text + " ";
                 textTeste.Text = textTeste.Text + $"Mensagem: Código: {sCodigo} - Número: {sFone} - Tipo: {sTipo}";
@@ -192,6 +192,7 @@ namespace WinFormsApp2
                 bdConn.Close();
 
                 return;
+                
 
             }
 

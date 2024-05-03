@@ -14,12 +14,13 @@ namespace Gweb.WhatsApp.Util
             public int id { get; set; }
         }
 
-        public class Root
+        public class RootAtendimento
         {
             public int code { get; set; }
             public string status { get; set; }
             public string message { get; set; }
             public Data data { get; set; }
+            public int meta { get; set; }
         }
 
 

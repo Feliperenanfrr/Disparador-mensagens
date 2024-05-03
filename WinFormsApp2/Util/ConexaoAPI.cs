@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Gweb.WhatsApp.Util.Atendimento;
 
 namespace Gweb.WhatsApp.Util
 {
@@ -143,24 +144,33 @@ namespace Gweb.WhatsApp.Util
 
             IRestResponse response = client.Execute(request);
 
-            if (response.IsSuccessful)
+            if (response.IsSuccessful) 
             {
-                
-                dynamic responseObject = JsonConvert.DeserializeObject<dynamic>(response.Content);
-                int idAtendimento = responseObject.data.id;
+                dynamic dadosDaResposta = JsonConvert.DeserializeObject<dynamic>(response.Content);
+                int idAtendimento = dadosDaResposta.data.id;
 
                 return idAtendimento;
             }
             else
             {
-                return 0;
+                Atendimento.RootAtendimento dadosDaResposta = JsonConvert.DeserializeObject<Atendimento.RootAtendimento>(response.Content);
+                int idAtendimento = dadosDaResposta.meta;
+
+                return idAtendimento;
             }
+
+            //Atendimento.RootAtendimento responseObject = JsonConvert.DeserializeObject<Atendimento.RootAtendimento>(response.Content);
+            //return responseObject;
+
+            // esse metodo erá retornar o código ou o meta, o id da conversa irá sair daqui de qualquer forma
+
+           
         }
 
-        public void enviarMensagem(string mensagem, string idLoja, int idDoAtendimento, string token)
+        public void enviarMensagem(string mensagem, string idLoja, int meta, string token)
         {
             var client = new RestClient("https://api.underchat.com.br/");
-            var request = new RestRequest($"/store/{idLoja}/conversation/{idDoAtendimento}/message", Method.POST);
+            var request = new RestRequest($"/store/{idLoja}/conversation/{meta}/message", Method.POST);
 
             var body = new
             {
