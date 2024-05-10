@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using PhoneNumbers;
 using Gweb.WhatsApp.Util;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Newtonsoft.Json.Linq;
 
 
 namespace WinFormsApp2
@@ -157,6 +158,8 @@ namespace WinFormsApp2
             MySqlCommand cmd = new MySqlCommand($"Select * from gueppardo.mensagem_testes where Enviada = 0 and CNPJ = '{CNPJ}' and API = 1", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
+            
+
             while (reader.Read())
             {
 
@@ -179,9 +182,11 @@ namespace WinFormsApp2
 
                 Contato contato = listaDeContatos.data[0];
 
-                int iniciarAtendimento = conexaoAPI.criarAtendimento(sIdLoja, contato, sIdSetor, sIdCanal, sMens, token);
+                int idAtendimento = conexaoAPI.criarAtendimento(sIdLoja, contato, sIdSetor, sIdCanal, sMens, token);
 
-                conexaoAPI.enviarMensagem(sMens, sIdLoja, iniciarAtendimento, token);
+                conexaoAPI.enviarMensagem(sMens, sIdLoja, idAtendimento, token);
+
+                conexaoAPI.enviarMensagemComImagem("https://www.gueppardo.net/LogoPeixote.jpg", sIdLoja, idAtendimento, token);
 
                 textTeste.Text = textTeste.Text + " ";
                 textTeste.Text = textTeste.Text + $"Mensagem: Código: {sCodigo} - Número: {sFone} - Tipo: {sTipo}";
@@ -190,6 +195,8 @@ namespace WinFormsApp2
                 MySqlCommand marcarComoEnviada = new MySqlCommand($"Update gueppardo.mensagem_testes set Enviada = 1 where Codigo = {sCodigo} and CNPJ = '{CNPJ}'", bdConn);
                 marcarComoEnviada.ExecuteNonQuery();
                 bdConn.Close();
+
+                
 
                 return;
                 

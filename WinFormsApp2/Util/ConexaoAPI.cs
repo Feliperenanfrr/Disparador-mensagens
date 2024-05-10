@@ -5,6 +5,7 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using static Gweb.WhatsApp.Util.Atendimento;
@@ -145,27 +146,32 @@ namespace Gweb.WhatsApp.Util
 
             IRestResponse response = client.Execute(request);
 
+            int idAtendimento = 0;
+
             if (response.IsSuccessful) 
             {
                 dynamic dadosDaResposta = JsonConvert.DeserializeObject<dynamic>(response.Content);
-                int idAtendimento = dadosDaResposta.data.id;
+                idAtendimento = dadosDaResposta.data.id;
 
-                return idAtendimento;
+                
             }
             else
             {
                 Atendimento.RootAtendimento dadosDaResposta = JsonConvert.DeserializeObject<Atendimento.RootAtendimento>(response.Content);
-                int idAtendimento = dadosDaResposta.meta;
+                idAtendimento = dadosDaResposta.meta;
 
-                return idAtendimento;
+                finalizarAtendimento(idLoja, idAtendimento, token);
+                
             }
+
+            return idAtendimento;
 
             //Atendimento.RootAtendimento responseObject = JsonConvert.DeserializeObject<Atendimento.RootAtendimento>(response.Content);
             //return responseObject;
 
             // esse metodo erá retornar o código ou o meta, o id da conversa irá sair daqui de qualquer forma
 
-           
+
         }
 
         public void enviarMensagem(string mensagem, string idLoja, int idAtendimento, string token)
@@ -201,8 +207,5 @@ namespace Gweb.WhatsApp.Util
             IRestResponse response = client.Execute(request);
 
         }
-
-
-
     }
 }
