@@ -32,8 +32,7 @@ namespace WinFormsApp2
         public FormUnderChat()
         {
             InitializeComponent();
-            //imgFoto.ImageLocation = txtImagem.Text;
-
+            
         }
 
 
@@ -115,23 +114,6 @@ namespace WinFormsApp2
             //Buscando Link e Chave e consulta CNPJ
             MySqlCommand cmd = new MySqlCommand("Select * from gueppardo.mensagem_uc where CNPJ = '" + CNPJ + "'", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
-
-            // Aqui é pego a chave o link da api para enviar mensagem, traga isso para o UC
-            /*
-            while (reader.Read())
-            {
-                txtLink.Text = reader["Link"].ToString();
-                txtChave.Text = reader["Chave"].ToString();
-            }
-
-            if (txtChave.Text == "")
-            {
-                var result = MessageBox.Show("Não existe um CNPJ cadastrado no site de controle Gueppardo.Net!", "ERRO!",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                Close();
-
-            }*/
 
             bdConn.Close();
             tmMonitora.Enabled = true;
@@ -217,37 +199,6 @@ namespace WinFormsApp2
             FormWhatsApp formWpp = new FormWhatsApp();
             formWpp.Show();
         }
-
-
-        /*private void buttonEnviarMensagem_Click(object sender, EventArgs e)
-        {
-            string email = textEmail.Text;
-            string senha = textSenha.Text;
-            string idLoja = textIdLoja.Text;
-            string idCanal = textIdCanal.Text;
-            string numero = textContatoNumero.Text;
-            string mensagem = textMensagem.Text;
-            //string idSetor = textIdSetor.Text;
-
-            ConexaoAPI conexaoAPI = new ConexaoAPI();
-
-            dynamic token = conexaoAPI.ObterToken(email, senha);
-
-            string respostaAPI = conexaoAPI.buscarContatoPorNumero(idLoja, numero, token);
-
-            Root listaDeContatos = JsonConvert.DeserializeObject<Root>(respostaAPI);
-
-            Contato contato = listaDeContatos.data[0];
-
-            foreach(Contato item in listaDeContatos.data) {
-                textTeste.Text = item.ToString();
-            }
-
-            //int idAtendimento = conexaoAPI.criarAtendimento(idLoja, contato, idSetor, idCanal, mensagem, token);
-
-            //conexaoAPI.enviarMensagem(mensagem, idLoja, idAtendimento, token);
-        }*/
-
 
     }
 

@@ -19,9 +19,6 @@ namespace Gweb.WhatsApp.Util
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest("/user/auth", Method.POST);
 
-            //string email = textEmail.Text;
-            //string senha = textSenha.Text;
-
             var login = new
             {
                 username = email,
@@ -34,7 +31,7 @@ namespace Gweb.WhatsApp.Util
 
             if (response.ErrorException != null)
             {
-                //MessageBox.Show($"Erro ao fazer a solicitação: {response.ErrorException.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
                 return null;
             }
             else
@@ -58,10 +55,8 @@ namespace Gweb.WhatsApp.Util
 
             if (response.IsSuccessful)
             {
-                //dynamic data = JsonConvert.DeserializeObject(response.Content);
-                //var contato = data[0];
                 string contato = response.Content;
-                //if (contato != null) return contato;
+               
                 return contato;
             }
 
@@ -166,12 +161,6 @@ namespace Gweb.WhatsApp.Util
 
             return idAtendimento;
 
-            //Atendimento.RootAtendimento responseObject = JsonConvert.DeserializeObject<Atendimento.RootAtendimento>(response.Content);
-            //return responseObject;
-
-            // esse metodo erá retornar o código ou o meta, o id da conversa irá sair daqui de qualquer forma
-
-
         }
 
         public void enviarMensagem(string mensagem, string idLoja, int idAtendimento, string token)
@@ -228,14 +217,6 @@ namespace Gweb.WhatsApp.Util
                 RestRequest request = new RestRequest($"/store/{idLoja}/conversation/{idAtendimento}/message", Method.POST);
                 request.AddFile("file", tempFilePath);
                 request.AddParameter("message", mensagem);
-
-                /*var body = new
-                {
-                    message = mensagem
-                };
-
-                request.AddJsonBody(body);
-                */
 
                 // Adicionar o token de autorização ao cabeçalho da requisição
                 request.AddHeader("Authorization", "Bearer " + token);
