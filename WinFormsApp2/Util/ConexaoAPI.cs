@@ -16,17 +16,19 @@ namespace Gweb.WhatsApp.Util
     {
         public string ObterToken(string email, string senha)
         {
+            //Monta corpo da requisição
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest("/user/auth", Method.POST);
 
+            //Adiciona credenciais de login ao corpo da requisição
             var login = new
             {
                 username = email,
                 password = senha
             };
-
             request.AddJsonBody(login);
 
+            //Executa requisição
             IRestResponse response = client.Execute(request);
 
             if (response.ErrorException != null)
@@ -45,6 +47,7 @@ namespace Gweb.WhatsApp.Util
 
         public dynamic buscarContatoPorNumero(string idLoja, string numero, string token, int tentativas = 0)
         {
+            //Monta e executa corpo da requisição
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"/store/{idLoja}/contact", Method.GET);
             request.AddParameter("filter[value]", numero);
@@ -60,6 +63,7 @@ namespace Gweb.WhatsApp.Util
                 return contato;
             }
 
+            //Faz a validação do número de telefone e converte para o padrão BR
             var phoneNumberUtil = PhoneNumberUtil.GetInstance();
             var numeroBrasil = phoneNumberUtil.Parse(numero, "BR");
 
@@ -86,6 +90,7 @@ namespace Gweb.WhatsApp.Util
 
         public static dynamic BuscarContatoPorId(string idLoja, string id, string token)
         {
+            //Busca contato pelo ID e tenta retornar, caso o numero não seja encontrado retorna nulo
             var client = new RestClient("https://api.example.com");
             var request = new RestRequest($"/store/{idLoja}/contact", Method.GET);
             request.AddParameter("filter[id]", id);
@@ -105,8 +110,6 @@ namespace Gweb.WhatsApp.Util
 
         public static void VerificaSeContatoFoiValidado(string idLoja, string idContato, string token, int tentativas = 1)
         {
-            //Console.WriteLine($"[{DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss")}] Verificando se o contato já foi validado ({tentativas}º Tentativa)...");
-
             dynamic contato = BuscarContatoPorId(idLoja, idContato, token);
             bool isValidated = contato != null && contato.status == "VALIDATED";
 
