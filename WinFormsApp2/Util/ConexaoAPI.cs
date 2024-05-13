@@ -207,5 +207,61 @@ namespace Gweb.WhatsApp.Util
             IRestResponse response = client.Execute(request);
 
         }
+
+        public void enviarMensagemComImagem(string mensagem, string idLoja, int idAtendimento, string imageUrl, string token)
+        {
+            try
+            {
+                Console.WriteLine("Enviando mensagem com imagem...");
+
+                // Baixar o conteúdo da imagem
+                WebClient webClient = new WebClient();
+                byte[] imageBytes = webClient.DownloadData(imageUrl);
+
+                // Salvar a imagem em um arquivo temporário
+                string tempDir = Path.GetTempPath();
+                string tempFilePath = Path.Combine(tempDir, "image.jpg");
+                File.WriteAllBytes(tempFilePath, imageBytes);
+
+                // Criar um objeto para representar o arquivo no disco
+                var client = new RestClient("https://api.underchat.com.br/");
+                RestRequest request = new RestRequest($"/store/{idLoja}/conversation/{idAtendimento}/message", Method.POST);
+                request.AddFile("file", tempFilePath);
+                request.AddParameter("message", mensagem);
+
+                /*var body = new
+                {
+                    message = mensagem
+                };
+
+                request.AddJsonBody(body);
+                */
+
+                // Adicionar o token de autorização ao cabeçalho da requisição
+                request.AddHeader("Authorization", "Bearer " + token);
+
+                // Enviar a requisição
+                IRestResponse response = client.Execute(request);
+
+                if (response.IsSuccessful)
+                {
+                    Console.WriteLine("Mensagem com imagem enviada com sucesso!");
+                }
+                else
+                {
+                    Console.WriteLine($"Ocorreu um erro ao enviar a mensagem com imagem. ERR: {response.ErrorMessage}");
+                }
+
+                // Remover o arquivo temporário depois de usar
+                File.Delete(tempFilePath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"ERRO ao enviar mensagem com imagem: {ex.Message}");
+            }
+        }
+
+
+
     }
 }

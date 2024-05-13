@@ -184,9 +184,14 @@ namespace WinFormsApp2
 
                 int idAtendimento = conexaoAPI.criarAtendimento(sIdLoja, contato, sIdSetor, sIdCanal, sMens, token);
 
-                conexaoAPI.enviarMensagem(sMens, sIdLoja, idAtendimento, token);
-
-                conexaoAPI.enviarMensagemComImagem("https://www.gueppardo.net/LogoPeixote.jpg", sIdLoja, idAtendimento, token);
+                if (sFoto == "")
+                {
+                    conexaoAPI.enviarMensagem(sMens, sIdLoja, idAtendimento, token);
+                }
+                else
+                {
+                    conexaoAPI.enviarMensagemComImagem(sMens, sIdLoja, idAtendimento, sFoto ,token);
+                }
 
                 textTeste.Text = textTeste.Text + " ";
                 textTeste.Text = textTeste.Text + $"Mensagem: Código: {sCodigo} - Número: {sFone} - Tipo: {sTipo}";
