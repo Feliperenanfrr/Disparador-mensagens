@@ -26,15 +26,12 @@ namespace WinFormsApp2
         private DataSet bdDataSet; //MySQL
         private string CNPJ;
 
-
         ConexaoAPI conexaoAPI = new ConexaoAPI();
 
         public FormUnderChat()
         {
             InitializeComponent();
-            
         }
-
 
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -92,8 +89,6 @@ namespace WinFormsApp2
                 bdConn.Open();
                 btnAtivar.Text = "Desativar";
                 btnSair.Enabled = false;
-                //btnEnvia.Enabled = false;
-                //btnEnvia2.Enabled = false;
             }
             catch
             {
@@ -106,9 +101,6 @@ namespace WinFormsApp2
 
                 btnAtivar.Text = "Desativar";
                 btnSair.Enabled = false;
-                //btnEnvia.Enabled = false;
-                //btnEnvia2.Enabled = false;
-
             }
 
             //Buscando Link e Chave e consulta CNPJ
@@ -140,12 +132,10 @@ namespace WinFormsApp2
             MySqlCommand cmd = new MySqlCommand($"Select * from gueppardo.mensagem_testes where Enviada = 0 and CNPJ = '{CNPJ}' and API = 1", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
-            
-
             while (reader.Read())
             {
 
-                //Captura Codigo
+                //Captura Código
                 var sCodigo = reader["Codigo"].ToString();
                 var sMens = reader["Mensagem"].ToString();
                 var sTipo = reader["TipoMensagem"].ToString();
@@ -183,11 +173,7 @@ namespace WinFormsApp2
                 marcarComoEnviada.ExecuteNonQuery();
                 bdConn.Close();
 
-                
-
                 return;
-                
-
             }
 
             bdConn.Close();

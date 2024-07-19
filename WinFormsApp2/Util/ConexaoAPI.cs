@@ -33,14 +33,12 @@ namespace Gweb.WhatsApp.Util
 
             if (response.ErrorException != null)
             {
-                
                 return null;
             }
             else
             {
                 dynamic responseObject = JsonConvert.DeserializeObject<dynamic>(response.Content);
                 string token = responseObject.data.token;
-
                 return token;
             }
         }
@@ -59,7 +57,7 @@ namespace Gweb.WhatsApp.Util
             if (response.IsSuccessful)
             {
                 string contato = response.Content;
-               
+
                 return contato;
             }
 
@@ -146,12 +144,12 @@ namespace Gweb.WhatsApp.Util
 
             int idAtendimento = 0;
 
-            if (response.IsSuccessful) 
+            if (response.IsSuccessful)
             {
                 dynamic dadosDaResposta = JsonConvert.DeserializeObject<dynamic>(response.Content);
                 idAtendimento = dadosDaResposta.data.id;
 
-                
+
             }
             else
             {
@@ -159,7 +157,7 @@ namespace Gweb.WhatsApp.Util
                 idAtendimento = dadosDaResposta.meta;
 
                 finalizarAtendimento(idLoja, idAtendimento, token);
-                
+
             }
 
             return idAtendimento;
