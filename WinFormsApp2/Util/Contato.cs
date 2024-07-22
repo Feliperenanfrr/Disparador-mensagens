@@ -21,10 +21,11 @@ namespace Gweb.WhatsApp.Util
     public class Person
     {
         public int id { get; set; }
+        public string name { get; set; }
 
         public override string ToString()
         {
-            return $"ID: {id}";
+            return $"ID: {id}, Name: {name}";
         }
     }
 

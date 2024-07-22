@@ -25,12 +25,13 @@ namespace Gweb.WhatsApp.Forms
             textContatos.Text = listaDeContatos.ToString();
             foreach(Contato contato in contatosLista)
             {
-                textContatos.Text += contato.ToString();
+                Person pessoa = contato.person;
+                string nome = pessoa.name;
+                if (nome.StartsWith("Cli-"))
+                {
+                    textContatos.Text += nome;
+                }
             }
-
-            /*List<RootContato> contatos = conexaoAPI.BuscarTodosContatos(idLoja, token);
-            RootContato listaDeContatos = JsonConvert.DeserializeObject<RootContato>(contatos);
-            textContatos.Text = listaDeContatos.ToString();*/
         }
 
         private void button1_Click(object sender, EventArgs e)
