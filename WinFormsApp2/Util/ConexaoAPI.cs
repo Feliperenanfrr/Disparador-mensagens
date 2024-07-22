@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using PhoneNumbers;
 using RestSharp;
+using RestSharp.Deserializers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -243,6 +244,23 @@ namespace Gweb.WhatsApp.Util
             }
         }
 
+        public RootContato BuscarTodosContatos(string idLoja, string token)
+        {
+            var client = new RestClient("https://api.underchat.com.br/");
+            var request = new RestRequest($"/store/{idLoja}/contact", Method.GET);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            var response = client.Execute(request);
+
+            if (response.IsSuccessful)
+            {
+                string contato = response.Content;
+                RootContato ListaDeContatos = JsonConvert.DeserializeObject<RootContato>(contato);
+                if (contato != null) return ListaDeContatos;
+            }
+
+            return null;
+        }
 
 
     }

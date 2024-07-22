@@ -40,7 +40,6 @@ namespace WinFormsApp2
 
         private void btnAtivar_Click(object sender, EventArgs e)
         {
-
             XmlDocument document = new XmlDocument();
             document.Load("Config.Xml");
             XmlNodeList livros = document.SelectNodes("/geral/empresa/CNPJ");
@@ -61,8 +60,6 @@ namespace WinFormsApp2
             {
                 btnAtivar.Text = "Ativar";
                 btnSair.Enabled = true;
-                //btnEnvia.Enabled = true;
-                //btnEnvia2.Enabled = true;
                 tmMonitora.Enabled = false;
                 bdConn.Close();
                 return;
@@ -79,7 +76,6 @@ namespace WinFormsApp2
 
             //Definição do dataset
             bdDataSet = new DataSet();
-
             //Define string de conexão
             bdConn = new MySqlConnection(builder.ConnectionString);
 
@@ -106,7 +102,6 @@ namespace WinFormsApp2
             //Buscando Link e Chave e consulta CNPJ
             MySqlCommand cmd = new MySqlCommand("Select * from gueppardo.mensagem_uc where CNPJ = '" + CNPJ + "'", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
-
             bdConn.Close();
             tmMonitora.Enabled = true;
         }
@@ -134,7 +129,6 @@ namespace WinFormsApp2
 
             while (reader.Read())
             {
-
                 //Captura Código
                 var sCodigo = reader["Codigo"].ToString();
                 var sMens = reader["Mensagem"].ToString();
@@ -147,13 +141,9 @@ namespace WinFormsApp2
 
                 ConexaoAPI conexaoAPI = new ConexaoAPI();
                 dynamic token = conexaoAPI.ObterToken(sEmail, sSenha);
-
                 string respostaAPI = conexaoAPI.buscarContatoPorNumero(sIdLoja, sFone, token);
-
                 RootContato listaDeContatos = JsonConvert.DeserializeObject<RootContato>(respostaAPI);
-
                 Contato contato = listaDeContatos.data[0];
-
                 int idAtendimento = conexaoAPI.criarAtendimento(sIdLoja, contato, sIdSetor, sIdCanal, sMens, token);
 
                 if (sFoto == "")
@@ -167,12 +157,10 @@ namespace WinFormsApp2
 
                 textTeste.Text = textTeste.Text + " ";
                 textTeste.Text = textTeste.Text + $"Mensagem: Código: {sCodigo} - Número: {sFone} - Tipo: {sTipo}";
-
                 bdConn.Open();
                 MySqlCommand marcarComoEnviada = new MySqlCommand($"Update gueppardo.mensagem_testes set Enviada = 1 where Codigo = {sCodigo} and CNPJ = '{CNPJ}'", bdConn);
                 marcarComoEnviada.ExecuteNonQuery();
                 bdConn.Close();
-
                 return;
             }
 
