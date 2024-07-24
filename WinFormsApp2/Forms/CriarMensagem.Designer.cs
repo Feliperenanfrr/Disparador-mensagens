@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CriarMensagem));
             textoMensagem = new RichTextBox();
             linkImagem = new RichTextBox();
             label1 = new Label();
@@ -110,6 +111,7 @@
             Controls.Add(label1);
             Controls.Add(linkImagem);
             Controls.Add(textoMensagem);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CriarMensagem";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CriarMensagem";

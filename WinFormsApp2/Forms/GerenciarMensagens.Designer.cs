@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarMensagens));
             menuStrip1 = new MenuStrip();
             btnCriarMensagem = new ToolStripMenuItem();
-            listarMensagensExistentesToolStripMenuItem = new ToolStripMenuItem();
+            btnListarMensagens = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -38,7 +39,7 @@
             // 
             menuStrip1.BackColor = SystemColors.ControlDark;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { btnCriarMensagem, listarMensagensExistentesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { btnCriarMensagem, btnListarMensagens });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1266, 28);
@@ -52,11 +53,12 @@
             btnCriarMensagem.Text = "Criar nova mensagem";
             btnCriarMensagem.Click += btnCriarMensagem_Click;
             // 
-            // listarMensagensExistentesToolStripMenuItem
+            // btnListarMensagens
             // 
-            listarMensagensExistentesToolStripMenuItem.Name = "listarMensagensExistentesToolStripMenuItem";
-            listarMensagensExistentesToolStripMenuItem.Size = new Size(205, 24);
-            listarMensagensExistentesToolStripMenuItem.Text = "Listar mensagens existentes";
+            btnListarMensagens.Name = "btnListarMensagens";
+            btnListarMensagens.Size = new Size(205, 24);
+            btnListarMensagens.Text = "Listar mensagens existentes";
+            btnListarMensagens.Click += btnListarMensagens_Click;
             // 
             // GerenciarMensagens
             // 
@@ -64,6 +66,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1266, 694);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "GerenciarMensagens";
             StartPosition = FormStartPosition.CenterScreen;
@@ -78,6 +81,6 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem btnCriarMensagem;
-        private ToolStripMenuItem listarMensagensExistentesToolStripMenuItem;
+        private ToolStripMenuItem btnListarMensagens;
     }
 }

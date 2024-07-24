@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarContato));
             btn_CadastrarContato = new Button();
             textContatos = new TextBox();
             SuspendLayout();
@@ -57,6 +58,7 @@
             ClientSize = new Size(1266, 694);
             Controls.Add(textContatos);
             Controls.Add(btn_CadastrarContato);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "GerenciarContato";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GerenciarContato";

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnderChat));
             groupBox1 = new GroupBox();
             btnAtivar = new Button();
-            txtPorta = new TextBox();
+            txtBanco = new TextBox();
             txtSenha = new TextBox();
             txtUsuario = new TextBox();
             txtServer = new TextBox();
@@ -72,7 +72,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(btnAtivar);
-            groupBox1.Controls.Add(txtPorta);
+            groupBox1.Controls.Add(txtBanco);
             groupBox1.Controls.Add(txtSenha);
             groupBox1.Controls.Add(txtUsuario);
             groupBox1.Controls.Add(txtServer);
@@ -101,15 +101,15 @@
             btnAtivar.UseVisualStyleBackColor = true;
             btnAtivar.Click += btnAtivar_Click;
             // 
-            // txtPorta
+            // txtBanco
             // 
-            txtPorta.Enabled = false;
-            txtPorta.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            txtPorta.Location = new Point(97, 146);
-            txtPorta.Name = "txtPorta";
-            txtPorta.Size = new Size(182, 27);
-            txtPorta.TabIndex = 6;
-            txtPorta.Text = "3306";
+            txtBanco.Enabled = false;
+            txtBanco.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBanco.Location = new Point(97, 146);
+            txtBanco.Name = "txtBanco";
+            txtBanco.Size = new Size(182, 27);
+            txtBanco.TabIndex = 6;
+            txtBanco.Text = "gueppardo";
             // 
             // txtSenha
             // 
@@ -154,9 +154,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(36, 153);
             label5.Name = "label5";
-            label5.Size = new Size(51, 20);
+            label5.Size = new Size(52, 20);
             label5.TabIndex = 6;
-            label5.Text = "Porta:";
+            label5.Text = "Banco";
             // 
             // label4
             // 
@@ -439,10 +439,6 @@
         private Label label4;
         private Label label3;
         private System.Windows.Forms.Timer tmMonitora;
-        private TextBox txtSenha;
-        private TextBox txtUsuario;
-        private TextBox txtServer;
-        private TextBox txtPorta;
         private Button btnAtivar;
         private TextBox textTeste;
         private Button button2;
@@ -467,5 +463,9 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem btnContatos_Menu;
         private ToolStripMenuItem btnMensagens_menu;
+        public TextBox txtServer;
+        public TextBox txtSenha;
+        public TextBox txtUsuario;
+        public TextBox txtBanco;
     }
 }

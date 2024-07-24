@@ -23,5 +23,11 @@ namespace Gweb.WhatsApp.Forms
             CriarMensagem criarMensagem = new CriarMensagem();
             criarMensagem.Show();
         }
+
+        private void btnListarMensagens_Click(object sender, EventArgs e)
+        {
+            ListarMensagem listarMensagem = new ListarMensagem();
+            listarMensagem.Show();
+        }
     }
 }
