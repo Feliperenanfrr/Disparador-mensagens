@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="Forms\CriarMensagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\FormWhatsApp.cs">
       <SubType>Form</SubType>
     </Compile>

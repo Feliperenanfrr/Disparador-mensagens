@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Gweb.WhatsApp.Forms
         public GerenciarMensagens()
         {
             InitializeComponent();
+        }
+
+        private void btnCriarMensagem_Click(object sender, EventArgs e)
+        {
+            CriarMensagem criarMensagem = new CriarMensagem();
+            criarMensagem.Show();
         }
     }
 }

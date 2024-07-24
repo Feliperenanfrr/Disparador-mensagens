@@ -8,7 +8,6 @@ namespace Gweb.WhatsApp.Forms
 {
     public partial class GerenciarContato : Form
     {
-        private string myConnectionString;
         private MySqlConnection bdConn;
         private DataSet bdDataSet;
 

@@ -34,7 +34,7 @@
             // 
             // btn_CadastrarContato
             // 
-            btn_CadastrarContato.Location = new Point(12, 12);
+            btn_CadastrarContato.Location = new Point(12, 58);
             btn_CadastrarContato.Name = "btn_CadastrarContato";
             btn_CadastrarContato.Size = new Size(200, 113);
             btn_CadastrarContato.TabIndex = 0;
@@ -44,10 +44,10 @@
             // 
             // textContatos
             // 
-            textContatos.Location = new Point(825, 12);
+            textContatos.Location = new Point(825, 58);
             textContatos.Multiline = true;
             textContatos.Name = "textContatos";
-            textContatos.Size = new Size(399, 670);
+            textContatos.Size = new Size(399, 624);
             textContatos.TabIndex = 1;
             // 
             // GerenciarContato
