@@ -265,3 +265,36 @@ C:\Users\guepp\Desktop\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\G
 C:\Users\guepp\Desktop\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
 C:\Users\guepp\Desktop\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.FormWhatsApp.resources
 C:\Users\guepp\Desktop\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.GerenciarContato.resources
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.exe
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.deps.json
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.runtimeconfig.json
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\PhoneNumbers.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\Newtonsoft.Json.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\RestSharp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\Google.Protobuf.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\ZstdNet.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\BouncyCastle.Crypto.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\Ubiety.Dns.Core.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Compression.LZ4.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Hash.xxHash.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.xml
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.AssemblyReference.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.FormUnderChat.resources
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.FormWhatsApp.resources
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.GerenciarContato.resources
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.GenerateResource.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfoInputs.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.AssemblyInfo.cs
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.sourcelink.json
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.Wha.ED09C985.Up2Date
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Gweb.WhatsApp.dll
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
+C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
