@@ -16,7 +16,13 @@
     <Compile Update="Forms\GerenciarMensagens.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\ListarContatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\ListarMensagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SelecionarContatos.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

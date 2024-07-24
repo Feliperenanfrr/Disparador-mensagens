@@ -301,3 +301,5 @@ C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug
 C:\Users\guepp\Desktop\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.GerenciarMensagens.resources
 C:\Users\guepp\Desktop\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.CriarMensagem.resources
 C:\Users\guepp\Desktop\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.ListarMensagem.resources
+C:\Users\guepp\Desktop\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.ListarContatos.resources
+C:\Users\guepp\Desktop\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.SelecionarContatos.resources

@@ -28,35 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarMensagem));
             dataGridMensagens = new DataGridView();
-            btnPesquisarMensagem = new Button();
             ID = new DataGridViewTextBoxColumn();
             Tipo = new DataGridViewTextBoxColumn();
             Mensagem = new DataGridViewTextBoxColumn();
             Imagem = new DataGridViewTextBoxColumn();
+            btnPesquisarMensagem = new Button();
+            btnSelecionarContatos = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridMensagens).BeginInit();
             SuspendLayout();
             // 
             // dataGridMensagens
             // 
-            dataGridMensagens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridMensagens.BackgroundColor = Color.White;
+            dataGridMensagens.BorderStyle = BorderStyle.None;
+            dataGridMensagens.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Gray;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.GrayText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridMensagens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridMensagens.ColumnHeadersHeight = 30;
             dataGridMensagens.Columns.AddRange(new DataGridViewColumn[] { ID, Tipo, Mensagem, Imagem });
-            dataGridMensagens.Location = new Point(-1, 192);
+            dataGridMensagens.Location = new Point(1, 197);
             dataGridMensagens.Name = "dataGridMensagens";
             dataGridMensagens.RowHeadersWidth = 51;
             dataGridMensagens.RowTemplate.Height = 29;
             dataGridMensagens.Size = new Size(1266, 502);
             dataGridMensagens.TabIndex = 0;
-            // 
-            // btnPesquisarMensagem
-            // 
-            btnPesquisarMensagem.Location = new Point(12, 12);
-            btnPesquisarMensagem.Name = "btnPesquisarMensagem";
-            btnPesquisarMensagem.Size = new Size(94, 29);
-            btnPesquisarMensagem.TabIndex = 1;
-            btnPesquisarMensagem.Text = "Pesquisar";
-            btnPesquisarMensagem.UseVisualStyleBackColor = true;
-            btnPesquisarMensagem.Click += btnPesquisarMensagem_Click;
             // 
             // ID
             // 
@@ -94,13 +98,35 @@
             Imagem.ReadOnly = true;
             Imagem.Width = 125;
             // 
+            // btnPesquisarMensagem
+            // 
+            btnPesquisarMensagem.Location = new Point(12, 12);
+            btnPesquisarMensagem.Name = "btnPesquisarMensagem";
+            btnPesquisarMensagem.Size = new Size(141, 29);
+            btnPesquisarMensagem.TabIndex = 1;
+            btnPesquisarMensagem.Text = "Pesquisar";
+            btnPesquisarMensagem.UseVisualStyleBackColor = true;
+            btnPesquisarMensagem.Click += btnPesquisarMensagem_Click;
+            // 
+            // btnSelecionarContatos
+            // 
+            btnSelecionarContatos.Location = new Point(185, 12);
+            btnSelecionarContatos.Name = "btnSelecionarContatos";
+            btnSelecionarContatos.Size = new Size(181, 29);
+            btnSelecionarContatos.TabIndex = 2;
+            btnSelecionarContatos.Text = "Selecionar contatos";
+            btnSelecionarContatos.UseVisualStyleBackColor = true;
+            btnSelecionarContatos.Click += btnSelecionarContatos_Click;
+            // 
             // ListarMensagem
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1266, 694);
+            Controls.Add(btnSelecionarContatos);
             Controls.Add(btnPesquisarMensagem);
             Controls.Add(dataGridMensagens);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ListarMensagem";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ListarMensagem";
@@ -116,5 +142,6 @@
         private DataGridViewTextBoxColumn Tipo;
         private DataGridViewTextBoxColumn Mensagem;
         private DataGridViewTextBoxColumn Imagem;
+        private Button btnSelecionarContatos;
     }
 }

@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarContato));
             btn_CadastrarContato = new Button();
             textContatos = new TextBox();
+            menuStrip1 = new MenuStrip();
+            btnListarContatos = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // btn_CadastrarContato
@@ -51,6 +54,23 @@
             textContatos.Size = new Size(399, 624);
             textContatos.TabIndex = 1;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { btnListarContatos });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1266, 28);
+            menuStrip1.TabIndex = 2;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // btnListarContatos
+            // 
+            btnListarContatos.Name = "btnListarContatos";
+            btnListarContatos.Size = new Size(119, 24);
+            btnListarContatos.Text = "Listar contatos";
+            btnListarContatos.Click += btnListarContatos_Click;
+            // 
             // GerenciarContato
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -58,10 +78,14 @@
             ClientSize = new Size(1266, 694);
             Controls.Add(textContatos);
             Controls.Add(btn_CadastrarContato);
+            Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
             Name = "GerenciarContato";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GerenciarContato";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -70,5 +94,7 @@
 
         private Button btn_CadastrarContato;
         private TextBox textContatos;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem btnListarContatos;
     }
 }

@@ -87,5 +87,11 @@ namespace Gweb.WhatsApp.Forms
         {
 
         }
+
+        private void btnListarContatos_Click(object sender, EventArgs e)
+        {
+            ListarContatos listarContatos = new ListarContatos();
+            listarContatos.Show();
+        }
     }
 }
