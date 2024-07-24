@@ -298,3 +298,4 @@ C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug
 C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
 C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
 C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
+C:\Users\guepp\Desktop\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.GerenciarMensagens.resources

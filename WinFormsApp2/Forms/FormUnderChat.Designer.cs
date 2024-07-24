@@ -62,7 +62,11 @@
             labelContatoNumero = new Label();
             label11 = new Label();
             label1 = new Label();
+            menuStrip1 = new MenuStrip();
+            btnContatos_Menu = new ToolStripMenuItem();
+            btnMensagens_menu = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -198,17 +202,17 @@
             // 
             // textTeste
             // 
-            textTeste.Location = new Point(744, 25);
+            textTeste.Location = new Point(744, 64);
             textTeste.Multiline = true;
             textTeste.Name = "textTeste";
-            textTeste.Size = new Size(501, 625);
+            textTeste.Size = new Size(501, 586);
             textTeste.TabIndex = 12;
             textTeste.Text = "Area de Mensagens";
             // 
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.Location = new Point(7, 59);
+            labelEmail.Location = new Point(12, 98);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(123, 20);
             labelEmail.TabIndex = 18;
@@ -216,7 +220,7 @@
             // 
             // textEmail
             // 
-            textEmail.Location = new Point(137, 56);
+            textEmail.Location = new Point(142, 95);
             textEmail.Name = "textEmail";
             textEmail.Size = new Size(237, 27);
             textEmail.TabIndex = 19;
@@ -224,7 +228,7 @@
             // 
             // textSenha
             // 
-            textSenha.Location = new Point(136, 99);
+            textSenha.Location = new Point(141, 138);
             textSenha.Name = "textSenha";
             textSenha.PasswordChar = '*';
             textSenha.Size = new Size(125, 27);
@@ -234,7 +238,7 @@
             // labelSenha
             // 
             labelSenha.AutoSize = true;
-            labelSenha.Location = new Point(7, 102);
+            labelSenha.Location = new Point(12, 141);
             labelSenha.Name = "labelSenha";
             labelSenha.Size = new Size(123, 20);
             labelSenha.TabIndex = 22;
@@ -242,7 +246,7 @@
             // 
             // textIdLoja
             // 
-            textIdLoja.Location = new Point(137, 143);
+            textIdLoja.Location = new Point(142, 182);
             textIdLoja.Name = "textIdLoja";
             textIdLoja.Size = new Size(125, 27);
             textIdLoja.TabIndex = 24;
@@ -251,7 +255,7 @@
             // labelIdLoja
             // 
             labelIdLoja.AutoSize = true;
-            labelIdLoja.Location = new Point(52, 139);
+            labelIdLoja.Location = new Point(57, 178);
             labelIdLoja.Name = "labelIdLoja";
             labelIdLoja.Size = new Size(78, 20);
             labelIdLoja.TabIndex = 25;
@@ -260,7 +264,7 @@
             // labelIdSetor
             // 
             labelIdSetor.AutoSize = true;
-            labelIdSetor.Location = new Point(48, 185);
+            labelIdSetor.Location = new Point(53, 224);
             labelIdSetor.Name = "labelIdSetor";
             labelIdSetor.Size = new Size(86, 20);
             labelIdSetor.TabIndex = 26;
@@ -269,7 +273,7 @@
             // labelIdCanal
             // 
             labelIdCanal.AutoSize = true;
-            labelIdCanal.Location = new Point(44, 222);
+            labelIdCanal.Location = new Point(49, 261);
             labelIdCanal.Name = "labelIdCanal";
             labelIdCanal.Size = new Size(86, 20);
             labelIdCanal.TabIndex = 27;
@@ -277,7 +281,7 @@
             // 
             // textIdSetor
             // 
-            textIdSetor.Location = new Point(137, 182);
+            textIdSetor.Location = new Point(142, 221);
             textIdSetor.Name = "textIdSetor";
             textIdSetor.Size = new Size(125, 27);
             textIdSetor.TabIndex = 28;
@@ -285,7 +289,7 @@
             // 
             // textIdCanal
             // 
-            textIdCanal.Location = new Point(136, 226);
+            textIdCanal.Location = new Point(141, 265);
             textIdCanal.Name = "textIdCanal";
             textIdCanal.Size = new Size(125, 27);
             textIdCanal.TabIndex = 29;
@@ -293,7 +297,7 @@
             // 
             // textContatoNome
             // 
-            textContatoNome.Location = new Point(556, 55);
+            textContatoNome.Location = new Point(561, 94);
             textContatoNome.Name = "textContatoNome";
             textContatoNome.Size = new Size(125, 27);
             textContatoNome.TabIndex = 30;
@@ -301,7 +305,7 @@
             // 
             // textContatoSobrenome
             // 
-            textContatoSobrenome.Location = new Point(556, 88);
+            textContatoSobrenome.Location = new Point(561, 127);
             textContatoSobrenome.Name = "textContatoSobrenome";
             textContatoSobrenome.Size = new Size(125, 27);
             textContatoSobrenome.TabIndex = 31;
@@ -309,7 +313,7 @@
             // 
             // textContatoNumero
             // 
-            textContatoNumero.Location = new Point(556, 121);
+            textContatoNumero.Location = new Point(561, 160);
             textContatoNumero.Name = "textContatoNumero";
             textContatoNumero.Size = new Size(125, 27);
             textContatoNumero.TabIndex = 32;
@@ -318,7 +322,7 @@
             // labelContatoNome
             // 
             labelContatoNome.AutoSize = true;
-            labelContatoNome.Location = new Point(491, 58);
+            labelContatoNome.Location = new Point(496, 97);
             labelContatoNome.Name = "labelContatoNome";
             labelContatoNome.Size = new Size(53, 20);
             labelContatoNome.TabIndex = 33;
@@ -327,7 +331,7 @@
             // labelContatoSobrenome
             // 
             labelContatoSobrenome.AutoSize = true;
-            labelContatoSobrenome.Location = new Point(455, 91);
+            labelContatoSobrenome.Location = new Point(460, 130);
             labelContatoSobrenome.Name = "labelContatoSobrenome";
             labelContatoSobrenome.Size = new Size(89, 20);
             labelContatoSobrenome.TabIndex = 34;
@@ -336,7 +340,7 @@
             // labelContatoNumero
             // 
             labelContatoNumero.AutoSize = true;
-            labelContatoNumero.Location = new Point(478, 124);
+            labelContatoNumero.Location = new Point(483, 163);
             labelContatoNumero.Name = "labelContatoNumero";
             labelContatoNumero.Size = new Size(66, 20);
             labelContatoNumero.TabIndex = 35;
@@ -345,7 +349,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(412, 25);
+            label11.Location = new Point(417, 64);
             label11.Name = "label11";
             label11.Size = new Size(132, 20);
             label11.TabIndex = 36;
@@ -354,16 +358,42 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(7, 25);
+            label1.Location = new Point(12, 64);
             label1.Name = "label1";
             label1.Size = new Size(116, 20);
             label1.TabIndex = 37;
             label1.Text = "Dados de envio:";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = SystemColors.ControlDark;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { btnContatos_Menu, btnMensagens_menu });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1266, 28);
+            menuStrip1.TabIndex = 38;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // btnContatos_Menu
+            // 
+            btnContatos_Menu.Name = "btnContatos_Menu";
+            btnContatos_Menu.Size = new Size(82, 24);
+            btnContatos_Menu.Text = "Contatos";
+            btnContatos_Menu.Click += btnContatos_Click;
+            // 
+            // btnMensagens_menu
+            // 
+            btnMensagens_menu.Name = "btnMensagens_menu";
+            btnMensagens_menu.Size = new Size(97, 24);
+            btnMensagens_menu.Text = "Mensagens";
+            btnMensagens_menu.Click += btnMensagens_Click;
+            // 
             // FormUnderChat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Menu;
             ClientSize = new Size(1266, 694);
             Controls.Add(label1);
             Controls.Add(label11);
@@ -385,12 +415,18 @@
             Controls.Add(labelEmail);
             Controls.Add(textTeste);
             Controls.Add(groupBox1);
+            Controls.Add(menuStrip1);
+            DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
             Name = "FormUnderChat";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Monitorador UnderChat - CNPJ:";
+            Load += FormUnderChat_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -428,5 +464,8 @@
         private Label labelContatoNumero;
         private Label label11;
         private Label label1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem btnContatos_Menu;
+        private ToolStripMenuItem btnMensagens_menu;
     }
 }

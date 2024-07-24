@@ -58,6 +58,7 @@
             Controls.Add(textContatos);
             Controls.Add(btn_CadastrarContato);
             Name = "GerenciarContato";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "GerenciarContato";
             ResumeLayout(false);
             PerformLayout();

@@ -15,6 +15,7 @@ using PhoneNumbers;
 using Gweb.WhatsApp.Util;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Newtonsoft.Json.Linq;
+using Gweb.WhatsApp.Forms;
 
 
 namespace WinFormsApp2
@@ -152,7 +153,7 @@ namespace WinFormsApp2
                 }
                 else
                 {
-                    conexaoAPI.enviarMensagemComImagem(sMens, sIdLoja, idAtendimento, sFoto ,token);
+                    conexaoAPI.enviarMensagemComImagem(sMens, sIdLoja, idAtendimento, sFoto, token);
                 }
 
                 textTeste.Text = textTeste.Text + " ";
@@ -174,6 +175,22 @@ namespace WinFormsApp2
             formWpp.Show();
         }
 
+        private void btnContatos_Click(object sender, EventArgs e)
+        {
+            GerenciarContato gerenciarContato = new GerenciarContato();
+            gerenciarContato.Show();
+        }
+
+        private void FormUnderChat_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMensagens_Click(object sender, EventArgs e)
+        {
+            GerenciarMensagens gerenciarMensagens = new GerenciarMensagens();
+            gerenciarMensagens.Show();
+        }
     }
 
 }
