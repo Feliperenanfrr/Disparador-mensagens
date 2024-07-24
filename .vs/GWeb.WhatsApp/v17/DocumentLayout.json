@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|C:\\Users\\felipe\\OneDrive\\\u00C1rea de Trabalho\\Gweb-UnderChat\\winformsapp2\\forms\\formunderchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\forms\\formunderchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|c:\\users\\felipe\\onedrive\\\u00E1rea de trabalho\\gweb-underchat\\winformsapp2\\forms\\gerenciarcontato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\forms\\gerenciarcontato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GerenciarContato.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\felipe\\OneDrive\\\u00C1rea de Trabalho\\Gweb-UnderChat\\WinFormsApp2\\Forms\\GerenciarContato.cs",
+              "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\GerenciarContato.cs",
+              "ToolTip": "C:\\Users\\felipe\\OneDrive\\\u00C1rea de Trabalho\\Gweb-UnderChat\\WinFormsApp2\\Forms\\GerenciarContato.cs [Design]",
+              "RelativeToolTip": "WinFormsApp2\\Forms\\GerenciarContato.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T00:26:41.779Z",
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,7 +44,7 @@
               "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\GerenciarContato.cs",
               "ToolTip": "C:\\Users\\felipe\\OneDrive\\\u00C1rea de Trabalho\\Gweb-UnderChat\\WinFormsApp2\\Forms\\GerenciarContato.cs",
               "RelativeToolTip": "WinFormsApp2\\Forms\\GerenciarContato.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAYwDgAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-22T14:17:18.75Z",
               "EditorCaption": ""
@@ -41,7 +57,7 @@
               "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\FormUnderChat.cs",
               "ToolTip": "C:\\Users\\felipe\\OneDrive\\\u00C1rea de Trabalho\\Gweb-UnderChat\\WinFormsApp2\\Forms\\FormUnderChat.cs",
               "RelativeToolTip": "WinFormsApp2\\Forms\\FormUnderChat.cs",
-              "ViewState": "AQIAAI4AAAAAAAAAAAAkwE8AAABDAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAgwE0AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-30T12:27:32.924Z",
               "EditorCaption": ""
