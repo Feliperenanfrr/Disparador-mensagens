@@ -19,7 +19,7 @@ namespace Gweb.WhatsApp.Util
                 Database = database,
                 UserID = user,
                 Password = password,
-                CharacterSet = "utf8"
+                CharacterSet = "utf8mb4"
             };
 
             bdConn = new MySqlConnection(builder.ConnectionString);

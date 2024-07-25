@@ -102,6 +102,7 @@
             Controls.Add(btnListarContatos);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ListarContatos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ListarContatos";
             ((System.ComponentModel.ISupportInitialize)dataGridContatos).EndInit();
             ResumeLayout(false);

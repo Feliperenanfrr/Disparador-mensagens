@@ -57,7 +57,7 @@ namespace WinFormsApp2
                 Database = "gueppardo",
                 UserID = txtUsuario.Text,
                 Password = txtSenha.Text,
-                CharacterSet = "latin"
+                CharacterSet = "utf8"
             };
 
             //Definição do dataset

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgendarMensagens));
             listContatos = new CheckedListBox();
             boxIdMensagens = new ComboBox();
             dataEnvioMensagem = new DateTimePicker();
@@ -65,7 +66,7 @@
             dataEnvioMensagem.Size = new Size(169, 27);
             dataEnvioMensagem.TabIndex = 2;
             dataEnvioMensagem.Value = new DateTime(2024, 7, 25, 0, 0, 0, 0);
-            dataEnvioMensagem.ValueChanged += this.dataEnvioMensagem_ValueChanged;
+            dataEnvioMensagem.ValueChanged += dataEnvioMensagem_ValueChanged;
             // 
             // label1
             // 
@@ -116,6 +117,7 @@
             Controls.Add(dataEnvioMensagem);
             Controls.Add(boxIdMensagens);
             Controls.Add(listContatos);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AgendarMensagens";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SelecionarContatos";
