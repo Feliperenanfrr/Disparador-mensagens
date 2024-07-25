@@ -11,7 +11,7 @@ namespace Gweb.WhatsApp.Util
     {
         MySqlConnection bdConn;
 
-        public MySqlConnection AbrirConexao(string server, string user, string password, string database)
+        public MySqlConnection AbrirConexao(string server, string user, string password, string database, string charset = "utf8mb4")
         {
             var builder = new MySqlConnectionStringBuilder
             {
@@ -19,7 +19,7 @@ namespace Gweb.WhatsApp.Util
                 Database = database,
                 UserID = user,
                 Password = password,
-                CharacterSet = "utf8mb4"
+                CharacterSet = charset
             };
 
             bdConn = new MySqlConnection(builder.ConnectionString);

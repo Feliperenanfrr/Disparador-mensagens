@@ -34,7 +34,7 @@ namespace Gweb.WhatsApp.Forms
                 Database = "gueppardo",
                 UserID = "gueppardo",
                 Password = "gpd1664",
-                CharacterSet = "utf8"
+                CharacterSet = "utf8mb4"
             };
 
             try
