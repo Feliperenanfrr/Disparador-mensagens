@@ -46,7 +46,7 @@ namespace WinFormsApp2
             {
                 btnAtivar.Text = "Ativar";
                 btnSair.Enabled = true;
-                tmMonitora.Enabled = false;
+                tmMonitora.Enabled = true;
                 bdConn.Close();
                 return;
             }
@@ -97,9 +97,9 @@ namespace WinFormsApp2
 
             bdConn.Open();
 
-            MySqlCommand consultaMensagensNaoEnviadas = new MySqlCommand($"Select * from gueppardo.envio_mensagens where envio = 0 ", bdConn);
+            /*MySqlCommand consultaMensagensNaoEnviadas = new MySqlCommand($"Select * from gueppardo.envio_mensagens where envio = 0 ", bdConn);
             MySqlDataReader mensagemNaoEnviadas = consultaMensagensNaoEnviadas.ExecuteReader();
-            mensagemNaoEnviadas.Read();
+            mensagemNaoEnviadas.Read();*/
 
             var emailUnderChat = textEmail.Text;
             var senhaUnderChat = textSenha.Text;
@@ -107,9 +107,6 @@ namespace WinFormsApp2
             var idCanalUnderChat = textIdCanal.Text;
             var idSetorUnderChat = textIdSetor.Text;
 
-            bdConn.Close();
-
-            bdConn.Open();
             MySqlCommand cmd = new MySqlCommand($"Select * from gueppardo.envio_mensagens where envio = 0", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -118,12 +115,9 @@ namespace WinFormsApp2
                 //Captura Código
                 var idEnvioMensagem = reader["id"].ToString();
                 var mensagem = reader["Mensagem"].ToString();
-                var tipoMensagem = reader["tipo"].ToString();
                 var telefone = reader["telefone"].ToString();
-                var imagem = reader["Foto"].ToString();
-                var nomeContato = reader["Nome"].ToString();
-
-                bdConn.Close();
+                //var imagem = reader["Foto"].ToString();
+                var nomeContato = reader["Nome_contato"].ToString();
 
                 ConexaoAPI conexaoAPI = new ConexaoAPI();
                 dynamic token = conexaoAPI.ObterToken(emailUnderChat, senhaUnderChat);
@@ -132,21 +126,20 @@ namespace WinFormsApp2
                 Contato contato = listaDeContatos.data[0];
                 int idAtendimento = conexaoAPI.criarAtendimento(idLojaUnderChat, contato, idSetorUnderChat, idCanalUnderChat, mensagem, token);
 
-                if (imagem == "")
-                {
+                //if (imagem == "")
+                //{
                     conexaoAPI.enviarMensagem(mensagem, idLojaUnderChat, idAtendimento, token);
-                }
+                /*}
                 else
                 {
                     conexaoAPI.enviarMensagemComImagem(mensagem, idLojaUnderChat, idAtendimento, imagem, token);
-                }
+                }*/
 
                 textMensagens.Text = textMensagens.Text + " ";
                 textMensagens.Text = textMensagens.Text + $"Código: {idEnvioMensagem} - Número: {telefone} - Clinete: {nomeContato}";
                 bdConn.Open();
                 MySqlCommand marcarComoEnviada = new MySqlCommand($"Update gueppardo.envio_mensagens set envio = 1 where Codigo = {idEnvioMensagem} and telefone = {telefone} and Nome_Contato = {nomeContato}", bdConn);
                 marcarComoEnviada.ExecuteNonQuery();
-                bdConn.Close();
                 return;
             }
 
