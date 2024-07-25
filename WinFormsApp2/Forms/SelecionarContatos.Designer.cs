@@ -30,7 +30,11 @@
         {
             listContatos = new CheckedListBox();
             boxIdMensagens = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            dataEnvioMensagem = new DateTimePicker();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            btnAgendarMensagem = new Button();
             SuspendLayout();
             // 
             // listContatos
@@ -51,31 +55,79 @@
             boxIdMensagens.DropDown += boxIdMensagens_DropDown;
             boxIdMensagens.SelectedIndexChanged += boxIdMensagens_SelectedIndexChanged;
             // 
-            // dateTimePicker1
+            // dataEnvioMensagem
             // 
-            dateTimePicker1.Location = new Point(459, 21);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 2;
+            dataEnvioMensagem.Format = DateTimePickerFormat.Short;
+            dataEnvioMensagem.Location = new Point(434, 55);
+            dataEnvioMensagem.Name = "dataEnvioMensagem";
+            dataEnvioMensagem.Size = new Size(169, 27);
+            dataEnvioMensagem.TabIndex = 2;
+            dataEnvioMensagem.Value = new DateTime(2024, 7, 25, 0, 0, 0, 0);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 122);
+            label1.Name = "label1";
+            label1.Size = new Size(151, 20);
+            label1.TabIndex = 3;
+            label1.Text = "Escolha a mensagem:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(434, 32);
+            label2.Name = "label2";
+            label2.Size = new Size(169, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Escolha a data de envio:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(434, 122);
+            label3.Name = "label3";
+            label3.Size = new Size(156, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Selecione os contatos:";
+            // 
+            // btnAgendarMensagem
+            // 
+            btnAgendarMensagem.Location = new Point(564, 558);
+            btnAgendarMensagem.Name = "btnAgendarMensagem";
+            btnAgendarMensagem.Size = new Size(177, 29);
+            btnAgendarMensagem.TabIndex = 6;
+            btnAgendarMensagem.Text = "Agendar mensagem";
+            btnAgendarMensagem.UseVisualStyleBackColor = true;
+            btnAgendarMensagem.Click += btnAgendarMensagem_Click;
             // 
             // SelecionarContatos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(832, 623);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(btnAgendarMensagem);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(dataEnvioMensagem);
             Controls.Add(boxIdMensagens);
             Controls.Add(listContatos);
             Name = "SelecionarContatos";
             Text = "SelecionarContatos";
             Load += SelecionarContatos_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private CheckedListBox listContatos;
         private ComboBox boxIdMensagens;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dataEnvioMensagem;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Button btnAgendarMensagem;
     }
 }
