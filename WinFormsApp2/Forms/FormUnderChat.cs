@@ -34,6 +34,7 @@ namespace WinFormsApp2
             InitializeComponent();
         }
 
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
@@ -41,22 +42,6 @@ namespace WinFormsApp2
 
         private void btnAtivar_Click(object sender, EventArgs e)
         {
-            XmlDocument document = new XmlDocument();
-            document.Load("Config.Xml");
-            XmlNodeList livros = document.SelectNodes("/geral/empresa/CNPJ");
-            CNPJ = livros.Item(0).InnerText;
-
-            if (CNPJ == "")
-            {
-                var result = MessageBox.Show("Não existe um CNPJ Ativo!", "ERRO!",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                Close();
-
-            }
-
-            FormUnderChat.ActiveForm.Text = "Monitorador UnderChat - CNPJ:" + CNPJ;
-
             if (btnAtivar.Text == "Desativar")
             {
                 btnAtivar.Text = "Ativar";
@@ -101,10 +86,10 @@ namespace WinFormsApp2
             }
 
             //Buscando Link e Chave e consulta CNPJ
-            MySqlCommand cmd = new MySqlCommand("Select * from gueppardo.mensagem_uc where CNPJ = '" + CNPJ + "'", bdConn);
+            /*MySqlCommand cmd = new MySqlCommand("Select * from gueppardo.mensagem_uc where CNPJ = '" + CNPJ + "'", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
             bdConn.Close();
-            tmMonitora.Enabled = true;
+            tmMonitora.Enabled = true;*/
         }
 
         private void tmMonitora_Tick(object sender, EventArgs e)
@@ -112,54 +97,54 @@ namespace WinFormsApp2
 
             bdConn.Open();
 
-            MySqlCommand consultaDadosLoja = new MySqlCommand($"Select * from gueppardo.mensagem_uc where CNPJ = '{CNPJ}' ", bdConn);
-            MySqlDataReader dadosLoja = consultaDadosLoja.ExecuteReader();
-            dadosLoja.Read();
+            MySqlCommand consultaMensagensNaoEnviadas = new MySqlCommand($"Select * from gueppardo.envio_mensagens where envio = 0 ", bdConn);
+            MySqlDataReader mensagemNaoEnviadas = consultaMensagensNaoEnviadas.ExecuteReader();
+            mensagemNaoEnviadas.Read();
 
-            var sEmail = dadosLoja["Email"].ToString();
-            var sSenha = dadosLoja["Senha"].ToString();
-            var sIdLoja = dadosLoja["IdLoja"].ToString();
-            var sIdCanal = dadosLoja["IdCanal"].ToString();
-            var sIdSetor = dadosLoja["IdSetor"];
+            var emailUnderChat = textEmail.Text;
+            var senhaUnderChat = textSenha.Text;
+            var idLojaUnderChat = textIdLoja.Text;
+            var idCanalUnderChat = textIdCanal.Text;
+            var idSetorUnderChat = textIdSetor.Text;
 
             bdConn.Close();
 
             bdConn.Open();
-            MySqlCommand cmd = new MySqlCommand($"Select * from gueppardo.mensagem_testes where Enviada = 0 and CNPJ = '{CNPJ}' and API = 1", bdConn);
+            MySqlCommand cmd = new MySqlCommand($"Select * from gueppardo.envio_mensagens where envio = 0", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
                 //Captura Código
-                var sCodigo = reader["Codigo"].ToString();
-                var sMens = reader["Mensagem"].ToString();
-                var sTipo = reader["TipoMensagem"].ToString();
-                var sFone = reader["Fone"].ToString();
-                var sFoto = reader["Foto"].ToString();
-                var sCNPJ = reader["CNPJ"].ToString();
+                var idEnvioMensagem = reader["id"].ToString();
+                var mensagem = reader["Mensagem"].ToString();
+                var tipoMensagem = reader["tipo"].ToString();
+                var telefone = reader["telefone"].ToString();
+                var imagem = reader["Foto"].ToString();
+                var nomeContato = reader["Nome"].ToString();
 
                 bdConn.Close();
 
                 ConexaoAPI conexaoAPI = new ConexaoAPI();
-                dynamic token = conexaoAPI.ObterToken(sEmail, sSenha);
-                string respostaAPI = conexaoAPI.buscarContatoPorNumero(sIdLoja, sFone, token);
+                dynamic token = conexaoAPI.ObterToken(emailUnderChat, senhaUnderChat);
+                string respostaAPI = conexaoAPI.buscarContatoPorNumero(idLojaUnderChat, telefone, token);
                 RootContato listaDeContatos = JsonConvert.DeserializeObject<RootContato>(respostaAPI);
                 Contato contato = listaDeContatos.data[0];
-                int idAtendimento = conexaoAPI.criarAtendimento(sIdLoja, contato, sIdSetor, sIdCanal, sMens, token);
+                int idAtendimento = conexaoAPI.criarAtendimento(idLojaUnderChat, contato, idSetorUnderChat, idCanalUnderChat, mensagem, token);
 
-                if (sFoto == "")
+                if (imagem == "")
                 {
-                    conexaoAPI.enviarMensagem(sMens, sIdLoja, idAtendimento, token);
+                    conexaoAPI.enviarMensagem(mensagem, idLojaUnderChat, idAtendimento, token);
                 }
                 else
                 {
-                    conexaoAPI.enviarMensagemComImagem(sMens, sIdLoja, idAtendimento, sFoto, token);
+                    conexaoAPI.enviarMensagemComImagem(mensagem, idLojaUnderChat, idAtendimento, imagem, token);
                 }
 
-                textTeste.Text = textTeste.Text + " ";
-                textTeste.Text = textTeste.Text + $"Mensagem: Código: {sCodigo} - Número: {sFone} - Tipo: {sTipo}";
+                textMensagens.Text = textMensagens.Text + " ";
+                textMensagens.Text = textMensagens.Text + $"Código: {idEnvioMensagem} - Número: {telefone} - Clinete: {nomeContato}";
                 bdConn.Open();
-                MySqlCommand marcarComoEnviada = new MySqlCommand($"Update gueppardo.mensagem_testes set Enviada = 1 where Codigo = {sCodigo} and CNPJ = '{CNPJ}'", bdConn);
+                MySqlCommand marcarComoEnviada = new MySqlCommand($"Update gueppardo.envio_mensagens set envio = 1 where Codigo = {idEnvioMensagem} and telefone = {telefone} and Nome_Contato = {nomeContato}", bdConn);
                 marcarComoEnviada.ExecuteNonQuery();
                 bdConn.Close();
                 return;

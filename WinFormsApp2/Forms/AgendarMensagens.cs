@@ -124,44 +124,94 @@ namespace Gweb.WhatsApp.Forms
             string senha = formUnderChat.txtSenha.Text;
             string banco = formUnderChat.txtBanco.Text;
 
-            bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
-
-            MensagemItem mensagemSelecionada = boxIdMensagens.SelectedItem as MensagemItem;
-            if (mensagemSelecionada == null)
+            using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
             {
-                MessageBox.Show("Por favor, selecione uma mensagem.");
-                return;
-            }
-            int idMensagem = mensagemSelecionada.Id;
-            DateTime dataSelecionada = dataEnvioMensagem.Value;
-
-            int linhasAfetadas = 0;
-            foreach (var item in listContatos.CheckedItems)
-            {
-                ListItem contato = item as ListItem;
-                if (contato == null) continue;
-
-                int idContato = contato.Id;
-
-                string query = "INSERT INTO envio_mensagens(id_contato, id_mensagem, data_envio) VALUES (@idContato, @idMensagem, @dataEnvio)";
-                using (MySqlCommand cmd = new MySqlCommand(query, bdConn))
+                MensagemItem mensagemSelecionada = boxIdMensagens.SelectedItem as MensagemItem;
+                if (mensagemSelecionada == null)
                 {
-                    cmd.Parameters.AddWithValue("@idMensagem", idMensagem);
-                    cmd.Parameters.AddWithValue("@idContato", idContato);
-                    cmd.Parameters.AddWithValue("@dataEnvio", dataSelecionada);
+                    MessageBox.Show("Por favor, selecione uma mensagem.");
+                    return;
+                }
 
-                   linhasAfetadas += cmd.ExecuteNonQuery();
+                int idMensagem = mensagemSelecionada.Id;
+                DateTime dataSelecionada = dataEnvioMensagem.Value;
+
+                int linhasAfetadas = 0;
+                List<int> idsContatos = new List<int>();
+
+                // Inserir dados na tabela envio_mensagens
+                foreach (var item in listContatos.CheckedItems)
+                {
+                    ListItem contato = item as ListItem;
+                    if (contato == null) continue;
+
+                    int idContato = contato.Id;
+                    idsContatos.Add(idContato);
+
+                    string query = "INSERT INTO envio_mensagens (id_contato, id_mensagem, data_envio) VALUES (@idContato, @idMensagem, @dataEnvio)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, bdConn))
+                    {
+                        cmd.Parameters.AddWithValue("@idMensagem", idMensagem);
+                        cmd.Parameters.AddWithValue("@idContato", idContato);
+                        cmd.Parameters.AddWithValue("@dataEnvio", dataSelecionada);
+                        linhasAfetadas += cmd.ExecuteNonQuery();
+                    }
+                }
+
+                // Atualizar os novos campos com informações das tabelas
+                if (linhasAfetadas > 0)
+                {
+                    // Obter a mensagem
+                    string mensagemQuery = "SELECT mensagem FROM cadastro_mensagens WHERE id = @idMensagem";
+                    string? mensagem = null;
+                    using (MySqlCommand cmd = new MySqlCommand(mensagemQuery, bdConn))
+                    {
+                        cmd.Parameters.AddWithValue("@idMensagem", idMensagem);
+                        mensagem = cmd.ExecuteScalar().ToString();
+                    }
+
+                    // Atualizar os campos Mensagem e Nome_Contato
+                    foreach (int idContato in idsContatos)
+                    {
+                        // Obter o nome e o telefone do contato
+                        string contatoQuery = "SELECT nome, telefone FROM contatos_underchat WHERE id = @idContato";
+                        string nomeContato = null;
+                        string telefone = null;
+                        using (MySqlCommand cmd = new MySqlCommand(contatoQuery, bdConn))
+                        {
+                            cmd.Parameters.AddWithValue("@idContato", idContato);
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    nomeContato = reader["nome"].ToString();
+                                    telefone = reader["telefone"].ToString();
+                                }
+                            }
+                        }
+
+                        // Atualizar os novos campos na tabela envio_mensagens
+                        string updateQuery = "UPDATE envio_mensagens SET Mensagem = @mensagem, Nome_Contato = @nomeContato, Telefone = @telefone WHERE id_contato = @idContato AND id_mensagem = @idMensagem AND data_envio = @dataEnvio";
+                        using (MySqlCommand cmd = new MySqlCommand(updateQuery, bdConn))
+                        {
+                            cmd.Parameters.AddWithValue("@mensagem", mensagem);
+                            cmd.Parameters.AddWithValue("@nomeContato", nomeContato);
+                            cmd.Parameters.AddWithValue("@telefone", telefone);
+                            cmd.Parameters.AddWithValue("@idContato", idContato);
+                            cmd.Parameters.AddWithValue("@idMensagem", idMensagem);
+                            cmd.Parameters.AddWithValue("@dataEnvio", dataSelecionada);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+
+                    MessageBox.Show("Mensagens agendadas com sucesso!");
+                    this.Close();
                 }
             }
-
-            if(linhasAfetadas > 0)
-            {
-                MessageBox.Show("Mensagens agendadas com sucesso!");
-                this.Close();
-            }
-
-            bdConn.Close();
         }
+
 
         private void dataEnvioMensagem_ValueChanged(object sender, EventArgs e)
         {
