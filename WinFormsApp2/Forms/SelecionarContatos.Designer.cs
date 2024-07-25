@@ -29,21 +29,42 @@
         private void InitializeComponent()
         {
             listContatos = new CheckedListBox();
+            boxIdMensagens = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
             // 
             // listContatos
             // 
             listContatos.FormattingEnabled = true;
-            listContatos.Location = new Point(12, 169);
+            listContatos.Location = new Point(434, 145);
             listContatos.Name = "listContatos";
             listContatos.Size = new Size(307, 378);
             listContatos.TabIndex = 0;
+            // 
+            // boxIdMensagens
+            // 
+            boxIdMensagens.FormattingEnabled = true;
+            boxIdMensagens.Location = new Point(12, 145);
+            boxIdMensagens.Name = "boxIdMensagens";
+            boxIdMensagens.Size = new Size(394, 28);
+            boxIdMensagens.TabIndex = 1;
+            boxIdMensagens.DropDown += boxIdMensagens_DropDown;
+            boxIdMensagens.SelectedIndexChanged += boxIdMensagens_SelectedIndexChanged;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(459, 21);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.TabIndex = 2;
             // 
             // SelecionarContatos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(520, 565);
+            ClientSize = new Size(832, 623);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(boxIdMensagens);
             Controls.Add(listContatos);
             Name = "SelecionarContatos";
             Text = "SelecionarContatos";
@@ -54,5 +75,7 @@
         #endregion
 
         private CheckedListBox listContatos;
+        private ComboBox boxIdMensagens;
+        private DateTimePicker dateTimePicker1;
     }
 }

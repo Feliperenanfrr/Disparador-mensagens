@@ -42,7 +42,7 @@
             // 
             // dataGridMensagens
             // 
-            dataGridMensagens.BackgroundColor = Color.White;
+            dataGridMensagens.BackgroundColor = SystemColors.Control;
             dataGridMensagens.BorderStyle = BorderStyle.None;
             dataGridMensagens.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -59,7 +59,7 @@
             dataGridMensagens.Name = "dataGridMensagens";
             dataGridMensagens.RowHeadersWidth = 51;
             dataGridMensagens.RowTemplate.Height = 29;
-            dataGridMensagens.Size = new Size(1266, 502);
+            dataGridMensagens.Size = new Size(553, 496);
             dataGridMensagens.TabIndex = 0;
             // 
             // ID
@@ -135,13 +135,12 @@
         }
 
         #endregion
-
-        private DataGridView dataGridMensagens;
         private Button btnPesquisarMensagem;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Tipo;
         private DataGridViewTextBoxColumn Mensagem;
         private DataGridViewTextBoxColumn Imagem;
         private Button btnSelecionarContatos;
+        public DataGridView dataGridMensagens;
     }
 }

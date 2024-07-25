@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Gweb.WhatsApp.Util;
 using WinFormsApp2;
+using System.Data;
 
 namespace Gweb.WhatsApp.Forms
 {
@@ -55,6 +56,43 @@ namespace Gweb.WhatsApp.Forms
             public override string ToString()
             {
                 return $"{Id}: {Nome}";
+            }
+        }
+
+        private void boxIdMensagens_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void boxIdMensagens_DropDown(object sender, EventArgs e)
+        {
+            FormUnderChat formUnderChat = new FormUnderChat();
+
+            string server = formUnderChat.txtServer.Text;
+            string user = formUnderChat.txtUsuario.Text;
+            string senha = formUnderChat.txtSenha.Text;
+            string banco = formUnderChat.txtBanco.Text;
+
+            bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
+
+            try
+            {
+                string query = "SELECT * FROM cadastro_mensagens";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                boxIdMensagens.Items.Clear();
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    boxIdMensagens.Items.Add($"{row["id"]}: {row["mensagem"].ToString()}");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
             }
         }
     }
