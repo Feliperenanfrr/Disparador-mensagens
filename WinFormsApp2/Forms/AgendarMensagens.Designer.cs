@@ -1,6 +1,6 @@
 ﻿namespace Gweb.WhatsApp.Forms
 {
-    partial class SelecionarContatos
+    partial class AgendarMensagens
     {
         /// <summary>
         /// Required designer variable.
@@ -57,12 +57,15 @@
             // 
             // dataEnvioMensagem
             // 
-            dataEnvioMensagem.Format = DateTimePickerFormat.Short;
+            dataEnvioMensagem.AccessibleRole = AccessibleRole.None;
+            dataEnvioMensagem.CustomFormat = "dd/MM/yyyy HH:mm";
+            dataEnvioMensagem.Format = DateTimePickerFormat.Custom;
             dataEnvioMensagem.Location = new Point(434, 55);
             dataEnvioMensagem.Name = "dataEnvioMensagem";
             dataEnvioMensagem.Size = new Size(169, 27);
             dataEnvioMensagem.TabIndex = 2;
             dataEnvioMensagem.Value = new DateTime(2024, 7, 25, 0, 0, 0, 0);
+            dataEnvioMensagem.ValueChanged += this.dataEnvioMensagem_ValueChanged;
             // 
             // label1
             // 
@@ -101,7 +104,7 @@
             btnAgendarMensagem.UseVisualStyleBackColor = true;
             btnAgendarMensagem.Click += btnAgendarMensagem_Click;
             // 
-            // SelecionarContatos
+            // AgendarMensagens
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -113,7 +116,8 @@
             Controls.Add(dataEnvioMensagem);
             Controls.Add(boxIdMensagens);
             Controls.Add(listContatos);
-            Name = "SelecionarContatos";
+            Name = "AgendarMensagens";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SelecionarContatos";
             Load += SelecionarContatos_Load;
             ResumeLayout(false);

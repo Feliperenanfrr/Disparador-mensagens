@@ -22,7 +22,7 @@
     <Compile Update="Forms\ListarMensagem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\SelecionarContatos.cs">
+    <Compile Update="Forms\AgendarMensagens.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

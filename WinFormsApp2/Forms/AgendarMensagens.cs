@@ -2,11 +2,11 @@
 using Gweb.WhatsApp.Util;
 using WinFormsApp2;
 using System.Data;
-using static Gweb.WhatsApp.Forms.SelecionarContatos;
+using static Gweb.WhatsApp.Forms.AgendarMensagens;
 
 namespace Gweb.WhatsApp.Forms
 {
-    public partial class SelecionarContatos : Form
+    public partial class AgendarMensagens : Form
     {
         MySqlConnection bdConn;
         operacoesBD operacoesBD = new operacoesBD();
@@ -14,7 +14,7 @@ namespace Gweb.WhatsApp.Forms
 
         private int idMensagem;
 
-        public SelecionarContatos()
+        public AgendarMensagens()
         {
             InitializeComponent();
         }
@@ -135,6 +135,7 @@ namespace Gweb.WhatsApp.Forms
             int idMensagem = mensagemSelecionada.Id;
             DateTime dataSelecionada = dataEnvioMensagem.Value;
 
+            int linhasAfetadas = 0;
             foreach (var item in listContatos.CheckedItems)
             {
                 ListItem contato = item as ListItem;
@@ -149,11 +150,37 @@ namespace Gweb.WhatsApp.Forms
                     cmd.Parameters.AddWithValue("@idContato", idContato);
                     cmd.Parameters.AddWithValue("@dataEnvio", dataSelecionada);
 
-                    cmd.ExecuteNonQuery();
+                   linhasAfetadas += cmd.ExecuteNonQuery();
                 }
             }
 
+            if(linhasAfetadas > 0)
+            {
+                MessageBox.Show("Mensagens agendadas com sucesso!");
+                this.Close();
+            }
+
             bdConn.Close();
+        }
+
+        private void dataEnvioMensagem_ValueChanged(object sender, EventArgs e)
+        {
+            //Função que limita a hora do envio de mensagens entre 08:00 e 18:00
+            DateTimePicker picker = sender as DateTimePicker;
+            if (picker == null) return;
+
+            DateTime DataSelecionada = picker.Value;
+            DateTime horaInicial = new DateTime(DataSelecionada.Year, DataSelecionada.Month, DataSelecionada.Day, 8, 0, 0);
+            DateTime horaLimite = new DateTime(DataSelecionada.Year, DataSelecionada.Month, DataSelecionada.Day, 18, 0, 0);
+
+            if (DataSelecionada < horaInicial)
+            {
+                picker.Value = horaInicial;
+            }
+            else if (DataSelecionada > horaLimite)
+            {
+                picker.Value = horaLimite;
+            }
         }
     }
 }

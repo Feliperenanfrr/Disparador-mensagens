@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\winformsapp2\\forms\\selecionarcontatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\forms\\selecionarcontatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|c:\\users\\guepp\\desktop\\gweb-underchat\\winformsapp2\\forms\\agendarmensagens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\forms\\agendarmensagens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|c:\\users\\guepp\\desktop\\gweb-underchat\\winformsapp2\\forms\\selecionarcontatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\forms\\selecionarcontatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|c:\\users\\guepp\\desktop\\gweb-underchat\\winformsapp2\\forms\\agendarmensagens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|solutionrelative:winformsapp2\\forms\\agendarmensagens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39AF2EBF-75E9-44C0-9568-4751453AE28D}|WinFormsApp2\\Gweb.WhatsApp.csproj|C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\winformsapp2\\forms\\listarmensagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -54,32 +54,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SelecionarContatos.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\SelecionarContatos.cs",
-              "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\SelecionarContatos.cs",
-              "ToolTip": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\SelecionarContatos.cs [Projeto]*",
-              "RelativeToolTip": "WinFormsApp2\\Forms\\SelecionarContatos.cs [Projeto]*",
+              "DocumentIndex": 0,
+              "Title": "AgendarMensagens.cs",
+              "DocumentMoniker": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\AgendarMensagens.cs",
+              "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\AgendarMensagens.cs",
+              "ToolTip": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\AgendarMensagens.cs",
+              "RelativeToolTip": "WinFormsApp2\\Forms\\AgendarMensagens.cs",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAqwKwAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T13:00:37.164Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2024-07-25T19:04:50.861Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SelecionarContatos.cs",
-              "DocumentMoniker": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\SelecionarContatos.cs",
-              "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\SelecionarContatos.cs",
-              "ToolTip": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\SelecionarContatos.cs*",
-              "RelativeToolTip": "WinFormsApp2\\Forms\\SelecionarContatos.cs*",
-              "ViewState": "AQIAAHQAAAAAAAAAAAAAAJQAAABHAAAA",
+              "DocumentIndex": 1,
+              "Title": "AgendarMensagens.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\AgendarMensagens.cs",
+              "RelativeDocumentMoniker": "WinFormsApp2\\Forms\\AgendarMensagens.cs",
+              "ToolTip": "C:\\Users\\guepp\\Desktop\\Gweb-UnderChat\\WinFormsApp2\\Forms\\AgendarMensagens.cs [Projeto]",
+              "RelativeToolTip": "WinFormsApp2\\Forms\\AgendarMensagens.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T19:01:26.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-25T13:00:37.164Z",
+              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",

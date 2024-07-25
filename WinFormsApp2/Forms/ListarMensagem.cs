@@ -44,7 +44,7 @@ namespace Gweb.WhatsApp.Forms
 
         private void btnSelecionarContatos_Click(object sender, EventArgs e)
         {
-            SelecionarContatos selecionarContatos = new SelecionarContatos();
+            AgendarMensagens selecionarContatos = new AgendarMensagens();
             selecionarContatos.Show();
         }
 
