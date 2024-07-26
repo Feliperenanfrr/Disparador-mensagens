@@ -86,11 +86,6 @@ namespace WinFormsApp2
                 btnSair.Enabled = false;
             }
 
-            //Buscando Link e Chave e consulta CNPJ
-            /*MySqlCommand cmd = new MySqlCommand("Select * from gueppardo.mensagem_uc where CNPJ = '" + CNPJ + "'", bdConn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            bdConn.Close();
-            tmMonitora.Enabled = true;*/
         }
 
         private void tmMonitora_Tick(object sender, EventArgs e)
@@ -99,10 +94,6 @@ namespace WinFormsApp2
             {
                 bdConn.Open();
             }
-
-            /*MySqlCommand consultaMensagensNaoEnviadas = new MySqlCommand($"Select * from gueppardo.envio_mensagens where envio = 0 ", bdConn);
-            MySqlDataReader mensagemNaoEnviadas = consultaMensagensNaoEnviadas.ExecuteReader();
-            mensagemNaoEnviadas.Read();*/
 
             var emailUnderChat = textEmail.Text;
             var senhaUnderChat = textSenha.Text;
@@ -129,8 +120,6 @@ namespace WinFormsApp2
                 Contato contato = listaDeContatos.data[0];
                 int idAtendimento = conexaoAPI.criarAtendimento(idLojaUnderChat, contato, idSetorUnderChat, idCanalUnderChat, mensagem, token);
 
-                //MessageBox.Show(respostaAPI);
-
                 if (imagem == "")
                 {
                     conexaoAPI.enviarMensagem(mensagem, idLojaUnderChat, idAtendimento, token);
@@ -144,7 +133,6 @@ namespace WinFormsApp2
 
                 textMensagens.Text = textMensagens.Text + " ";
                 textMensagens.Text = textMensagens.Text + $"Código: {idEnvioMensagem} - Número: {telefone} - Cliente: {nomeContato}";
-                //MySqlCommand marcarComoEnviada = new MySqlCommand($"Update gueppardo.envio_mensagens set envio = 1 where Codigo = {idEnvioMensagem} and telefone = {telefone} and Nome_Contato = {nomeContato}", bdConn);
                 using (MySqlCommand marcarComoEnviada = new MySqlCommand("UPDATE gueppardo.envio_mensagens SET envio = 1 WHERE id = @idEnvioMensagem AND telefone = @telefone AND Nome_Contato = @nomeContato", bdConn))
                 {
                     // Adiciona parâmetros à consulta SQL
