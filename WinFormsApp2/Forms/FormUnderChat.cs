@@ -27,7 +27,8 @@ namespace WinFormsApp2
         private DataSet bdDataSet; //MySQL
         private string CNPJ;
 
-        ConexaoAPI conexaoAPI = new ConexaoAPI();
+        ConexaoAPI conexaoAPI;
+        operacoesBD operacoesBD;
 
         public FormUnderChat()
         {
@@ -94,7 +95,6 @@ namespace WinFormsApp2
 
         private void tmMonitora_Tick(object sender, EventArgs e)
         {
-
             bdConn.Open();
 
             /*MySqlCommand consultaMensagensNaoEnviadas = new MySqlCommand($"Select * from gueppardo.envio_mensagens where envio = 0 ", bdConn);
@@ -105,7 +105,7 @@ namespace WinFormsApp2
             var senhaUnderChat = textSenha.Text;
             var idLojaUnderChat = textIdLoja.Text;
             var idCanalUnderChat = textIdCanal.Text;
-            var idSetorUnderChat = textIdSetor.Text;
+            var idSetorUnderChat = int.Parse(textIdSetor.Text);
 
             MySqlCommand cmd = new MySqlCommand($"Select * from gueppardo.envio_mensagens where envio = 0", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -116,30 +116,43 @@ namespace WinFormsApp2
                 var idEnvioMensagem = reader["id"].ToString();
                 var mensagem = reader["Mensagem"].ToString();
                 var telefone = reader["telefone"].ToString();
-                //var imagem = reader["Foto"].ToString();
+                var imagem = reader["imagem"].ToString();
                 var nomeContato = reader["Nome_contato"].ToString();
 
-                ConexaoAPI conexaoAPI = new ConexaoAPI();
+                conexaoAPI = new ConexaoAPI();
                 dynamic token = conexaoAPI.ObterToken(emailUnderChat, senhaUnderChat);
                 string respostaAPI = conexaoAPI.buscarContatoPorNumero(idLojaUnderChat, telefone, token);
                 RootContato listaDeContatos = JsonConvert.DeserializeObject<RootContato>(respostaAPI);
                 Contato contato = listaDeContatos.data[0];
                 int idAtendimento = conexaoAPI.criarAtendimento(idLojaUnderChat, contato, idSetorUnderChat, idCanalUnderChat, mensagem, token);
 
-                //if (imagem == "")
-                //{
+                //MessageBox.Show(respostaAPI);
+
+                if (imagem == "")
+                {
                     conexaoAPI.enviarMensagem(mensagem, idLojaUnderChat, idAtendimento, token);
-                /*}
+                }
                 else
                 {
                     conexaoAPI.enviarMensagemComImagem(mensagem, idLojaUnderChat, idAtendimento, imagem, token);
-                }*/
+                }
+
+                reader.Close();
 
                 textMensagens.Text = textMensagens.Text + " ";
-                textMensagens.Text = textMensagens.Text + $"Código: {idEnvioMensagem} - Número: {telefone} - Clinete: {nomeContato}";
-                bdConn.Open();
-                MySqlCommand marcarComoEnviada = new MySqlCommand($"Update gueppardo.envio_mensagens set envio = 1 where Codigo = {idEnvioMensagem} and telefone = {telefone} and Nome_Contato = {nomeContato}", bdConn);
-                marcarComoEnviada.ExecuteNonQuery();
+                textMensagens.Text = textMensagens.Text + $"Código: {idEnvioMensagem} - Número: {telefone} - Cliente: {nomeContato}";
+                //MySqlCommand marcarComoEnviada = new MySqlCommand($"Update gueppardo.envio_mensagens set envio = 1 where Codigo = {idEnvioMensagem} and telefone = {telefone} and Nome_Contato = {nomeContato}", bdConn);
+                using (MySqlCommand marcarComoEnviada = new MySqlCommand("UPDATE gueppardo.envio_mensagens SET envio = 1 WHERE id = @idEnvioMensagem AND telefone = @telefone AND Nome_Contato = @nomeContato", bdConn))
+                {
+                    // Adiciona parâmetros à consulta SQL
+                    marcarComoEnviada.Parameters.AddWithValue("@idEnvioMensagem", idEnvioMensagem);
+                    marcarComoEnviada.Parameters.AddWithValue("@telefone", telefone);
+                    marcarComoEnviada.Parameters.AddWithValue("@nomeContato", nomeContato);
+
+                    // Executa a consulta
+                    marcarComoEnviada.ExecuteNonQuery();
+                }
+
                 return;
             }
 
