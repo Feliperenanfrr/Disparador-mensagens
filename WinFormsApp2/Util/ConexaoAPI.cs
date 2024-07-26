@@ -149,16 +149,12 @@ namespace Gweb.WhatsApp.Util
             {
                 dynamic dadosDaResposta = JsonConvert.DeserializeObject<dynamic>(response.Content);
                 idAtendimento = dadosDaResposta.data.id;
-
-
             }
             else
             {
                 Atendimento.RootAtendimento dadosDaResposta = JsonConvert.DeserializeObject<Atendimento.RootAtendimento>(response.Content);
                 idAtendimento = dadosDaResposta.meta;
-
                 finalizarAtendimento(idLoja, idAtendimento, token);
-
             }
 
             return idAtendimento;

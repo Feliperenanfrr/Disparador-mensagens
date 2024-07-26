@@ -162,11 +162,21 @@ namespace Gweb.WhatsApp.Forms
                 if (linhasAfetadas > 0)
                 {
                     // Obter a mensagem
-                    string mensagemQuery = "SELECT mensagem FROM cadastro_mensagens WHERE id = @idMensagem";
+                    string mensagemQuery = "SELECT mensagem, imagem FROM cadastro_mensagens WHERE id = @idMensagem";
                     string? mensagem = null;
+                    string? imagem = null;
+
                     using (MySqlCommand cmd = new MySqlCommand(mensagemQuery, bdConn))
                     {
-                        cmd.Parameters.AddWithValue("@idMensagem", idMensagem);
+                        cmd.Parameters.AddWithValue("idMensagem", idMensagem);
+                        using(MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                mensagem = reader["mensagem"].ToString();
+                                imagem = reader["imagem"].ToString();
+                            }
+                        }
                         mensagem = cmd.ExecuteScalar().ToString();
                     }
 
@@ -191,10 +201,11 @@ namespace Gweb.WhatsApp.Forms
                         }
 
                         // Atualizar os novos campos na tabela envio_mensagens
-                        string updateQuery = "UPDATE envio_mensagens SET Mensagem = @mensagem, Nome_Contato = @nomeContato, Telefone = @telefone WHERE id_contato = @idContato AND id_mensagem = @idMensagem AND data_envio = @dataEnvio";
+                        string updateQuery = "UPDATE envio_mensagens SET Mensagem = @mensagem, Imagem = @imagem, Nome_Contato = @nomeContato, Telefone = @telefone WHERE id_contato = @idContato AND id_mensagem = @idMensagem AND data_envio = @dataEnvio";
                         using (MySqlCommand cmd = new MySqlCommand(updateQuery, bdConn))
                         {
                             cmd.Parameters.AddWithValue("@mensagem", mensagem);
+                            cmd.Parameters.AddWithValue("@imagem", imagem);
                             cmd.Parameters.AddWithValue("@nomeContato", nomeContato);
                             cmd.Parameters.AddWithValue("@telefone", telefone);
                             cmd.Parameters.AddWithValue("@idContato", idContato);
@@ -203,6 +214,7 @@ namespace Gweb.WhatsApp.Forms
 
                             cmd.ExecuteNonQuery();
                         }
+
                     }
 
 

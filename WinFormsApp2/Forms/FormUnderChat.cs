@@ -95,7 +95,10 @@ namespace WinFormsApp2
 
         private void tmMonitora_Tick(object sender, EventArgs e)
         {
-            bdConn.Open();
+            if (bdConn.State != System.Data.ConnectionState.Open)
+            {
+                bdConn.Open();
+            }
 
             /*MySqlCommand consultaMensagensNaoEnviadas = new MySqlCommand($"Select * from gueppardo.envio_mensagens where envio = 0 ", bdConn);
             MySqlDataReader mensagemNaoEnviadas = consultaMensagensNaoEnviadas.ExecuteReader();
