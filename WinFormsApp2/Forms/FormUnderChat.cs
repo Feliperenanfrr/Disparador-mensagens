@@ -47,7 +47,7 @@ namespace WinFormsApp2
             {
                 btnAtivar.Text = "Ativar";
                 btnSair.Enabled = true;
-                tmMonitora.Enabled = true;
+                tmMonitora.Enabled = false;
                 bdConn.Close();
                 return;
             }
@@ -72,6 +72,7 @@ namespace WinFormsApp2
                 bdConn.Open();
                 btnAtivar.Text = "Desativar";
                 btnSair.Enabled = false;
+                tmMonitora.Enabled = true;
             }
             catch
             {
@@ -149,12 +150,6 @@ namespace WinFormsApp2
 
             bdConn.Close();
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FormWhatsApp formWpp = new FormWhatsApp();
-            formWpp.Show();
         }
 
         private void btnContatos_Click(object sender, EventArgs e)

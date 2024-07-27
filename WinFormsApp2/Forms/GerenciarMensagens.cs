@@ -29,5 +29,11 @@ namespace Gweb.WhatsApp.Forms
             ListarMensagem listarMensagem = new ListarMensagem();
             listarMensagem.Show();
         }
+
+        private void btnAgendarMensagem_Click(object sender, EventArgs e)
+        {
+            AgendarMensagens selecionarContatos = new AgendarMensagens();
+            selecionarContatos.Show();
+        }
     }
 }

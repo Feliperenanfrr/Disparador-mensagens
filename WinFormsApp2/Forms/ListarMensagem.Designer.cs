@@ -36,7 +36,7 @@
             Mensagem = new DataGridViewTextBoxColumn();
             Imagem = new DataGridViewTextBoxColumn();
             btnPesquisarMensagem = new Button();
-            btnSelecionarContatos = new Button();
+            menuStrip1 = new MenuStrip();
             ((System.ComponentModel.ISupportInitialize)dataGridMensagens).BeginInit();
             SuspendLayout();
             // 
@@ -100,7 +100,7 @@
             // 
             // btnPesquisarMensagem
             // 
-            btnPesquisarMensagem.Location = new Point(12, 12);
+            btnPesquisarMensagem.Location = new Point(1072, 580);
             btnPesquisarMensagem.Name = "btnPesquisarMensagem";
             btnPesquisarMensagem.Size = new Size(141, 29);
             btnPesquisarMensagem.TabIndex = 1;
@@ -108,30 +108,31 @@
             btnPesquisarMensagem.UseVisualStyleBackColor = true;
             btnPesquisarMensagem.Click += btnPesquisarMensagem_Click;
             // 
-            // btnSelecionarContatos
+            // menuStrip1
             // 
-            btnSelecionarContatos.Location = new Point(185, 12);
-            btnSelecionarContatos.Name = "btnSelecionarContatos";
-            btnSelecionarContatos.Size = new Size(181, 29);
-            btnSelecionarContatos.TabIndex = 2;
-            btnSelecionarContatos.Text = "Selecionar contatos";
-            btnSelecionarContatos.UseVisualStyleBackColor = true;
-            btnSelecionarContatos.Click += btnSelecionarContatos_Click;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1266, 24);
+            menuStrip1.TabIndex = 3;
+            menuStrip1.Text = "menuStrip1";
             // 
             // ListarMensagem
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1266, 694);
-            Controls.Add(btnSelecionarContatos);
             Controls.Add(btnPesquisarMensagem);
             Controls.Add(dataGridMensagens);
+            Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
             Name = "ListarMensagem";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ListarMensagem";
             ((System.ComponentModel.ISupportInitialize)dataGridMensagens).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -140,7 +141,7 @@
         private DataGridViewTextBoxColumn Tipo;
         private DataGridViewTextBoxColumn Mensagem;
         private DataGridViewTextBoxColumn Imagem;
-        private Button btnSelecionarContatos;
         public DataGridView dataGridMensagens;
+        private MenuStrip menuStrip1;
     }
 }

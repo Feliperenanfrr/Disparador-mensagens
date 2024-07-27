@@ -41,7 +41,6 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            button2 = new Button();
             tmMonitora = new System.Windows.Forms.Timer(components);
             textMensagens = new TextBox();
             labelEmail = new Label();
@@ -74,7 +73,6 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(button2);
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.Location = new Point(15, 405);
             groupBox1.Name = "groupBox1";
@@ -177,16 +175,6 @@
             label2.Size = new Size(73, 20);
             label2.TabIndex = 0;
             label2.Text = "Servidor:";
-            // 
-            // button2
-            // 
-            button2.Location = new Point(295, 179);
-            button2.Name = "button2";
-            button2.Size = new Size(318, 52);
-            button2.TabIndex = 17;
-            button2.Text = "WhatsApp";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // tmMonitora
             // 
@@ -367,7 +355,6 @@
         private System.Windows.Forms.Timer tmMonitora;
         private Button btnAtivar;
         private TextBox textMensagens;
-        private Button button2;
         private Label labelIdLoja;
         private TextBox textEmail;
         private TextBox textSenha;

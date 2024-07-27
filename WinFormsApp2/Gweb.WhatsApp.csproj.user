@@ -7,9 +7,6 @@
     <Compile Update="Forms\CriarMensagem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\FormWhatsApp.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\GerenciarContato.cs">
       <SubType>Form</SubType>
     </Compile>

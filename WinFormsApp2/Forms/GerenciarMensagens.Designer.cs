@@ -32,6 +32,7 @@
             menuStrip1 = new MenuStrip();
             btnCriarMensagem = new ToolStripMenuItem();
             btnListarMensagens = new ToolStripMenuItem();
+            btnAgendarMensagem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             menuStrip1.BackColor = SystemColors.ControlDark;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { btnCriarMensagem, btnListarMensagens });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { btnCriarMensagem, btnListarMensagens, btnAgendarMensagem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1266, 28);
@@ -59,6 +60,13 @@
             btnListarMensagens.Size = new Size(205, 24);
             btnListarMensagens.Text = "Listar mensagens existentes";
             btnListarMensagens.Click += btnListarMensagens_Click;
+            // 
+            // btnAgendarMensagem
+            // 
+            btnAgendarMensagem.Name = "btnAgendarMensagem";
+            btnAgendarMensagem.Size = new Size(157, 24);
+            btnAgendarMensagem.Text = "Agendar mensagem";
+            btnAgendarMensagem.Click += btnAgendarMensagem_Click;
             // 
             // GerenciarMensagens
             // 
@@ -82,5 +90,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem btnCriarMensagem;
         private ToolStripMenuItem btnListarMensagens;
+        private ToolStripMenuItem btnAgendarMensagem;
     }
 }
