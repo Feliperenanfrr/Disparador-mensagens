@@ -2,7 +2,6 @@
 using Gweb.WhatsApp.Util;
 using WinFormsApp2;
 using System.Data;
-using System.Windows.Forms;
 
 namespace Gweb.WhatsApp.Forms
 {

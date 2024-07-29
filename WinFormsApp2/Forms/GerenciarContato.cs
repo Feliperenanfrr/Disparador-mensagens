@@ -1,7 +1,5 @@
 ﻿using Gweb.WhatsApp.Util;
 using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Data;
 
 namespace Gweb.WhatsApp.Forms

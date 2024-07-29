@@ -2,7 +2,6 @@
 using Gweb.WhatsApp.Util;
 using WinFormsApp2;
 using System.Data;
-using static Gweb.WhatsApp.Forms.AgendarMensagens;
 
 namespace Gweb.WhatsApp.Forms
 {

@@ -1,19 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "PhYx6ilOkE2PiaOoCFSLj6a1srl/W7dPyS11aBNGkjeuxG9sPpbXqJxsC3qpOLEx6A6BFCV4oCLCorMgoIww8Q==",
+  "dgSpecHash": "lxUUhQQdW8ReMD7ZLM8LwiRO/t57ceBHkDcV9IGTI9Y3EmilJ14+TLZy44SFZo/T20KcJM47BmDpprv6kRz48g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\felipe\\OneDrive\\Área de Trabalho\\Gweb-UnderChat\\WinFormsApp2\\Gweb.WhatsApp.csproj",
+  "projectFilePath": "C:\\Users\\guepp\\Desktop\\Disparador-mensagens\\WinFormsApp2\\Gweb.WhatsApp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\felipe\\.nuget\\packages\\libphonenumber-csharp\\8.13.35\\libphonenumber-csharp.8.13.35.nupkg.sha512",
-    "C:\\Users\\felipe\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\felipe\\.nuget\\packages\\restsharp\\106.3.1\\restsharp.106.3.1.nupkg.sha512"
+    "C:\\Users\\guepp\\.nuget\\packages\\libphonenumber-csharp\\8.13.35\\libphonenumber-csharp.8.13.35.nupkg.sha512",
+    "C:\\Users\\guepp\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\guepp\\.nuget\\packages\\restsharp\\106.3.1\\restsharp.106.3.1.nupkg.sha512",
+    "C:\\Users\\guepp\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\guepp\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\guepp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\guepp\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'RestSharp' 106.3.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-9pq7-rcxv-47vq",
+      "message": "O pacote 'RestSharp' 106.3.1 tem uma alta vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-9pq7-rcxv-47vq",
       "libraryId": "RestSharp",
       "targetGraphs": [
         "net6.0-windows7.0"

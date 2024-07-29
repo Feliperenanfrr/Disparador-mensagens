@@ -1,20 +1,7 @@
-using RestSharp;
 using System.Data;
 using MySql.Data.MySqlClient;
-using System.Globalization;
-using System.Text;
-using System;
-using System.Xml;
-using static System.Windows.Forms.LinkLabel;
-using Microsoft.VisualBasic;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-using System.Windows.Forms;
-using Gweb.WhatsApp;
 using Newtonsoft.Json;
-using PhoneNumbers;
 using Gweb.WhatsApp.Util;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using Newtonsoft.Json.Linq;
 using Gweb.WhatsApp.Forms;
 
 
