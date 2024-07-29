@@ -119,8 +119,10 @@ namespace WinFormsApp2
 
                 reader.Close();
 
+                textMensagens.Clear();
                 textMensagens.Text = textMensagens.Text + " ";
                 textMensagens.Text = textMensagens.Text + $"Código: {idEnvioMensagem} - Número: {telefone} - Cliente: {nomeContato}";
+
                 using (MySqlCommand marcarComoEnviada = new MySqlCommand("UPDATE gueppardo.envio_mensagens SET envio = 1 WHERE id = @idEnvioMensagem AND telefone = @telefone AND Nome_Contato = @nomeContato", bdConn))
                 {
                     // Adiciona parâmetros à consulta SQL

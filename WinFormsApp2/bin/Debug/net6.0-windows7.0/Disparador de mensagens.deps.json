@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "Gweb.WhatsApp/1.0.0": {
+      "Disparador de mensagens/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "RestSharp": "106.3.1",
@@ -14,7 +14,7 @@
           "MySql.Data": "8.0.30.0"
         },
         "runtime": {
-          "Gweb.WhatsApp.dll": {}
+          "Disparador de mensagens.dll": {}
         }
       },
       "libphonenumber-csharp/8.13.35": {
@@ -108,7 +108,7 @@
     }
   },
   "libraries": {
-    "Gweb.WhatsApp/1.0.0": {
+    "Disparador de mensagens/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

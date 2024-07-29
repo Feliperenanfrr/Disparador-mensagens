@@ -6,11 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>1486146471-whatsapp_79438.ico</ApplicationIcon>
+    <ApplicationIcon>UnderChat.ico</ApplicationIcon>
+    <AssemblyName>Disparador de mensagens</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="1486146471-whatsapp_79438.ico" />
+    <Content Include="UnderChat.ico" />
   </ItemGroup>
 
   <ItemGroup>

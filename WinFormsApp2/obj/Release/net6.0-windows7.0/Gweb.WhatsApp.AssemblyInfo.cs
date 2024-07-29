@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Gweb.WhatsApp")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Disparador de mensagens")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a85706e4f8a4660ee302169eb7e45cb127d6dd8")]
-[assembly: System.Reflection.AssemblyProductAttribute("Gweb.WhatsApp")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Gweb.WhatsApp")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d9858b208dc90ced6d5ba2e1ed4059eec0b86d2")]
+[assembly: System.Reflection.AssemblyProductAttribute("Disparador de mensagens")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Disparador de mensagens")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

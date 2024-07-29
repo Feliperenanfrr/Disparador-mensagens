@@ -307,11 +307,6 @@ C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug
 C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.GerenciarMensagens.resources
 C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.ListarContatos.resources
 C:\Users\felipe\OneDrive\Área de Trabalho\Gweb-UnderChat\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.ListarMensagem.resources
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.exe
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.deps.json
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.runtimeconfig.json
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\PhoneNumbers.dll
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Newtonsoft.Json.dll
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\RestSharp.dll
@@ -339,8 +334,13 @@ C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-window
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.sourcelink.json
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.Wha.ED09C985.Up2Date
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.dll
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Gweb.WhatsApp.dll
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.pdb
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.genruntimeconfig.cache
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Gweb.WhatsApp.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Disparador de mensagens.exe
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Disparador de mensagens.deps.json
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Disparador de mensagens.runtimeconfig.json
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Disparador de mensagens.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\Disparador de mensagens.pdb
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Disparador de mensagens.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Disparador de mensagens.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Disparador de mensagens.pdb
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Disparador de mensagens.dll
