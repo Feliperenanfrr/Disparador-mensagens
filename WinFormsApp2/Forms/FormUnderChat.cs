@@ -89,7 +89,7 @@ namespace WinFormsApp2
             var idCanalUnderChat = textIdCanal.Text;
             var idSetorUnderChat = int.Parse(textIdSetor.Text);
 
-            MySqlCommand cmd = new MySqlCommand($"Select * from gueppardo.envio_mensagens where envio = 0", bdConn);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM gueppardo.envio_mensagens WHERE envio = 0 AND data_envio <= NOW()", bdConn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
