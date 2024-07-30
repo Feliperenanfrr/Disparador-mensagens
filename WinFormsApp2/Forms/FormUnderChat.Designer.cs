@@ -336,7 +336,6 @@
             Name = "FormUnderChat";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Disparador de Mensagens";
-            Load += FormUnderChat_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             menuStrip1.ResumeLayout(false);

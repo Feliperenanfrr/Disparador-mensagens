@@ -15,11 +15,6 @@ namespace Gweb.WhatsApp.Forms
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnListarContatos_Click(object sender, EventArgs e)
         {
             FormUnderChat formUnderChat = new FormUnderChat();
@@ -28,7 +23,6 @@ namespace Gweb.WhatsApp.Forms
             string user = formUnderChat.txtUsuario.Text;
             string senha = formUnderChat.txtSenha.Text;
             string banco = formUnderChat.txtBanco.Text;
-
             bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
 
             try

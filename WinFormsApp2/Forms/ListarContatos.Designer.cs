@@ -59,7 +59,6 @@
             dataGridContatos.RowTemplate.Height = 29;
             dataGridContatos.Size = new Size(1266, 502);
             dataGridContatos.TabIndex = 1;
-            dataGridContatos.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ID
             // 

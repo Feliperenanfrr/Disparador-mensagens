@@ -54,7 +54,6 @@
             boxIdMensagens.Size = new Size(394, 28);
             boxIdMensagens.TabIndex = 1;
             boxIdMensagens.DropDown += boxIdMensagens_DropDown;
-            boxIdMensagens.SelectedIndexChanged += boxIdMensagens_SelectedIndexChanged;
             // 
             // dataEnvioMensagem
             // 
@@ -120,7 +119,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AgendarMensagens";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "SelecionarContatos";
+            Text = "Agendar mensagem";
             Load += SelecionarContatos_Load;
             ResumeLayout(false);
             PerformLayout();

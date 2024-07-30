@@ -63,17 +63,14 @@ namespace WinFormsApp2
             }
             catch
             {
-
                 if (bdConn.State != ConnectionState.Open)
                 {
                     MessageBox.Show("Impossível estabelecer uma conexão");
                     Close();
                 }
-
                 btnAtivar.Text = "Desativar";
                 btnSair.Enabled = false;
             }
-
         }
 
         private void tmMonitora_Tick(object sender, EventArgs e)
@@ -133,12 +130,9 @@ namespace WinFormsApp2
                     // Executa a consulta
                     marcarComoEnviada.ExecuteNonQuery();
                 }
-
                 return;
             }
-
             bdConn.Close();
-
         }
 
         private void btnContatos_Click(object sender, EventArgs e)
@@ -146,12 +140,7 @@ namespace WinFormsApp2
             GerenciarContato gerenciarContato = new GerenciarContato();
             gerenciarContato.Show();
         }
-
-        private void FormUnderChat_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnMensagens_Click(object sender, EventArgs e)
         {
             GerenciarMensagens gerenciarMensagens = new GerenciarMensagens();

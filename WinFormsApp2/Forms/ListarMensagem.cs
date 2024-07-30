@@ -23,7 +23,6 @@ namespace Gweb.WhatsApp.Forms
             string user = formUnderChat.txtUsuario.Text;
             string senha = formUnderChat.txtSenha.Text;
             string banco = formUnderChat.txtBanco.Text;
-
             bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
 
             try

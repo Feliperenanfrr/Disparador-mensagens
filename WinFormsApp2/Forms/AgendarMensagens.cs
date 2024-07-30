@@ -49,7 +49,6 @@ namespace Gweb.WhatsApp.Forms
         private void SelecionarContatos_Load(object sender, EventArgs e)
         {
             FormUnderChat formUnderChat = new FormUnderChat();
-
             string server = formUnderChat.txtServer.Text;
             string user = formUnderChat.txtUsuario.Text;
             string senha = formUnderChat.txtSenha.Text;
@@ -74,19 +73,12 @@ namespace Gweb.WhatsApp.Forms
             }
         }
 
-        private void boxIdMensagens_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void boxIdMensagens_DropDown(object sender, EventArgs e)
         {
             string server = formUnderChat.txtServer.Text;
             string user = formUnderChat.txtUsuario.Text;
             string senha = formUnderChat.txtSenha.Text;
             string banco = formUnderChat.txtBanco.Text;
-
-
             bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
 
             try
@@ -106,13 +98,11 @@ namespace Gweb.WhatsApp.Forms
                     };
                     boxIdMensagens.Items.Add(item);
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro: {ex.Message}");
             }
-
             operacoesBD.EncerrarBancoDados(bdConn);
         }
 
@@ -134,7 +124,6 @@ namespace Gweb.WhatsApp.Forms
 
                 int idMensagem = mensagemSelecionada.Id;
                 DateTime dataSelecionada = dataEnvioMensagem.Value;
-
                 int linhasAfetadas = 0;
                 List<int> idsContatos = new List<int>();
 
@@ -143,7 +132,6 @@ namespace Gweb.WhatsApp.Forms
                 {
                     ListItem contato = item as ListItem;
                     if (contato == null) continue;
-
                     int idContato = contato.Id;
                     idsContatos.Add(idContato);
 
@@ -210,13 +198,9 @@ namespace Gweb.WhatsApp.Forms
                             cmd.Parameters.AddWithValue("@idContato", idContato);
                             cmd.Parameters.AddWithValue("@idMensagem", idMensagem);
                             cmd.Parameters.AddWithValue("@dataEnvio", dataSelecionada);
-
                             cmd.ExecuteNonQuery();
                         }
-
                     }
-
-
                     MessageBox.Show("Mensagens agendadas com sucesso!");
                     this.Close();
                 }

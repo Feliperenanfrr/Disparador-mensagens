@@ -77,13 +77,7 @@ namespace Gweb.WhatsApp.Forms
             {
                 textContatos.Text = ex.Message;
             }
-
             bdConn.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnListarContatos_Click(object sender, EventArgs e)
