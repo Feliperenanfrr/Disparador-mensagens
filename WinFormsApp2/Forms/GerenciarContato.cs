@@ -32,6 +32,8 @@ namespace Gweb.WhatsApp.Forms
 
             try
             {
+                // Faz um GET na API do UnderChat cria uma instância da classe Contato(Util/Contato.cs) para cada contato cadastrado
+                // Adiciona todos os contatos a uma lista do tipo Contato
                 bdDataSet = new DataSet();
                 bdConn = new MySqlConnection(builder.ConnectionString);
                 bdConn.Open();
@@ -44,6 +46,7 @@ namespace Gweb.WhatsApp.Forms
 
                 foreach (Contato contato in contatosLista)
                 {
+                    // Cadastra apenas os contatos com os prefixos e que não estejam cadastrados no BD
                     Person pessoa = contato.person;
                     string nome = pessoa.name;
                     if (nome.StartsWith("Gpd") || nome.StartsWith("Cli-") || nome.StartsWith("Parc-"))

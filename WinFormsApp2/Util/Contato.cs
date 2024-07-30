@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 
 namespace Gweb.WhatsApp.Util
 {
+    // Classe auxiliar usada para manipular o JSON de contatos vindo da API do UnderChat
+
     public class Contato
     {
         public int id { get; set; }

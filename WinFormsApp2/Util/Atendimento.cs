@@ -8,7 +8,7 @@ namespace Gweb.WhatsApp.Util
 {
     internal class Atendimento
     {
-        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+        // Classe auxiliar usada para manipular o JSON do atendimento vindo da API do UnderChat
         public class Data
         {
             public int id { get; set; }

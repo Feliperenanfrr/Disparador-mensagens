@@ -17,6 +17,7 @@ namespace Gweb.WhatsApp.Forms
 
         private void btnListarContatos_Click(object sender, EventArgs e)
         {
+            // Seleciona todos os contatos cadastrados no BD e exibe eles em um Data Grid
             FormUnderChat formUnderChat = new FormUnderChat();
 
             string server = formUnderChat.txtServer.Text;

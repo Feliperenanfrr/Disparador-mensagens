@@ -17,6 +17,7 @@ namespace Gweb.WhatsApp.Forms
 
         private void btnPesquisarMensagem_Click(object sender, EventArgs e)
         {
+            // Seleciona todas as mensagens cadastradas no BD e exibe elas em um Data Grid
             FormUnderChat formUnderChat = new FormUnderChat();
 
             string server = formUnderChat.txtServer.Text;

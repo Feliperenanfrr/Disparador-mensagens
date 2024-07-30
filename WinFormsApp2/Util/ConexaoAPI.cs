@@ -17,19 +17,16 @@ namespace Gweb.WhatsApp.Util
     {
         public string ObterToken(string email, string senha)
         {
-            //Monta corpo da requisição
+            // Acessa o endpoint de autenticação da API, adiciona as credenciais de login ao corpo da requisição
+            // Executa a requisição HTTP e armazena a resposta na variável "response"
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest("/user/auth", Method.POST);
-
-            //Adiciona credenciais de login ao corpo da requisição
             var login = new
             {
                 username = email,
                 password = senha
             };
             request.AddJsonBody(login);
-
-            //Executa requisição
             IRestResponse response = client.Execute(request);
 
             if (response.ErrorException != null)
@@ -38,6 +35,8 @@ namespace Gweb.WhatsApp.Util
             }
             else
             {
+                // Caso a requisição seja bem sucedida, desserializa o JSON de resposta para armazenar e retornar o Token
+                // O Token retornado será usado para autenticação nas outras requisições
                 dynamic responseObject = JsonConvert.DeserializeObject<dynamic>(response.Content);
                 string token = responseObject.data.token;
                 return token;
@@ -46,7 +45,7 @@ namespace Gweb.WhatsApp.Util
 
         public dynamic buscarContatoPorNumero(string idLoja, string numero, string token, int tentativas = 0)
         {
-            //Monta e executa corpo da requisição
+            //Monta e executa corpo da requisição, armazena a resposta na variável "response"
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"/store/{idLoja}/contact", Method.GET);
             request.AddParameter("filter[value]", numero);
@@ -58,11 +57,10 @@ namespace Gweb.WhatsApp.Util
             if (response.IsSuccessful)
             {
                 string contato = response.Content;
-
                 return contato;
             }
 
-            //Faz a validação do número de telefone e converte para o padrão BR
+            //Faz a validação do número de telefone, garantindo que está no padrão correto para a API
             var phoneNumberUtil = PhoneNumberUtil.GetInstance();
             var numeroBrasil = phoneNumberUtil.Parse(numero, "BR");
 
@@ -109,6 +107,7 @@ namespace Gweb.WhatsApp.Util
 
         public static void VerificaSeContatoFoiValidado(string idLoja, string idContato, string token, int tentativas = 1)
         {
+            // Verifica se o status do JSON do contato está como validad0
             dynamic contato = BuscarContatoPorId(idLoja, idContato, token);
             bool isValidated = contato != null && contato.status == "VALIDATED";
 
@@ -128,23 +127,23 @@ namespace Gweb.WhatsApp.Util
 
         public int criarAtendimento(string idLoja, Contato contato, int idSetor, string idCanal, string mensagem, string token)
         {
+            // Abre um novo atendimento usando o id do contato no corpo da requisição
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"/store/{idLoja}/conversation/new", Method.POST);
-
             var body = new
             {
                 contact = contato.id,
                 sector = idSetor,
                 channel = idCanal
             };
-
             request.AddJsonBody(body);
             request.AddHeader("Authorization", "Bearer " + token);
-
             IRestResponse response = client.Execute(request);
 
             int idAtendimento = 0;
 
+            // Se o atendimento for aberto, retorna o ID do atendimento
+            // Se o atendimento já estiver aberto, finaliza ele e tenta novamente
             if (response.IsSuccessful)
             {
                 dynamic dadosDaResposta = JsonConvert.DeserializeObject<dynamic>(response.Content);
@@ -169,16 +168,13 @@ namespace Gweb.WhatsApp.Util
         {
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"/store/{idLoja}/conversation/{idAtendimento}/message", Method.POST);
-
             var body = new
             {
                 message = mensagem
             };
-
             request.AddJsonBody(body);
             request.AddHeader("Authorization", "Bearer " + token);
-
-            IRestResponse response = client.Execute(request);
+            client.Execute(request);
 
         }
 
@@ -186,25 +182,19 @@ namespace Gweb.WhatsApp.Util
         {
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"/store/{idLoja}/conversation/{idAtendimento}/finish", Method.POST);
-
             var body = new
             {
                 sendFinishMessage = false
             };
-
             request.AddJsonBody(body);
             request.AddHeader("Authorization", "Bearer " + token);
-
-            IRestResponse response = client.Execute(request);
-
+            client.Execute(request);
         }
 
         public void enviarMensagemComImagem(string mensagem, string idLoja, int idAtendimento, string imageUrl, string token)
         {
             try
             {
-                Console.WriteLine("Enviando mensagem com imagem...");
-
                 // Baixar o conteúdo da imagem
                 WebClient webClient = new WebClient();
                 byte[] imageBytes = webClient.DownloadData(imageUrl);
@@ -214,38 +204,25 @@ namespace Gweb.WhatsApp.Util
                 string tempFilePath = Path.Combine(tempDir, "image.jpg");
                 File.WriteAllBytes(tempFilePath, imageBytes);
 
-                // Criar um objeto para representar o arquivo no disco
                 var client = new RestClient("https://api.underchat.com.br/");
                 RestRequest request = new RestRequest($"/store/{idLoja}/conversation/{idAtendimento}/message", Method.POST);
                 request.AddFile("file", tempFilePath);
                 request.AddParameter("message", mensagem);
-
-                // Adicionar o token de autorização ao cabeçalho da requisição
                 request.AddHeader("Authorization", "Bearer " + token);
-
-                // Enviar a requisição
                 IRestResponse response = client.Execute(request);
-
-                if (response.IsSuccessful)
-                {
-                    Console.WriteLine("Mensagem com imagem enviada com sucesso!");
-                }
-                else
-                {
-                    Console.WriteLine($"Ocorreu um erro ao enviar a mensagem com imagem. ERR: {response.ErrorMessage}");
-                }
 
                 // Remover o arquivo temporário depois de usar
                 File.Delete(tempFilePath);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"ERRO ao enviar mensagem com imagem: {ex.Message}");
+               throw new Exception ($"ERRO ao enviar mensagem com imagem: {ex.Message}");
             }
         }
 
         public RootContato BuscarTodosContatos(string idLoja, string token)
         {
+            // Faz uma requisição de todos os contatos cadastrados, retornando uma instância da classe RootContato(Util/RootContato)
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"/store/{idLoja}/contact", Method.GET);
             request.AddHeader("Authorization", "Bearer " + token);
