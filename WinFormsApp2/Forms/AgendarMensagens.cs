@@ -7,6 +7,8 @@ namespace Gweb.WhatsApp.Forms
 {
     public partial class AgendarMensagens : Form
     {
+        //Fazer: Adicionar checkbox para decidir se os clientes selecionados irão receber a mensagem recorrentemente ou apenas uma vez
+
         MySqlConnection bdConn;
         operacoesBD operacoesBD = new operacoesBD();
         FormUnderChat formUnderChat = new FormUnderChat();

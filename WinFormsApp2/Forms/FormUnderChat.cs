@@ -22,7 +22,6 @@ namespace WinFormsApp2
             InitializeComponent();
         }
 
-
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
@@ -48,12 +47,9 @@ namespace WinFormsApp2
                 CharacterSet = "utf8"
             };
 
-            //Definição do dataset
             bdDataSet = new DataSet();
-            //Define string de conexão
             bdConn = new MySqlConnection(builder.ConnectionString);
 
-            //Abre conexão 1
             try
             {
                 bdConn.Open();
@@ -91,13 +87,16 @@ namespace WinFormsApp2
 
             while (reader.Read())
             {
-                //Captura Código
+                //Captura dados das mensagens retornadas pelo BD
                 var idEnvioMensagem = reader["id"].ToString();
                 var mensagem = reader["Mensagem"].ToString();
                 var telefone = reader["telefone"].ToString();
                 var imagem = reader["imagem"].ToString();
                 var nomeContato = reader["Nome_contato"].ToString();
 
+                // Utiliza a classe ConexaoApi criada na pasta Util para fazer requisições HTTP para a API do UnderChat
+                // Utiliza a classe Contato criada na pasta Util para receber os dados retornados pela API
+                // Utiliza a biblioteca Newtonsoft.Json para desserializar e manipular JSON
                 conexaoAPI = new ConexaoAPI();
                 dynamic token = conexaoAPI.ObterToken(emailUnderChat, senhaUnderChat);
                 string respostaAPI = conexaoAPI.buscarContatoPorNumero(idLojaUnderChat, telefone, token);
@@ -116,18 +115,16 @@ namespace WinFormsApp2
 
                 reader.Close();
 
+                // Insere os dados das mensagens enviadas em uma caixa de texto
                 textMensagens.Clear();
                 textMensagens.Text = textMensagens.Text + " ";
                 textMensagens.Text = textMensagens.Text + $"Código: {idEnvioMensagem} - Número: {telefone} - Cliente: {nomeContato}";
 
                 using (MySqlCommand marcarComoEnviada = new MySqlCommand("UPDATE gueppardo.envio_mensagens SET envio = 1 WHERE id = @idEnvioMensagem AND telefone = @telefone AND Nome_Contato = @nomeContato", bdConn))
                 {
-                    // Adiciona parâmetros à consulta SQL
                     marcarComoEnviada.Parameters.AddWithValue("@idEnvioMensagem", idEnvioMensagem);
                     marcarComoEnviada.Parameters.AddWithValue("@telefone", telefone);
                     marcarComoEnviada.Parameters.AddWithValue("@nomeContato", nomeContato);
-
-                    // Executa a consulta
                     marcarComoEnviada.ExecuteNonQuery();
                 }
                 return;

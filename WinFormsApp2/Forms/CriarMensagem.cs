@@ -30,6 +30,7 @@ namespace Gweb.WhatsApp.Forms
 
             try
             {
+                //Cadastra a mensagem no BD, se alguma linha for afetada, limpa o formulário para evitar registros duplicados
                 bdConn = new MySqlConnection(builder.ConnectionString);
                 bdConn.Open();
 
