@@ -18,6 +18,7 @@ namespace Gweb.WhatsApp.Forms
             InitializeComponent();
         }
 
+        //ListItem e MensagemItem são classes auxiliares utilizadas para manipular dados tornando mais fácil a utilização deles
         public class ListItem
         {
             public string Nome { get; }
@@ -75,6 +76,7 @@ namespace Gweb.WhatsApp.Forms
 
         private void boxIdMensagens_DropDown(object sender, EventArgs e)
         {
+            // Utiliza a classe MensagemItem para receber os dados da tabela cadastro_mensagens e exiibir no ComboBox
             string server = formUnderChat.txtServer.Text;
             string user = formUnderChat.txtUsuario.Text;
             string senha = formUnderChat.txtSenha.Text;
@@ -127,7 +129,8 @@ namespace Gweb.WhatsApp.Forms
                 int linhasAfetadas = 0;
                 List<int> idsContatos = new List<int>();
 
-                // Inserir dados na tabela envio_mensagens
+                // Cria instâncias da classe ListItem para cada contato selecionado na checklist
+                // Insere um registro com a mensagem selecionada para cada contato
                 foreach (var item in listContatos.CheckedItems)
                 {
                     ListItem contato = item as ListItem;
@@ -145,10 +148,10 @@ namespace Gweb.WhatsApp.Forms
                     }
                 }
 
-                // Atualizar os novos campos com informações das tabelas
+                // Recebe a quantidade de linhas afetadas no banco para garantir que as alterações foram feitas
                 if (linhasAfetadas > 0)
                 {
-                    // Obter a mensagem
+                    // Recebe os dados da mensagem através do ID inserido na tabela pela funçaõ acima
                     string mensagemQuery = "SELECT mensagem, imagem FROM cadastro_mensagens WHERE id = @idMensagem";
                     string? mensagem = null;
                     string? imagem = null;
@@ -167,10 +170,10 @@ namespace Gweb.WhatsApp.Forms
                         mensagem = cmd.ExecuteScalar().ToString();
                     }
 
-                    // Atualizar os campos Mensagem e Nome_Contato
+                    // Varre a lista de números inteiros instânciada nessa função
                     foreach (int idContato in idsContatos)
                     {
-                        // Obter o nome e o telefone do contato
+                        // Recebe o nome e telefone do contato através do ID
                         string contatoQuery = "SELECT nome, telefone FROM contatos_underchat WHERE id = @idContato";
                         string nomeContato = null;
                         string telefone = null;
@@ -187,7 +190,8 @@ namespace Gweb.WhatsApp.Forms
                             }
                         }
 
-                        // Atualizar os novos campos na tabela envio_mensagens
+                        // Atualiza os registros na tabela envio_mensagens com os dados obtidos nessa função
+                        // Após isso, fecha o formulário para evitar registros duplicados
                         string updateQuery = "UPDATE envio_mensagens SET Mensagem = @mensagem, Imagem = @imagem, Nome_Contato = @nomeContato, Telefone = @telefone WHERE id_contato = @idContato AND id_mensagem = @idMensagem AND data_envio = @dataEnvio";
                         using (MySqlCommand cmd = new MySqlCommand(updateQuery, bdConn))
                         {
