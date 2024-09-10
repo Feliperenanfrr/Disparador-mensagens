@@ -31,18 +31,18 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnderChat));
             groupBox1 = new GroupBox();
-            btnAtivar = new Button();
+            btnAtivar = new MaterialSkin.Controls.MaterialButton();
             txtBanco = new TextBox();
             txtSenha = new TextBox();
             txtUsuario = new TextBox();
             txtServer = new TextBox();
-            btnSair = new Button();
+            btnSair = new MaterialSkin.Controls.MaterialButton();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             tmMonitora = new System.Windows.Forms.Timer(components);
-            textMensagens = new TextBox();
+            textMensagens = new TextBox(); 
             labelEmail = new Label();
             textEmail = new TextBox();
             textSenha = new TextBox();
@@ -83,12 +83,23 @@
             // 
             // btnAtivar
             // 
+            btnAtivar.AutoSize = false;
+            btnAtivar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnAtivar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnAtivar.Depth = 0;
             btnAtivar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAtivar.HighEmphasis = true;
+            btnAtivar.Icon = null;
             btnAtivar.Location = new Point(295, 30);
+            btnAtivar.Margin = new Padding(4, 6, 4, 6);
+            btnAtivar.MouseState = MaterialSkin.MouseState.HOVER;
             btnAtivar.Name = "btnAtivar";
-            btnAtivar.Size = new Size(318, 84);
+            btnAtivar.NoAccentTextColor = Color.Empty;
+            btnAtivar.Size = new Size(223, 53);
             btnAtivar.TabIndex = 10;
             btnAtivar.Text = "Ativar";
+            btnAtivar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnAtivar.UseAccentColor = false;
             btnAtivar.UseVisualStyleBackColor = true;
             btnAtivar.Click += btnAtivar_Click;
             // 
@@ -132,11 +143,22 @@
             // 
             // btnSair
             // 
-            btnSair.Location = new Point(295, 121);
+            btnSair.AutoSize = false;
+            btnSair.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnSair.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnSair.Depth = 0;
+            btnSair.HighEmphasis = true;
+            btnSair.Icon = null;
+            btnSair.Location = new Point(295, 95);
+            btnSair.Margin = new Padding(4, 6, 4, 6);
+            btnSair.MouseState = MaterialSkin.MouseState.HOVER;
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(318, 52);
+            btnSair.NoAccentTextColor = Color.Empty;
+            btnSair.Size = new Size(223, 45);
             btnSair.TabIndex = 5;
             btnSair.Text = "Sair";
+            btnSair.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnSair.UseAccentColor = false;
             btnSair.UseVisualStyleBackColor = true;
             btnSair.Click += btnSair_Click;
             // 
@@ -346,13 +368,12 @@
 
         #endregion
         private GroupBox groupBox1;
-        private Button btnSair;
+        private MaterialSkin.Controls.MaterialButton btnSair;
         private Label label2;
         private Label label5;
         private Label label4;
         private Label label3;
         private System.Windows.Forms.Timer tmMonitora;
-        private Button btnAtivar;
         private TextBox textMensagens;
         private Label labelIdLoja;
         private TextBox textEmail;
@@ -372,5 +393,6 @@
         private ToolStripMenuItem btnContatos_Menu;
         private ToolStripMenuItem btnMensagens_menu;
         private MenuStrip menuStrip1;
+        private MaterialSkin.Controls.MaterialButton btnAtivar;
     }
 }

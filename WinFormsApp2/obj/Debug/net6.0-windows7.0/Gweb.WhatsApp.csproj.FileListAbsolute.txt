@@ -344,3 +344,4 @@ C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-window
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\refint\Disparador de mensagens.dll
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Disparador de mensagens.pdb
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Disparador de mensagens.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\MaterialSkin.dll
