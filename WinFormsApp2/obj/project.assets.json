@@ -15,6 +15,18 @@
           }
         }
       },
+      "MaterialSkin.2/2.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -57,6 +69,23 @@
         "lib/netstandard2.0/PhoneNumbers.xml",
         "libphonenumber-csharp.8.13.35.nupkg.sha512",
         "libphonenumber-csharp.nuspec"
+      ]
+    },
+    "MaterialSkin.2/2.3.1": {
+      "sha512": "w2vFxLNk4InCDU7pXDfBqPfv55HhBtuu8HRfEqQpeS3sNTS1pUzDs/hS0b5JW2/tKvt+P1of9OINP8a9omWDBg==",
+      "type": "package",
+      "path": "materialskin.2/2.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net45/MaterialSkin.dll",
+        "lib/net461/MaterialSkin.dll",
+        "lib/net48/MaterialSkin.dll",
+        "lib/net5.0-windows7.0/MaterialSkin.dll",
+        "materialskin.2.2.3.1.nupkg.sha512",
+        "materialskin.2.nuspec",
+        "nugetIcon.png"
       ]
     },
     "Newtonsoft.Json/13.0.3": {
@@ -105,6 +134,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "MaterialSkin.2 >= 2.3.1",
       "Newtonsoft.Json >= 13.0.3",
       "RestSharp >= 106.3.1",
       "libphonenumber-csharp >= 8.13.35"
@@ -131,6 +161,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -154,6 +185,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows7.0",
         "dependencies": {
+          "MaterialSkin.2": {
+            "target": "Package",
+            "version": "[2.3.1, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
@@ -181,19 +216,19 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.29, 6.0.29]"
+            "version": "[6.0.33, 6.0.33]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.29, 6.0.29]"
+            "version": "[6.0.33, 6.0.33]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.29, 6.0.29]"
+            "version": "[6.0.33, 6.0.33]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.29, 6.0.29]"
+            "version": "[6.0.33, 6.0.33]"
           }
         ],
         "frameworkReferences": {
@@ -204,7 +239,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -4,8 +4,9 @@
     "\\Iconn",
     "\\WinFormsApp2",
     "\\WinFormsApp2\\Forms",
+    "\\WinFormsApp2\\UserControls",
     "\\WinFormsApp2\\Util"
   ],
-  "SelectedNode": "\\DisparadorDeMensagens.sln",
+  "SelectedNode": "\\WinFormsApp2\\UserControls\\GerenciarContatoPage.Designer.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -22,5 +22,8 @@
     <Compile Update="Forms\AgendarMensagens.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UserControls\GerenciarContatoPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
