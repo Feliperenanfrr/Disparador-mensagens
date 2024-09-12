@@ -3,11 +3,12 @@ using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Gweb.WhatsApp.Util;
 using Gweb.WhatsApp.Forms;
+using MaterialSkin.Controls;
 
 
 namespace WinFormsApp2
 {
-    public partial class FormUnderChat : Form
+    public partial class FormUnderChat : MaterialForm
     {
         private MySqlConnection bdConn; //MySQL
         private MySqlDataAdapter bdAdapter;

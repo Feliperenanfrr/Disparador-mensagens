@@ -1,4 +1,6 @@
-﻿namespace WinFormsApp2
+﻿using MaterialSkin.Controls;
+
+namespace WinFormsApp2
 {
     partial class FormUnderChat
     {
@@ -31,18 +33,18 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnderChat));
             groupBox1 = new GroupBox();
-            btnAtivar = new Button();
+            btnAtivar = new MaterialButton();
             txtBanco = new TextBox();
             txtSenha = new TextBox();
             txtUsuario = new TextBox();
             txtServer = new TextBox();
-            btnSair = new Button();
+            btnSair = new MaterialButton();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             tmMonitora = new System.Windows.Forms.Timer(components);
-            textMensagens = new TextBox();
+            textMensagens = new MaterialTextBox();
             labelEmail = new Label();
             textEmail = new TextBox();
             textSenha = new TextBox();
@@ -83,12 +85,23 @@
             // 
             // btnAtivar
             // 
+            btnAtivar.AutoSize = false;
+            btnAtivar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnAtivar.Density = MaterialButton.MaterialButtonDensity.Default;
+            btnAtivar.Depth = 0;
             btnAtivar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAtivar.HighEmphasis = true;
+            btnAtivar.Icon = null;
             btnAtivar.Location = new Point(295, 30);
+            btnAtivar.Margin = new Padding(4, 6, 4, 6);
+            btnAtivar.MouseState = MaterialSkin.MouseState.HOVER;
             btnAtivar.Name = "btnAtivar";
+            btnAtivar.NoAccentTextColor = Color.Empty;
             btnAtivar.Size = new Size(318, 84);
             btnAtivar.TabIndex = 10;
             btnAtivar.Text = "Ativar";
+            btnAtivar.Type = MaterialButton.MaterialButtonType.Contained;
+            btnAtivar.UseAccentColor = false;
             btnAtivar.UseVisualStyleBackColor = true;
             btnAtivar.Click += btnAtivar_Click;
             // 
@@ -132,11 +145,22 @@
             // 
             // btnSair
             // 
+            btnSair.AutoSize = false;
+            btnSair.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnSair.Density = MaterialButton.MaterialButtonDensity.Default;
+            btnSair.Depth = 0;
+            btnSair.HighEmphasis = true;
+            btnSair.Icon = null;
             btnSair.Location = new Point(295, 121);
+            btnSair.Margin = new Padding(4, 6, 4, 6);
+            btnSair.MouseState = MaterialSkin.MouseState.HOVER;
             btnSair.Name = "btnSair";
+            btnSair.NoAccentTextColor = Color.Empty;
             btnSair.Size = new Size(318, 52);
             btnSair.TabIndex = 5;
             btnSair.Text = "Sair";
+            btnSair.Type = MaterialButton.MaterialButtonType.Contained;
+            btnSair.UseAccentColor = false;
             btnSair.UseVisualStyleBackColor = true;
             btnSair.Click += btnSair_Click;
             // 
@@ -183,17 +207,24 @@
             // 
             // textMensagens
             // 
-            textMensagens.Location = new Point(744, 64);
-            textMensagens.Multiline = true;
+            textMensagens.AnimateReadOnly = false;
+            textMensagens.BorderStyle = BorderStyle.None;
+            textMensagens.Depth = 0;
+            textMensagens.Font = new Font("Roboto", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
+            textMensagens.LeadingIcon = null;
+            textMensagens.Location = new Point(740, 118);
+            textMensagens.MaxLength = 50;
+            textMensagens.MouseState = MaterialSkin.MouseState.OUT;
             textMensagens.Name = "textMensagens";
-            textMensagens.Size = new Size(501, 586);
+            textMensagens.Size = new Size(501, 50);
             textMensagens.TabIndex = 12;
             textMensagens.Text = "Area de Mensagens";
+            textMensagens.TrailingIcon = null;
             // 
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.Location = new Point(12, 98);
+            labelEmail.Location = new Point(10, 178);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(123, 20);
             labelEmail.TabIndex = 18;
@@ -201,7 +232,7 @@
             // 
             // textEmail
             // 
-            textEmail.Location = new Point(142, 95);
+            textEmail.Location = new Point(140, 175);
             textEmail.Name = "textEmail";
             textEmail.Size = new Size(237, 27);
             textEmail.TabIndex = 19;
@@ -209,7 +240,7 @@
             // 
             // textSenha
             // 
-            textSenha.Location = new Point(141, 138);
+            textSenha.Location = new Point(139, 218);
             textSenha.Name = "textSenha";
             textSenha.PasswordChar = '*';
             textSenha.Size = new Size(125, 27);
@@ -219,7 +250,7 @@
             // labelSenha
             // 
             labelSenha.AutoSize = true;
-            labelSenha.Location = new Point(12, 141);
+            labelSenha.Location = new Point(10, 221);
             labelSenha.Name = "labelSenha";
             labelSenha.Size = new Size(123, 20);
             labelSenha.TabIndex = 22;
@@ -227,7 +258,7 @@
             // 
             // textIdLoja
             // 
-            textIdLoja.Location = new Point(142, 182);
+            textIdLoja.Location = new Point(140, 262);
             textIdLoja.Name = "textIdLoja";
             textIdLoja.Size = new Size(125, 27);
             textIdLoja.TabIndex = 24;
@@ -236,7 +267,7 @@
             // labelIdLoja
             // 
             labelIdLoja.AutoSize = true;
-            labelIdLoja.Location = new Point(57, 178);
+            labelIdLoja.Location = new Point(55, 258);
             labelIdLoja.Name = "labelIdLoja";
             labelIdLoja.Size = new Size(78, 20);
             labelIdLoja.TabIndex = 25;
@@ -245,7 +276,7 @@
             // labelIdSetor
             // 
             labelIdSetor.AutoSize = true;
-            labelIdSetor.Location = new Point(53, 224);
+            labelIdSetor.Location = new Point(51, 304);
             labelIdSetor.Name = "labelIdSetor";
             labelIdSetor.Size = new Size(86, 20);
             labelIdSetor.TabIndex = 26;
@@ -254,7 +285,7 @@
             // labelIdCanal
             // 
             labelIdCanal.AutoSize = true;
-            labelIdCanal.Location = new Point(49, 261);
+            labelIdCanal.Location = new Point(47, 341);
             labelIdCanal.Name = "labelIdCanal";
             labelIdCanal.Size = new Size(86, 20);
             labelIdCanal.TabIndex = 27;
@@ -262,7 +293,7 @@
             // 
             // textIdSetor
             // 
-            textIdSetor.Location = new Point(142, 221);
+            textIdSetor.Location = new Point(140, 301);
             textIdSetor.Name = "textIdSetor";
             textIdSetor.Size = new Size(125, 27);
             textIdSetor.TabIndex = 28;
@@ -270,7 +301,7 @@
             // 
             // textIdCanal
             // 
-            textIdCanal.Location = new Point(141, 265);
+            textIdCanal.Location = new Point(139, 345);
             textIdCanal.Name = "textIdCanal";
             textIdCanal.Size = new Size(125, 27);
             textIdCanal.TabIndex = 29;
@@ -279,7 +310,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 64);
+            label1.Location = new Point(10, 149);
             label1.Name = "label1";
             label1.Size = new Size(116, 20);
             label1.TabIndex = 37;
@@ -304,9 +335,9 @@
             menuStrip1.BackColor = SystemColors.ControlDark;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { btnContatos_Menu, btnMensagens_menu });
-            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Location = new Point(3, 64);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1266, 28);
+            menuStrip1.Size = new Size(1260, 28);
             menuStrip1.TabIndex = 38;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -330,7 +361,6 @@
             Controls.Add(textMensagens);
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);
-            DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "FormUnderChat";
@@ -346,14 +376,14 @@
 
         #endregion
         private GroupBox groupBox1;
-        private Button btnSair;
+        private MaterialButton btnSair;
         private Label label2;
         private Label label5;
         private Label label4;
         private Label label3;
         private System.Windows.Forms.Timer tmMonitora;
-        private Button btnAtivar;
-        private TextBox textMensagens;
+        private MaterialButton btnAtivar;
+        private MaterialTextBox textMensagens;
         private Label labelIdLoja;
         private TextBox textEmail;
         private TextBox textSenha;

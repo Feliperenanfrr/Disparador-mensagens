@@ -1,11 +1,12 @@
 ﻿using Gweb.WhatsApp.Util;
+using MaterialSkin.Controls;
 using MySql.Data.MySqlClient;
 using System.Data;
 using WinFormsApp2;
 
 namespace Gweb.WhatsApp.Forms
 {
-    public partial class ListarContatos : Form
+    public partial class ListarContatos : MaterialForm
     {
         operacoesBD operacoesBD = new operacoesBD();
         private MySqlConnection bdConn;
@@ -38,6 +39,11 @@ namespace Gweb.WhatsApp.Forms
             {
                 MessageBox.Show($"Erro: {ex.Message}");
             }
+        }
+
+        private void ListarContatos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

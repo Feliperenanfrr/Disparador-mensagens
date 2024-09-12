@@ -1,4 +1,6 @@
-﻿namespace Gweb.WhatsApp.Forms
+﻿using MaterialSkin.Controls;
+
+namespace Gweb.WhatsApp.Forms
 {
     partial class ListarContatos
     {
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarContatos));
-            btnListarContatos = new Button();
+            btnListarContatos = new MaterialButton();
             dataGridContatos = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             Id_Underchat = new DataGridViewTextBoxColumn();
@@ -40,11 +42,21 @@
             // 
             // btnListarContatos
             // 
-            btnListarContatos.Location = new Point(12, 12);
+            btnListarContatos.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnListarContatos.Density = MaterialButton.MaterialButtonDensity.Default;
+            btnListarContatos.Depth = 0;
+            btnListarContatos.HighEmphasis = true;
+            btnListarContatos.Icon = null;
+            btnListarContatos.Location = new Point(7, 132);
+            btnListarContatos.Margin = new Padding(4, 6, 4, 6);
+            btnListarContatos.MouseState = MaterialSkin.MouseState.HOVER;
             btnListarContatos.Name = "btnListarContatos";
-            btnListarContatos.Size = new Size(94, 29);
+            btnListarContatos.NoAccentTextColor = Color.Empty;
+            btnListarContatos.Size = new Size(151, 36);
             btnListarContatos.TabIndex = 0;
             btnListarContatos.Text = "Listar contatos";
+            btnListarContatos.Type = MaterialButton.MaterialButtonType.Contained;
+            btnListarContatos.UseAccentColor = false;
             btnListarContatos.UseVisualStyleBackColor = true;
             btnListarContatos.Click += btnListarContatos_Click;
             // 
@@ -57,7 +69,7 @@
             dataGridContatos.Name = "dataGridContatos";
             dataGridContatos.RowHeadersWidth = 51;
             dataGridContatos.RowTemplate.Height = 29;
-            dataGridContatos.Size = new Size(1266, 502);
+            dataGridContatos.Size = new Size(552, 482);
             dataGridContatos.TabIndex = 1;
             // 
             // ID
@@ -96,20 +108,25 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1266, 694);
             Controls.Add(dataGridContatos);
             Controls.Add(btnListarContatos);
+            Enabled = false;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ListarContatos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ListarContatos";
+            Load += ListarContatos_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridContatos).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button btnListarContatos;
+        private MaterialButton btnListarContatos;
         private DataGridView dataGridContatos;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Id_Underchat;

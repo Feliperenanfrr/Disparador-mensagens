@@ -1,10 +1,11 @@
 ﻿using Gweb.WhatsApp.Util;
+using MaterialSkin.Controls;
 using MySql.Data.MySqlClient;
 using System.Data;
 
 namespace Gweb.WhatsApp.Forms
 {
-    public partial class GerenciarContato : Form
+    public partial class GerenciarContato : MaterialForm
     {
         private MySqlConnection bdConn;
         private DataSet bdDataSet;

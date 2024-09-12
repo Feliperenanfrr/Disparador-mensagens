@@ -1,4 +1,6 @@
-﻿namespace Gweb.WhatsApp.Forms
+﻿using MaterialSkin.Controls;
+
+namespace Gweb.WhatsApp.Forms
 {
     partial class GerenciarContato
     {
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarContato));
-            btn_CadastrarContato = new Button();
+            btn_CadastrarContato = new MaterialButton();
             textContatos = new TextBox();
             menuStrip1 = new MenuStrip();
             btnListarContatos = new ToolStripMenuItem();
@@ -38,7 +40,7 @@
             // 
             // btn_CadastrarContato
             // 
-            btn_CadastrarContato.Location = new Point(12, 58);
+            btn_CadastrarContato.Location = new Point(46, 507);
             btn_CadastrarContato.Name = "btn_CadastrarContato";
             btn_CadastrarContato.Size = new Size(200, 113);
             btn_CadastrarContato.TabIndex = 0;
@@ -58,9 +60,9 @@
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { btnListarContatos });
-            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Location = new Point(3, 64);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1266, 28);
+            menuStrip1.Size = new Size(1260, 28);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -92,7 +94,7 @@
 
         #endregion
 
-        private Button btn_CadastrarContato;
+        private MaterialButton btn_CadastrarContato;
         private TextBox textContatos;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem btnListarContatos;
