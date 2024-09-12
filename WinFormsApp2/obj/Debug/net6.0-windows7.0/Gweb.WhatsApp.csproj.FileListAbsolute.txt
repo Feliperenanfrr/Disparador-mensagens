@@ -346,3 +346,5 @@ C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-window
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\ref\Disparador de mensagens.dll
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\MaterialSkin.dll
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.UserControls.GerenciarContato.resources
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.MensagensTabControl.resources
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Properties.Resources.resources

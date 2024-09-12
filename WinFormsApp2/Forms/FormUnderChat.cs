@@ -141,8 +141,10 @@ namespace WinFormsApp2
         
         private void btnMensagens_Click(object sender, EventArgs e)
         {
-            GerenciarMensagens gerenciarMensagens = new GerenciarMensagens();
-            gerenciarMensagens.Show();
+            MensagensTabControl mensagensTabControl = new MensagensTabControl();
+            mensagensTabControl.Show();
+            // gerenciarMensagens = new GerenciarMensagens();
+            // gerenciarMensagens.Show();
         }
     }
 

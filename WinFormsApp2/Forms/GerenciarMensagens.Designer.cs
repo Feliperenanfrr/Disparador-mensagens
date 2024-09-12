@@ -29,23 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarMensagens));
-            menuStrip1 = new MenuStrip();
             btnCriarMensagem = new ToolStripMenuItem();
             btnListarMensagens = new ToolStripMenuItem();
             btnAgendarMensagem = new ToolStripMenuItem();
+            menuStrip1 = new MenuStrip();
             menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.BackColor = SystemColors.ControlDark;
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { btnCriarMensagem, btnListarMensagens, btnAgendarMensagem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1266, 28);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
             // 
             // btnCriarMensagem
             // 
@@ -68,6 +57,17 @@
             btnAgendarMensagem.Text = "Agendar mensagem";
             btnAgendarMensagem.Click += btnAgendarMensagem_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = SystemColors.ControlDark;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { btnCriarMensagem, btnListarMensagens, btnAgendarMensagem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1266, 28);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
             // GerenciarMensagens
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -87,9 +87,9 @@
 
         #endregion
 
-        private MenuStrip menuStrip1;
         private ToolStripMenuItem btnCriarMensagem;
         private ToolStripMenuItem btnListarMensagens;
         private ToolStripMenuItem btnAgendarMensagem;
+        private MenuStrip menuStrip1;
     }
 }
