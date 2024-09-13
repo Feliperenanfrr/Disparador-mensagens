@@ -33,18 +33,18 @@ namespace Gweb.WhatsApp.Forms
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MensagensTabControl));
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            tabCriarMensagem = new TabPage();
             tabListarMensagens = new TabPage();
-            imageList1 = new ImageList(components);
             tabAgendarMensagem = new TabPage();
+            tabCriarMensagem = new TabPage();
+            imageList1 = new ImageList(components);
             materialTabControl1.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl1
             // 
-            materialTabControl1.Controls.Add(tabCriarMensagem);
             materialTabControl1.Controls.Add(tabListarMensagens);
             materialTabControl1.Controls.Add(tabAgendarMensagem);
+            materialTabControl1.Controls.Add(tabCriarMensagem);
             materialTabControl1.Depth = 0;
             materialTabControl1.Dock = DockStyle.Fill;
             materialTabControl1.ImageList = imageList1;
@@ -53,8 +53,29 @@ namespace Gweb.WhatsApp.Forms
             materialTabControl1.Multiline = true;
             materialTabControl1.Name = "materialTabControl1";
             materialTabControl1.SelectedIndex = 0;
-            materialTabControl1.Size = new Size(1278, 674);
+            materialTabControl1.Size = new Size(1260, 627);
             materialTabControl1.TabIndex = 0;
+            // 
+            // tabListarMensagens
+            // 
+            tabListarMensagens.BackColor = Color.White;
+            tabListarMensagens.ImageKey = "list.png";
+            tabListarMensagens.Location = new Point(4, 39);
+            tabListarMensagens.Name = "tabListarMensagens";
+            tabListarMensagens.Padding = new Padding(3);
+            tabListarMensagens.Size = new Size(1252, 584);
+            tabListarMensagens.TabIndex = 1;
+            tabListarMensagens.Text = "Listar mensagens ";
+            // 
+            // tabAgendarMensagem
+            // 
+            tabAgendarMensagem.ImageKey = "clock.png";
+            tabAgendarMensagem.Location = new Point(4, 39);
+            tabAgendarMensagem.Name = "tabAgendarMensagem";
+            tabAgendarMensagem.Size = new Size(1270, 631);
+            tabAgendarMensagem.TabIndex = 2;
+            tabAgendarMensagem.Text = "Agendar envio";
+            tabAgendarMensagem.UseVisualStyleBackColor = true;
             // 
             // tabCriarMensagem
             // 
@@ -67,17 +88,6 @@ namespace Gweb.WhatsApp.Forms
             tabCriarMensagem.TabIndex = 0;
             tabCriarMensagem.Text = "Criar mensagem";
             // 
-            // tabListarMensagens
-            // 
-            tabListarMensagens.BackColor = Color.White;
-            tabListarMensagens.ImageKey = "list.png";
-            tabListarMensagens.Location = new Point(4, 39);
-            tabListarMensagens.Name = "tabListarMensagens";
-            tabListarMensagens.Padding = new Padding(3);
-            tabListarMensagens.Size = new Size(1270, 631);
-            tabListarMensagens.TabIndex = 1;
-            tabListarMensagens.Text = "Listar mensagens ";
-            // 
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth8Bit;
@@ -87,27 +97,19 @@ namespace Gweb.WhatsApp.Forms
             imageList1.Images.SetKeyName(1, "list.png");
             imageList1.Images.SetKeyName(2, "clock.png");
             // 
-            // tabAgendarMensagem
-            // 
-            tabAgendarMensagem.ImageKey = "clock.png";
-            tabAgendarMensagem.Location = new Point(4, 39);
-            tabAgendarMensagem.Name = "tabAgendarMensagem";
-            tabAgendarMensagem.Size = new Size(1270, 631);
-            tabAgendarMensagem.TabIndex = 2;
-            tabAgendarMensagem.Text = "Agendar envio";
-            tabAgendarMensagem.UseVisualStyleBackColor = true;
-            // 
             // MensagensTabControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1284, 741);
+            ClientSize = new Size(1266, 694);
             Controls.Add(materialTabControl1);
+            DrawerShowIconsWhenHidden = true;
+            DrawerTabControl = materialTabControl1;
             Name = "MensagensTabControl";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciador de mensagens";
             materialTabControl1.ResumeLayout(false);
             ResumeLayout(false);
-            materialTabControl1.Visible = true;
         }
 
         #endregion

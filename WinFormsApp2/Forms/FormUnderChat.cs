@@ -143,8 +143,8 @@ namespace WinFormsApp2
         {
             MensagensTabControl mensagensTabControl = new MensagensTabControl();
             mensagensTabControl.Show();
-            // gerenciarMensagens = new GerenciarMensagens();
-            // gerenciarMensagens.Show();
+            //GerenciarMensagens gerenciarMensagens = new GerenciarMensagens();
+            //gerenciarMensagens.Show();
         }
     }
 
