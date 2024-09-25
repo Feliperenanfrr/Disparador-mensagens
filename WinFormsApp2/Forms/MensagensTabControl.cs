@@ -106,7 +106,7 @@ namespace Gweb.WhatsApp.Forms
             operacoesBD.EncerrarBancoDados(bdConn);
         }
 
-        private void listContatos_Paint(object sender, PaintEventArgs e)
+        private async void listContatos_Paint(object sender, PaintEventArgs e)
         {
             FormUnderChat formUnderChat = new FormUnderChat();
             string server = formUnderChat.txtServer.Text;
@@ -116,26 +116,41 @@ namespace Gweb.WhatsApp.Forms
 
             try
             {
-                bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
+                bdConn = await Task.Run(() => operacoesBD.AbrirConexao(server, user, senha, banco));
                 string query = "SELECT * FROM contatos_underchat";
                 MySqlCommand cmd = new MySqlCommand(query, bdConn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    string nome = reader["nome"].ToString();
-                    int id = Convert.ToInt32(reader["id"]);
-                    //ListItem contato = new ListItem(nome, id);
-                    string contato = $"{id}: {nome}";
-                    listContatos.Items.Add(contato);
 
-                }
-                //string contato = $"{id.ToString()}: {nome}";
+                var contatos = await Task.Run(() =>
+                {
+                    var listaContatos = new List<string>();
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string nome = reader["nome"].ToString();
+                            int id = Convert.ToInt32(reader["id"]);
+                            string contato = $"{id}: {nome}";
+                            listaContatos.Add(contato);
+                        }
+                    }
+                    return listaContatos;
+                });
+
+                // Atualizando a interface na thread principal
+                listContatos.BeginInvoke((Action)(() =>
+                {
+                    foreach (var contato in contatos)
+                    {
+                        listContatos.Items.Add(contato);
+                    }
+                }));
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao carregar contatos: {ex.Message}");
             }
         }
+
 
         private void btnAgendarMensagem_Click(object sender, EventArgs e)
         {
