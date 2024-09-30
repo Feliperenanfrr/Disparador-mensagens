@@ -1,10 +1,8 @@
 ﻿using Gweb.WhatsApp.Util;
-using MaterialSkin;
 using MaterialSkin.Controls;
 using MySql.Data.MySqlClient;
 using System.Data;
 using WinFormsApp2;
-using static Gweb.WhatsApp.Forms.AgendarMensagens;
 
 namespace Gweb.WhatsApp.Forms
 {
@@ -14,126 +12,73 @@ namespace Gweb.WhatsApp.Forms
         private MySqlConnection bdConn;
         FormUnderChat formUnderChat = new FormUnderChat();
 
+        private int idMensagem;
+        private string server;
+        private string user;
+        private string senha;
+        private string banco;
+
         public MensagensTabControl()
         {
             InitializeComponent();
+            this.server = formUnderChat.txtServer.Text;
+            this.user = formUnderChat.txtUsuario.Text;
+            this.senha = formUnderChat.txtSenha.Text;
+            this.banco = formUnderChat.txtBanco.Text;
         }
-        
+
         private void btnPesquisarMensagem_Click(object sender, EventArgs e)
         {
-
             // Seleciona todas as mensagens cadastradas no BD e exibe elas em um Data Grid
-            FormUnderChat formUnderChat = new FormUnderChat();
-
-            string server = formUnderChat.txtServer.Text;
-            string user = formUnderChat.txtUsuario.Text;
-            string senha = formUnderChat.txtSenha.Text;
-            string banco = formUnderChat.txtBanco.Text;
-            bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
-
-            try
+            using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
             {
-                string query = "SELECT * FROM cadastro_mensagens";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                dataGridMensagens.DataSource = dataTable;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro: {ex.Message}");
+                try
+                {
+                    string query = "SELECT * FROM cadastro_mensagens";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridMensagens.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro: {ex.Message}");
+                }
             }
         }
 
         private void boxIdMensagem_DropDown(object sender, EventArgs e)
         {
             // Utiliza a classe MensagemItem para receber os dados da tabela cadastro_mensagens e exiibir no ComboBox
-            string server = formUnderChat.txtServer.Text;
-            string user = formUnderChat.txtUsuario.Text;
-            string senha = formUnderChat.txtSenha.Text;
-            string banco = formUnderChat.txtBanco.Text;
-            bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
-
-            try
+            using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
             {
-                string query = "SELECT * FROM cadastro_mensagens";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                boxIdMensagens.Items.Clear();
-
-                foreach (DataRow row in dataTable.Rows)
+                try
                 {
-                    MensagemItem item = new MensagemItem
+                    string query = "SELECT * FROM cadastro_mensagens";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    boxIdMensagens.Items.Clear();
+
+                    foreach (DataRow row in dataTable.Rows)
                     {
-                        Id = Convert.ToInt32(row["id"]),
-                        Mensagem = row["mensagem"].ToString()
-                    };
-                    boxIdMensagens.Items.Add(item);
+                        MensagemItem item = new MensagemItem
+                        {
+                            Id = Convert.ToInt32(row["id"]),
+                            Mensagem = row["mensagem"].ToString()
+                        };
+                        boxIdMensagens.Items.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro: {ex.Message}");
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro: {ex.Message}");
-            }
-            operacoesBD.EncerrarBancoDados(bdConn);
         }
-
-        private async void listContatos_Paint(object sender, PaintEventArgs e)
-        {
-            FormUnderChat formUnderChat = new FormUnderChat();
-            string server = formUnderChat.txtServer.Text;
-            string user = formUnderChat.txtUsuario.Text;
-            string senha = formUnderChat.txtSenha.Text;
-            string banco = formUnderChat.txtBanco.Text;
-
-            try
-            {
-                bdConn = await Task.Run(() => operacoesBD.AbrirConexao(server, user, senha, banco));
-                string query = "SELECT * FROM contatos_underchat";
-                MySqlCommand cmd = new MySqlCommand(query, bdConn);
-
-                var contatos = await Task.Run(() =>
-                {
-                    var listaContatos = new List<string>();
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string nome = reader["nome"].ToString();
-                            int id = Convert.ToInt32(reader["id"]);
-                            string contato = $"{id}: {nome}";
-                            listaContatos.Add(contato);
-                        }
-                    }
-                    return listaContatos;
-                });
-
-                // Atualizando a interface na thread principal
-                listContatos.BeginInvoke((Action)(() =>
-                {
-                    foreach (var contato in contatos)
-                    {
-                        listContatos.Items.Add(contato);
-                    }
-                }));
-
-                operacoesBD.EncerrarBancoDados(bdConn);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao carregar contatos: {ex.Message}");
-            }
-        }
-
 
         private void btnAgendarMensagem_Click(object sender, EventArgs e)
         {
-            string server = formUnderChat.txtServer.Text;
-            string user = formUnderChat.txtUsuario.Text;
-            string senha = formUnderChat.txtSenha.Text;
-            string banco = formUnderChat.txtBanco.Text;
-
             using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
             {
                 MensagemItem mensagemSelecionada = boxIdMensagens.SelectedItem as MensagemItem;
@@ -229,71 +174,59 @@ namespace Gweb.WhatsApp.Forms
             }
         }
 
-        private void tabAgendarMensagem_Paint(object sender, PaintEventArgs e)
+        private void boxIdMensagem_DropDown_1(object sender, EventArgs e)
         {
-            string server = formUnderChat.txtServer.Text;
-            string user = formUnderChat.txtUsuario.Text;
-            string senha = formUnderChat.txtSenha.Text;
-            string banco = formUnderChat.txtBanco.Text;
+            // Utiliza a classe MensagemItem para receber os dados da tabela cadastro_mensagens e exiibir no ComboBox
+            using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
+            {
+                try
+                {
+                    string query = "SELECT * FROM cadastro_mensagens";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    boxIdMensagens.Items.Clear();
 
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        MensagemItem item = new MensagemItem
+                        {
+                            Id = Convert.ToInt32(row["id"]),
+                            Mensagem = row["mensagem"].ToString()
+                        };
+                        boxIdMensagens.Items.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro: {ex.Message}");
+                }
+            }
+
+        }
+
+        private void MensagensTabControl_Load(object sender, EventArgs e)
+        {
             try
             {
                 using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
                 {
                     string query = "SELECT * FROM contatos_underchat";
-                    using (MySqlCommand cmd = new MySqlCommand(query, bdConn))
+                    MySqlCommand cmd = new MySqlCommand(query, bdConn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
                     {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                string nome = reader["nome"].ToString();
-                                int id = Convert.ToInt32(reader["id"]);
-                                listContatos.Items.Add(new ListItem(nome, id));
-                            }
-                        } // O `DataReader` será fechado aqui.
+                        string nome = reader["nome"].ToString();
+                        int id = Convert.ToInt32(reader["id"]);
+                        listContatos.Items.Add(new ListItem(nome, id));
                     }
-                } // A conexão será fechada aqui.
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao carregar contatos: {ex.Message}");
             }
         }
-
-        private void boxIdMensagem_DropDown_1(object sender, EventArgs e)
-        {
-            // Utiliza a classe MensagemItem para receber os dados da tabela cadastro_mensagens e exiibir no ComboBox
-            string server = formUnderChat.txtServer.Text;
-            string user = formUnderChat.txtUsuario.Text;
-            string senha = formUnderChat.txtSenha.Text;
-            string banco = formUnderChat.txtBanco.Text;
-            bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
-
-            try
-            {
-                string query = "SELECT * FROM cadastro_mensagens";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                boxIdMensagens.Items.Clear();
-
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    MensagemItem item = new MensagemItem
-                    {
-                        Id = Convert.ToInt32(row["id"]),
-                        Mensagem = row["mensagem"].ToString()
-                    };
-                    boxIdMensagens.Items.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro: {ex.Message}");
-            }
-            operacoesBD.EncerrarBancoDados(bdConn);
-            
-        }
+        
     }
 }

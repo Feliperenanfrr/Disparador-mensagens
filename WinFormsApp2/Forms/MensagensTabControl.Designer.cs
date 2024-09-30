@@ -133,7 +133,6 @@ namespace Gweb.WhatsApp.Forms
             tabAgendarMensagem.TabIndex = 2;
             tabAgendarMensagem.Text = "Agendar envio";
             tabAgendarMensagem.UseVisualStyleBackColor = true;
-            tabAgendarMensagem.Paint += tabAgendarMensagem_Paint;
             // 
             // listContatos
             // 
@@ -204,9 +203,9 @@ namespace Gweb.WhatsApp.Forms
             labelMensagem.AutoSize = true;
             labelMensagem.Location = new Point(83, 74);
             labelMensagem.Name = "labelMensagem";
-            labelMensagem.Size = new Size(143, 20);
+            labelMensagem.Size = new Size(151, 20);
             labelMensagem.TabIndex = 0;
-            labelMensagem.Text = "Escola a mensagem:";
+            labelMensagem.Text = "Escolha a mensagem:";
             // 
             // tabCriarMensagem
             // 
@@ -345,6 +344,7 @@ namespace Gweb.WhatsApp.Forms
             Name = "MensagensTabControl";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciador de mensagens";
+            Load += MensagensTabControl_Load;
             materialTabControl1.ResumeLayout(false);
             tabListarMensagens.ResumeLayout(false);
             tabListarMensagens.PerformLayout();

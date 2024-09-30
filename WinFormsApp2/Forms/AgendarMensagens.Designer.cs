@@ -53,7 +53,7 @@
             boxIdMensagens.Name = "boxIdMensagens";
             boxIdMensagens.Size = new Size(394, 28);
             boxIdMensagens.TabIndex = 1;
-            boxIdMensagens.DropDown += boxIdMensagens_DropDown;
+            //boxIdMensagens.DropDown += boxIdMensagens_DropDown;
             // 
             // dataEnvioMensagem
             // 
@@ -65,7 +65,7 @@
             dataEnvioMensagem.Size = new Size(169, 27);
             dataEnvioMensagem.TabIndex = 2;
             dataEnvioMensagem.Value = new DateTime(2024, 7, 25, 0, 0, 0, 0);
-            dataEnvioMensagem.ValueChanged += dataEnvioMensagem_ValueChanged;
+            //dataEnvioMensagem.ValueChanged += dataEnvioMensagem_ValueChanged;
             // 
             // label1
             // 
@@ -102,7 +102,7 @@
             btnAgendarMensagem.TabIndex = 6;
             btnAgendarMensagem.Text = "Agendar mensagem";
             btnAgendarMensagem.UseVisualStyleBackColor = true;
-            btnAgendarMensagem.Click += btnAgendarMensagem_Click;
+            //btnAgendarMensagem.Click += btnAgendarMensagem_Click;
             // 
             // AgendarMensagens
             // 
@@ -120,7 +120,7 @@
             Name = "AgendarMensagens";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agendar mensagem";
-            Load += SelecionarContatos_Load;
+            //Load += SelecionarContatos_Load;
             ResumeLayout(false);
             PerformLayout();
         }

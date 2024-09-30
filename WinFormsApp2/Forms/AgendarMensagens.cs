@@ -7,6 +7,7 @@ namespace Gweb.WhatsApp.Forms
 {
     public partial class AgendarMensagens : Form
     {
+        /*
         //Fazer: Adicionar checkbox para decidir se os clientes selecionados irão receber a mensagem recorrentemente ou apenas uma vez
 
         MySqlConnection bdConn;
@@ -26,25 +27,23 @@ namespace Gweb.WhatsApp.Forms
             this.user = formUnderChat.txtUsuario.Text;
             this.senha = formUnderChat.txtSenha.Text;
             this.banco = formUnderChat.txtBanco.Text;
-
         }
-
-        //ListItem e MensagemItem são classes auxiliares utilizadas para manipular dados tornando mais fácil a utilização deles
-        
-
+        *
         private void SelecionarContatos_Load(object sender, EventArgs e)
         {
             try
             {
-                bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
-                string query = "SELECT * FROM contatos_underchat";
-                MySqlCommand cmd = new MySqlCommand(query, bdConn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
                 {
-                    string nome = reader["nome"].ToString();
-                    int id = Convert.ToInt32(reader["id"]);
-                    listContatos.Items.Add(new ListItem(nome, id));
+                    string query = "SELECT * FROM contatos_underchat";
+                    MySqlCommand cmd = new MySqlCommand(query, bdConn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string nome = reader["nome"].ToString();
+                        int id = Convert.ToInt32(reader["id"]);
+                        listContatos.Items.Add(new ListItem(nome, id));
+                    }
                 }
             }
             catch (Exception ex)
@@ -56,32 +55,33 @@ namespace Gweb.WhatsApp.Forms
         private void boxIdMensagens_DropDown(object sender, EventArgs e)
         {
             // Utiliza a classe MensagemItem para receber os dados da tabela cadastro_mensagens e exiibir no ComboBox
-            
-            bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
 
-            try
-            {
-                string query = "SELECT * FROM cadastro_mensagens";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                boxIdMensagens.Items.Clear();
-
-                foreach (DataRow row in dataTable.Rows)
+            using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
+            { 
+                try
                 {
-                    MensagemItem item = new MensagemItem
+                    string query = "SELECT * FROM cadastro_mensagens";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    boxIdMensagens.Items.Clear();
+
+                    foreach (DataRow row in dataTable.Rows)
                     {
-                        Id = Convert.ToInt32(row["id"]),
-                        Mensagem = row["mensagem"].ToString()
-                    };
-                    boxIdMensagens.Items.Add(item);
+                        MensagemItem item = new MensagemItem
+                        {
+                            Id = Convert.ToInt32(row["id"]),
+                            Mensagem = row["mensagem"].ToString()
+                        };
+                        boxIdMensagens.Items.Add(item);
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro: {ex.Message}");
+                }
+                operacoesBD.EncerrarBancoDados(bdConn);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro: {ex.Message}");
-            }
-            operacoesBD.EncerrarBancoDados(bdConn);
         }
 
         private void btnAgendarMensagem_Click(object sender, EventArgs e)
@@ -179,7 +179,6 @@ namespace Gweb.WhatsApp.Forms
                         }
                     }
                     MessageBox.Show("Mensagens agendadas com sucesso!");
-                    this.Close();
                 }
             }
         }
@@ -204,5 +203,6 @@ namespace Gweb.WhatsApp.Forms
                 picker.Value = horaLimite;
             }
         }
+        */
     }
 }
