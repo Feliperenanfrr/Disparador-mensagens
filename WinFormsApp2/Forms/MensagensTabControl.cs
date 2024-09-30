@@ -18,32 +18,7 @@ namespace Gweb.WhatsApp.Forms
         {
             InitializeComponent();
         }
-        public class ListItem
-        {
-            public string Nome { get; }
-            public int Id { get; }
-
-            public ListItem(string nome, int id)
-            {
-                Nome = nome;
-                Id = id;
-            }
-            public override string ToString()
-            {
-                return $"{Id}: {Nome}";
-            }
-        }
-
-        public class MensagemItem
-        {
-            public int Id { get; set; }
-            public string Mensagem { get; set; }
-            public override string ToString()
-            {
-                return $"{Id}: {Mensagem}";
-            }
-        }
-
+        
         private void btnPesquisarMensagem_Click(object sender, EventArgs e)
         {
 
@@ -256,7 +231,6 @@ namespace Gweb.WhatsApp.Forms
 
         private void tabAgendarMensagem_Paint(object sender, PaintEventArgs e)
         {
-            FormUnderChat formUnderChat = new FormUnderChat();
             string server = formUnderChat.txtServer.Text;
             string user = formUnderChat.txtUsuario.Text;
             string senha = formUnderChat.txtSenha.Text;
@@ -264,16 +238,22 @@ namespace Gweb.WhatsApp.Forms
 
             try
             {
-                bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
-                string query = "SELECT * FROM contatos_underchat";
-                MySqlCommand cmd = new MySqlCommand(query, bdConn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
                 {
-                    string nome = reader["nome"].ToString();
-                    int id = Convert.ToInt32(reader["id"]);
-                    listContatos.Items.Add(new ListItem(nome, id));
-                }
+                    string query = "SELECT * FROM contatos_underchat";
+                    using (MySqlCommand cmd = new MySqlCommand(query, bdConn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string nome = reader["nome"].ToString();
+                                int id = Convert.ToInt32(reader["id"]);
+                                listContatos.Items.Add(new ListItem(nome, id));
+                            }
+                        } // O `DataReader` será fechado aqui.
+                    }
+                } // A conexão será fechada aqui.
             }
             catch (Exception ex)
             {

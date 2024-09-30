@@ -11,52 +11,29 @@ namespace Gweb.WhatsApp.Forms
 
         MySqlConnection bdConn;
         operacoesBD operacoesBD = new operacoesBD();
-        FormUnderChat formUnderChat = new FormUnderChat();
+        private FormUnderChat formUnderChat;
 
         private int idMensagem;
+        private string server;
+        private string user;
+        private string senha;
+        private string banco;
 
         public AgendarMensagens()
         {
             InitializeComponent();
+            this.server = formUnderChat.txtServer.Text;
+            this.user = formUnderChat.txtUsuario.Text;
+            this.senha = formUnderChat.txtSenha.Text;
+            this.banco = formUnderChat.txtBanco.Text;
+
         }
 
         //ListItem e MensagemItem são classes auxiliares utilizadas para manipular dados tornando mais fácil a utilização deles
-        public class ListItem
-        {
-            public string Nome { get; }
-            public int Id { get; }
-
-            public ListItem(string nome, int id)
-            {
-                Nome = nome;
-                Id = id;
-            }
-
-            public override string ToString()
-            {
-                return $"{Id}: {Nome}";
-            }
-        }
-
-        public class MensagemItem
-        {
-            public int Id { get; set; }
-            public string Mensagem { get; set; }
-
-            public override string ToString()
-            {
-                return $"{Id}: {Mensagem}";
-            }
-        }
+        
 
         private void SelecionarContatos_Load(object sender, EventArgs e)
         {
-            FormUnderChat formUnderChat = new FormUnderChat();
-            string server = formUnderChat.txtServer.Text;
-            string user = formUnderChat.txtUsuario.Text;
-            string senha = formUnderChat.txtSenha.Text;
-            string banco = formUnderChat.txtBanco.Text;
-
             try
             {
                 bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
@@ -79,10 +56,7 @@ namespace Gweb.WhatsApp.Forms
         private void boxIdMensagens_DropDown(object sender, EventArgs e)
         {
             // Utiliza a classe MensagemItem para receber os dados da tabela cadastro_mensagens e exiibir no ComboBox
-            string server = formUnderChat.txtServer.Text;
-            string user = formUnderChat.txtUsuario.Text;
-            string senha = formUnderChat.txtSenha.Text;
-            string banco = formUnderChat.txtBanco.Text;
+            
             bdConn = operacoesBD.AbrirConexao(server, user, senha, banco);
 
             try
@@ -112,10 +86,7 @@ namespace Gweb.WhatsApp.Forms
 
         private void btnAgendarMensagem_Click(object sender, EventArgs e)
         {
-            string server = formUnderChat.txtServer.Text;
-            string user = formUnderChat.txtUsuario.Text;
-            string senha = formUnderChat.txtSenha.Text;
-            string banco = formUnderChat.txtBanco.Text;
+           
 
             using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
             {
