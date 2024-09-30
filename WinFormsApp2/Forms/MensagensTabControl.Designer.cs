@@ -37,11 +37,11 @@ namespace Gweb.WhatsApp.Forms
             btnPesquisarMensagem = new MaterialSkin.Controls.MaterialButton();
             dataGridMensagens = new DataGridView();
             tabAgendarMensagem = new TabPage();
+            listContatos = new CheckedListBox();
             btnAgendarMensagem = new MaterialSkin.Controls.MaterialButton();
-            listContatos = new MaterialSkin.Controls.MaterialCheckedListBox();
             labelData = new Label();
             dataEnvioMensagem = new DateTimePicker();
-            boxIdMensagem = new ComboBox();
+            boxIdMensagens = new ComboBox();
             labelMensagem = new Label();
             tabCriarMensagem = new TabPage();
             btnCriarMensagem = new MaterialSkin.Controls.MaterialButton();
@@ -120,11 +120,11 @@ namespace Gweb.WhatsApp.Forms
             // 
             // tabAgendarMensagem
             // 
-            tabAgendarMensagem.Controls.Add(btnAgendarMensagem);
             tabAgendarMensagem.Controls.Add(listContatos);
+            tabAgendarMensagem.Controls.Add(btnAgendarMensagem);
             tabAgendarMensagem.Controls.Add(labelData);
             tabAgendarMensagem.Controls.Add(dataEnvioMensagem);
-            tabAgendarMensagem.Controls.Add(boxIdMensagem);
+            tabAgendarMensagem.Controls.Add(boxIdMensagens);
             tabAgendarMensagem.Controls.Add(labelMensagem);
             tabAgendarMensagem.ImageKey = "clock.png";
             tabAgendarMensagem.Location = new Point(4, 39);
@@ -133,6 +133,20 @@ namespace Gweb.WhatsApp.Forms
             tabAgendarMensagem.TabIndex = 2;
             tabAgendarMensagem.Text = "Agendar envio";
             tabAgendarMensagem.UseVisualStyleBackColor = true;
+            tabAgendarMensagem.Paint += tabAgendarMensagem_Paint;
+            // 
+            // listContatos
+            // 
+            listContatos.BackColor = Color.WhiteSmoke;
+            listContatos.BorderStyle = BorderStyle.None;
+            listContatos.CheckOnClick = true;
+            listContatos.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            listContatos.ForeColor = Color.Black;
+            listContatos.FormattingEnabled = true;
+            listContatos.Location = new Point(667, 180);
+            listContatos.Name = "listContatos";
+            listContatos.Size = new Size(250, 275);
+            listContatos.TabIndex = 9;
             // 
             // btnAgendarMensagem
             // 
@@ -155,20 +169,6 @@ namespace Gweb.WhatsApp.Forms
             btnAgendarMensagem.UseVisualStyleBackColor = true;
             btnAgendarMensagem.Click += btnAgendarMensagem_Click;
             // 
-            // listContatos
-            // 
-            listContatos.AutoScroll = true;
-            listContatos.BackColor = Color.Transparent;
-            listContatos.Depth = 0;
-            listContatos.Location = new Point(667, 193);
-            listContatos.MouseState = MaterialSkin.MouseState.HOVER;
-            listContatos.Name = "listContatos";
-            listContatos.Size = new Size(250, 272);
-            listContatos.Striped = false;
-            listContatos.StripeDarkColor = Color.Empty;
-            listContatos.TabIndex = 7;
-            listContatos.Paint += listContatos_Paint;
-            // 
             // labelData
             // 
             labelData.AutoSize = true;
@@ -188,15 +188,16 @@ namespace Gweb.WhatsApp.Forms
             dataEnvioMensagem.Size = new Size(169, 27);
             dataEnvioMensagem.TabIndex = 5;
             dataEnvioMensagem.Value = new DateTime(2024, 7, 25, 0, 0, 0, 0);
+            dataEnvioMensagem.DropDown += boxIdMensagem_DropDown_1;
             // 
-            // boxIdMensagem
+            // boxIdMensagens
             // 
-            boxIdMensagem.FormattingEnabled = true;
-            boxIdMensagem.Location = new Point(87, 106);
-            boxIdMensagem.Name = "boxIdMensagem";
-            boxIdMensagem.Size = new Size(328, 28);
-            boxIdMensagem.TabIndex = 1;
-            boxIdMensagem.DropDown += boxIdMensagem_DropDown;
+            boxIdMensagens.FormattingEnabled = true;
+            boxIdMensagens.Location = new Point(87, 106);
+            boxIdMensagens.Name = "boxIdMensagens";
+            boxIdMensagens.Size = new Size(328, 28);
+            boxIdMensagens.TabIndex = 1;
+            boxIdMensagens.DropDown += boxIdMensagem_DropDown_1;
             // 
             // labelMensagem
             // 
@@ -279,7 +280,6 @@ namespace Gweb.WhatsApp.Forms
             labelLink.Size = new Size(118, 20);
             labelLink.TabIndex = 3;
             labelLink.Text = "Link da imagem:";
-            labelLink.Click += label1_Click;
             // 
             // labelCriarMensagem
             // 
@@ -289,7 +289,6 @@ namespace Gweb.WhatsApp.Forms
             labelCriarMensagem.Size = new Size(142, 20);
             labelCriarMensagem.TabIndex = 2;
             labelCriarMensagem.Text = "Digite a mensagem:";
-            labelCriarMensagem.Click += labelCriarMensagem_Click;
             // 
             // linkImagem
             // 
@@ -307,7 +306,6 @@ namespace Gweb.WhatsApp.Forms
             linkImagem.TabIndex = 1;
             linkImagem.Text = "";
             linkImagem.TrailingIcon = null;
-            linkImagem.TextChanged += materialTextBox1_TextChanged;
             // 
             // textoMensagem
             // 
@@ -368,10 +366,9 @@ namespace Gweb.WhatsApp.Forms
         private DataGridView dataGridMensagens;
         private MaterialSkin.Controls.MaterialButton btnPesquisarMensagem;
         private Label labelMensagem;
-        private ComboBox boxIdMensagem;
+        private ComboBox boxIdMensagens;
         private Label labelData;
         private DateTimePicker dataEnvioMensagem;
-        private MaterialSkin.Controls.MaterialCheckedListBox listContatos;
         private MaterialSkin.Controls.MaterialButton btnAgendarMensagem;
         private MaterialSkin.Controls.MaterialTextBox textoMensagem;
         private MaterialSkin.Controls.MaterialTextBox linkImagem;
@@ -380,5 +377,6 @@ namespace Gweb.WhatsApp.Forms
         private Label labelLink;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private MaterialSkin.Controls.MaterialButton btnCriarMensagem;
+        private CheckedListBox listContatos;
     }
 }
