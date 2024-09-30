@@ -188,6 +188,7 @@ namespace Gweb.WhatsApp.Forms
             dataEnvioMensagem.TabIndex = 5;
             dataEnvioMensagem.Value = new DateTime(2024, 7, 25, 0, 0, 0, 0);
             dataEnvioMensagem.DropDown += boxIdMensagem_DropDown_1;
+
             // 
             // boxIdMensagens
             // 
@@ -197,6 +198,11 @@ namespace Gweb.WhatsApp.Forms
             boxIdMensagens.Size = new Size(328, 28);
             boxIdMensagens.TabIndex = 1;
             boxIdMensagens.DropDown += boxIdMensagem_DropDown_1;
+            boxIdMensagens.FlatStyle = FlatStyle.Flat;
+            boxIdMensagens.BackColor = Color.White; // Fundo branco simples para combinar com Material Design
+            boxIdMensagens.ForeColor = Color.Black; // Cor do texto para contraste
+            boxIdMensagens.Font = new Font("Roboto", 12); // Use uma fonte como Roboto para manter o padrão Material
+
             // 
             // labelMensagem
             // 

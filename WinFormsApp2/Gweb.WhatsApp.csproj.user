@@ -4,29 +4,17 @@
     <_LastSelectedProfileId>D:\OneDrivers\Gueppardo.Net\OneDriveOLD\Fontes Gpd.Net\GWeb.WhatsApp\WinFormsApp2\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Forms\CriarMensagem.cs">
+    <Compile Update="Forms\ContatosTabControl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\GerenciarContato.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\GerenciarMensagens.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\ListarContatos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\ListarMensagem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\AgendarMensagens.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\MensagensTabControl.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="UserControls\GerenciarContatoPage.cs">
-      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 </Project>
