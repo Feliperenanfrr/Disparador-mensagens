@@ -45,7 +45,7 @@ namespace Gweb.WhatsApp.Forms
             labelMensagem = new Label();
             tabCriarMensagem = new TabPage();
             btnCriarMensagem = new MaterialSkin.Controls.MaterialButton();
-            materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            tipoMensagem = new MaterialSkin.Controls.MaterialTextBox();
             labelTipoMensagem = new Label();
             labelLink = new Label();
             labelCriarMensagem = new Label();
@@ -188,21 +188,19 @@ namespace Gweb.WhatsApp.Forms
             dataEnvioMensagem.TabIndex = 5;
             dataEnvioMensagem.Value = new DateTime(2024, 7, 25, 0, 0, 0, 0);
             dataEnvioMensagem.DropDown += boxIdMensagem_DropDown_1;
-
             // 
             // boxIdMensagens
             // 
+            boxIdMensagens.BackColor = Color.White;
+            boxIdMensagens.FlatStyle = FlatStyle.Flat;
+            boxIdMensagens.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            boxIdMensagens.ForeColor = Color.Black;
             boxIdMensagens.FormattingEnabled = true;
             boxIdMensagens.Location = new Point(87, 106);
             boxIdMensagens.Name = "boxIdMensagens";
-            boxIdMensagens.Size = new Size(328, 28);
+            boxIdMensagens.Size = new Size(328, 32);
             boxIdMensagens.TabIndex = 1;
             boxIdMensagens.DropDown += boxIdMensagem_DropDown_1;
-            boxIdMensagens.FlatStyle = FlatStyle.Flat;
-            boxIdMensagens.BackColor = Color.White; // Fundo branco simples para combinar com Material Design
-            boxIdMensagens.ForeColor = Color.Black; // Cor do texto para contraste
-            boxIdMensagens.Font = new Font("Roboto", 12); // Use uma fonte como Roboto para manter o padrão Material
-
             // 
             // labelMensagem
             // 
@@ -217,7 +215,7 @@ namespace Gweb.WhatsApp.Forms
             // 
             tabCriarMensagem.BackColor = Color.White;
             tabCriarMensagem.Controls.Add(btnCriarMensagem);
-            tabCriarMensagem.Controls.Add(materialTextBox1);
+            tabCriarMensagem.Controls.Add(tipoMensagem);
             tabCriarMensagem.Controls.Add(labelTipoMensagem);
             tabCriarMensagem.Controls.Add(labelLink);
             tabCriarMensagem.Controls.Add(labelCriarMensagem);
@@ -250,23 +248,24 @@ namespace Gweb.WhatsApp.Forms
             btnCriarMensagem.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btnCriarMensagem.UseAccentColor = false;
             btnCriarMensagem.UseVisualStyleBackColor = true;
+            btnCriarMensagem.Click += btnCriarMensagem_Click;
             // 
-            // materialTextBox1
+            // tipoMensagem
             // 
-            materialTextBox1.AnimateReadOnly = false;
-            materialTextBox1.BorderStyle = BorderStyle.None;
-            materialTextBox1.Depth = 0;
-            materialTextBox1.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox1.LeadingIcon = null;
-            materialTextBox1.Location = new Point(613, 207);
-            materialTextBox1.MaxLength = 50;
-            materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox1.Multiline = false;
-            materialTextBox1.Name = "materialTextBox1";
-            materialTextBox1.Size = new Size(215, 50);
-            materialTextBox1.TabIndex = 5;
-            materialTextBox1.Text = "";
-            materialTextBox1.TrailingIcon = null;
+            tipoMensagem.AnimateReadOnly = false;
+            tipoMensagem.BorderStyle = BorderStyle.None;
+            tipoMensagem.Depth = 0;
+            tipoMensagem.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            tipoMensagem.LeadingIcon = null;
+            tipoMensagem.Location = new Point(613, 207);
+            tipoMensagem.MaxLength = 50;
+            tipoMensagem.MouseState = MaterialSkin.MouseState.OUT;
+            tipoMensagem.Multiline = false;
+            tipoMensagem.Name = "tipoMensagem";
+            tipoMensagem.Size = new Size(215, 50);
+            tipoMensagem.TabIndex = 5;
+            tipoMensagem.Text = "";
+            tipoMensagem.TrailingIcon = null;
             // 
             // labelTipoMensagem
             // 
@@ -381,7 +380,7 @@ namespace Gweb.WhatsApp.Forms
         private Label labelCriarMensagem;
         private Label labelTipoMensagem;
         private Label labelLink;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox tipoMensagem;
         private MaterialSkin.Controls.MaterialButton btnCriarMensagem;
         private CheckedListBox listContatos;
     }
