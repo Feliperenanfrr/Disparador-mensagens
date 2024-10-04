@@ -135,8 +135,8 @@ namespace WinFormsApp2
 
         private void btnContatos_Click(object sender, EventArgs e)
         {
-            GerenciarContato gerenciarContato = new GerenciarContato();
-            gerenciarContato.Show();
+            ContatosTabControl contatosTabControl = new ContatosTabControl();
+            contatosTabControl.Show();
         }
         
         private void btnMensagens_Click(object sender, EventArgs e)

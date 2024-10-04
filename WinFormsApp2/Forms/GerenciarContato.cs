@@ -45,6 +45,8 @@ namespace Gweb.WhatsApp.Forms
                 List<Contato> contatosLista = listaDeContatos.data;
                 textContatos.Text = listaDeContatos.ToString();
 
+                int contatosCadastrados = 0;
+
                 foreach (Contato contato in contatosLista)
                 {
                     // Cadastra apenas os contatos com os prefixos e que não estejam cadastrados no BD
@@ -71,11 +73,14 @@ namespace Gweb.WhatsApp.Forms
 
                                     insertCmd.ExecuteNonQuery();
                                 }
+                                contatosCadastrados++;
                             }
 
                         }
                     }
                 }
+
+                MaterialMessageBox.Show($"Total de contatos cadastrados: {contatosCadastrados}", "Contatos Cadastrados");
             }
             catch (Exception ex)
             {

@@ -30,8 +30,10 @@
         {
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             tabPage1 = new TabPage();
+            btnCadastrarContato = new MaterialSkin.Controls.MaterialButton();
             tabPage2 = new TabPage();
             materialTabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl1
@@ -50,6 +52,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btnCadastrarContato);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -58,12 +61,32 @@
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnCadastrarContato
+            // 
+            btnCadastrarContato.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnCadastrarContato.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnCadastrarContato.Depth = 0;
+            btnCadastrarContato.HighEmphasis = true;
+            btnCadastrarContato.Icon = null;
+            btnCadastrarContato.Location = new Point(458, 171);
+            btnCadastrarContato.Margin = new Padding(4, 6, 4, 6);
+            btnCadastrarContato.MouseState = MaterialSkin.MouseState.HOVER;
+            btnCadastrarContato.Name = "btnCadastrarContato";
+            btnCadastrarContato.NoAccentTextColor = Color.Empty;
+            btnCadastrarContato.Size = new Size(158, 36);
+            btnCadastrarContato.TabIndex = 0;
+            btnCadastrarContato.Text = "materialButton1";
+            btnCadastrarContato.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnCadastrarContato.UseAccentColor = false;
+            btnCadastrarContato.UseVisualStyleBackColor = true;
+            btnCadastrarContato.Click += btnCadastrarContato_Click;
+            // 
             // tabPage2
             // 
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(242, 92);
+            tabPage2.Size = new Size(1238, 484);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -75,8 +98,10 @@
             ClientSize = new Size(1252, 584);
             Controls.Add(materialTabControl1);
             Name = "ContatosTabControl";
-            Text = "ContatosTabControl";
+            Text = "Gerenciar Contatos";
             materialTabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -85,5 +110,6 @@
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
+        private MaterialSkin.Controls.MaterialButton btnCadastrarContato;
     }
 }

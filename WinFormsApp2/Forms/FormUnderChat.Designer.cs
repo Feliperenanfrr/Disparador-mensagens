@@ -215,6 +215,7 @@ namespace WinFormsApp2
             textMensagens.Location = new Point(740, 118);
             textMensagens.MaxLength = 50;
             textMensagens.MouseState = MaterialSkin.MouseState.OUT;
+            textMensagens.Multiline = false;
             textMensagens.Name = "textMensagens";
             textMensagens.Size = new Size(501, 50);
             textMensagens.TabIndex = 12;

@@ -1,44 +1,37 @@
-﻿using Gweb.WhatsApp.Util;
+﻿using Gweb.WhatsApp.Entidades;
 using MaterialSkin.Controls;
-using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using WinFormsApp2;
+using System.Linq;
+using System.Windows.Forms;
+using System.Collections.Generic;
+using Gweb.WhatsApp.Dados;
 
 namespace Gweb.WhatsApp.Forms
 {
     public partial class MensagensTabControl : MaterialForm
     {
-        operacoesBD operacoesBD = new operacoesBD();
-        private MySqlConnection bdConn;
-        FormUnderChat formUnderChat = new FormUnderChat();
-
-        private int idMensagem;
-        private string server;
-        private string user;
-        private string senha;
-        private string banco;
-
         public MensagensTabControl()
         {
             InitializeComponent();
-            this.server = formUnderChat.txtServer.Text;
-            this.user = formUnderChat.txtUsuario.Text;
-            this.senha = formUnderChat.txtSenha.Text;
-            this.banco = formUnderChat.txtBanco.Text;
         }
 
+        // Evento de pesquisa de mensagens
         private void btnPesquisarMensagem_Click(object sender, EventArgs e)
         {
-            // Seleciona todas as mensagens cadastradas no BD e exibe elas em um Data Grid
-            using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
+            using (var context = new MyDbContext())
             {
                 try
                 {
-                    string query = "SELECT * FROM cadastro_mensagens";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                    dataGridMensagens.DataSource = dataTable;
+                    // Busca todas as mensagens cadastradas
+                    var mensagens = context.Mensagens.ToList();
+                    dataGridMensagens.DataSource = mensagens.Select(m => new
+                    {
+                        m.Id,
+                        m.MensagemTexto,
+                        m.Tipo,
+                        m.Imagem
+                    }).ToList();
                 }
                 catch (Exception ex)
                 {
@@ -47,25 +40,22 @@ namespace Gweb.WhatsApp.Forms
             }
         }
 
+        // Evento de carregamento do combo box com as mensagens
         private void boxIdMensagem_DropDown(object sender, EventArgs e)
         {
-            // Utiliza a classe MensagemItem para receber os dados da tabela cadastro_mensagens e exiibir no ComboBox
-            using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
+            using (var context = new MyDbContext())
             {
                 try
                 {
-                    string query = "SELECT * FROM cadastro_mensagens";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
+                    var mensagens = context.Mensagens.ToList();
                     boxIdMensagens.Items.Clear();
 
-                    foreach (DataRow row in dataTable.Rows)
+                    foreach (var mensagem in mensagens)
                     {
                         MensagemItem item = new MensagemItem
                         {
-                            Id = Convert.ToInt32(row["id"]),
-                            Mensagem = row["mensagem"].ToString()
+                            Id = mensagem.Id,
+                            Mensagem = mensagem.MensagemTexto
                         };
                         boxIdMensagens.Items.Add(item);
                     }
@@ -77,11 +67,12 @@ namespace Gweb.WhatsApp.Forms
             }
         }
 
+        // Evento de agendamento de mensagens
         private void btnAgendarMensagem_Click(object sender, EventArgs e)
         {
-            using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
+            using (var context = new MyDbContext())
             {
-                MensagemItem mensagemSelecionada = boxIdMensagens.SelectedItem as MensagemItem;
+                Mensagem mensagemSelecionada = boxIdMensagens.SelectedItem as Mensagem;
                 if (mensagemSelecionada == null)
                 {
                     MessageBox.Show("Por favor, selecione uma mensagem.");
@@ -90,135 +81,50 @@ namespace Gweb.WhatsApp.Forms
 
                 int idMensagem = mensagemSelecionada.Id;
                 DateTime dataSelecionada = dataEnvioMensagem.Value;
-                int linhasAfetadas = 0;
+
                 List<int> idsContatos = new List<int>();
 
-                // Cria instâncias da classe ListItem para cada contato selecionado na checklist
-                // Insere um registro com a mensagem selecionada para cada contato
+                // Inserção de mensagens agendadas para os contatos selecionados
                 foreach (var item in listContatos.CheckedItems)
                 {
-                    ListItem contato = item as ListItem;
+                    ContatoUnderchat contato = item as ContatoUnderchat;
                     if (contato == null) continue;
-                    int idContato = contato.Id;
-                    idsContatos.Add(idContato);
 
-                    string query = "INSERT INTO envio_mensagens (id_contato, id_mensagem, data_envio) VALUES (@idContato, @idMensagem, @dataEnvio)";
-                    using (MySqlCommand cmd = new MySqlCommand(query, bdConn))
+                    var envioMensagem = new EnvioMensagem
                     {
-                        cmd.Parameters.AddWithValue("@idMensagem", idMensagem);
-                        cmd.Parameters.AddWithValue("@idContato", idContato);
-                        cmd.Parameters.AddWithValue("@dataEnvio", dataSelecionada);
-                        linhasAfetadas += cmd.ExecuteNonQuery();
-                    }
+                        IdContato = contato.Id,
+                        IdMensagem = idMensagem,
+                        DataEnvio = dataSelecionada,
+                        NomeContato = contato.Nome,  // Simulação do nome do contato
+                        Telefone = contato.Telefone  // Simulação do telefone do contato
+                    };
+
+                    context.EnvioMensagens.Add(envioMensagem);
                 }
 
-                // Recebe a quantidade de linhas afetadas no banco para garantir que as alterações foram feitas
-                if (linhasAfetadas > 0)
-                {
-                    // Recebe os dados da mensagem através do ID inserido na tabela pela funçaõ acima
-                    string mensagemQuery = "SELECT mensagem, imagem FROM cadastro_mensagens WHERE id = @idMensagem";
-                    string? mensagem = null;
-                    string? imagem = null;
-
-                    using (MySqlCommand cmd = new MySqlCommand(mensagemQuery, bdConn))
-                    {
-                        cmd.Parameters.AddWithValue("idMensagem", idMensagem);
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                mensagem = reader["mensagem"].ToString();
-                                imagem = reader["imagem"].ToString();
-                            }
-                        }
-                        mensagem = cmd.ExecuteScalar().ToString();
-                    }
-
-                    // Varre a lista de números inteiros instânciada nessa função
-                    foreach (int idContato in idsContatos)
-                    {
-                        // Recebe o nome e telefone do contato através do ID
-                        string contatoQuery = "SELECT nome, telefone FROM contatos_underchat WHERE id = @idContato";
-                        string nomeContato = null;
-                        string telefone = null;
-                        using (MySqlCommand cmd = new MySqlCommand(contatoQuery, bdConn))
-                        {
-                            cmd.Parameters.AddWithValue("@idContato", idContato);
-                            using (MySqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                if (reader.Read())
-                                {
-                                    nomeContato = reader["nome"].ToString();
-                                    telefone = reader["telefone"].ToString();
-                                }
-                            }
-                        }
-
-                        // Atualiza os registros na tabela envio_mensagens com os dados obtidos nessa função
-                        // Após isso, fecha o formulário para evitar registros duplicados
-                        string updateQuery = "UPDATE envio_mensagens SET Mensagem = @mensagem, Imagem = @imagem, Nome_Contato = @nomeContato, Telefone = @telefone WHERE id_contato = @idContato AND id_mensagem = @idMensagem AND data_envio = @dataEnvio";
-                        using (MySqlCommand cmd = new MySqlCommand(updateQuery, bdConn))
-                        {
-                            cmd.Parameters.AddWithValue("@mensagem", mensagem);
-                            cmd.Parameters.AddWithValue("@imagem", imagem);
-                            cmd.Parameters.AddWithValue("@nomeContato", nomeContato);
-                            cmd.Parameters.AddWithValue("@telefone", telefone);
-                            cmd.Parameters.AddWithValue("@idContato", idContato);
-                            cmd.Parameters.AddWithValue("@idMensagem", idMensagem);
-                            cmd.Parameters.AddWithValue("@dataEnvio", dataSelecionada);
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                    MessageBox.Show("Mensagens agendadas com sucesso!");
-                }
-            }
-        }
-
-        private void boxIdMensagem_DropDown_1(object sender, EventArgs e)
-        {
-            // Utiliza a classe MensagemItem para receber os dados da tabela cadastro_mensagens e exiibir no ComboBox
-            using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
-            {
                 try
                 {
-                    string query = "SELECT * FROM cadastro_mensagens";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, bdConn);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                    boxIdMensagens.Items.Clear();
-
-                    foreach (DataRow row in dataTable.Rows)
-                    {
-                        MensagemItem item = new MensagemItem
-                        {
-                            Id = Convert.ToInt32(row["id"]),
-                            Mensagem = row["mensagem"].ToString()
-                        };
-                        boxIdMensagens.Items.Add(item);
-                    }
+                    context.SaveChanges();
+                    MessageBox.Show("Mensagens agendadas com sucesso!");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Erro: {ex.Message}");
                 }
             }
-
         }
 
+        // Evento de carregamento dos contatos
         private void MensagensTabControl_Load(object sender, EventArgs e)
         {
             try
             {
-                using (bdConn = operacoesBD.AbrirConexao(server, user, senha, banco))
+                using (var context = new MyDbContext())
                 {
-                    string query = "SELECT * FROM contatos_underchat";
-                    MySqlCommand cmd = new MySqlCommand(query, bdConn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    var contatos = context.Contatos.ToList();
+                    foreach (var contato in contatos)
                     {
-                        string nome = reader["nome"].ToString();
-                        int id = Convert.ToInt32(reader["id"]);
-                        listContatos.Items.Add(new ListItem(nome, id));
+                        listContatos.Items.Add(new ListItem(contato.Nome, contato.Id));
                     }
                 }
             }
@@ -228,56 +134,64 @@ namespace Gweb.WhatsApp.Forms
             }
         }
 
+        // Evento para criar uma nova mensagem
         private void btnCriarMensagem_Click(object sender, EventArgs e)
         {
-
-            string mensagem = textoMensagem.Text;
+            string mensagemTexto = textoMensagem.Text;
             string tipo = tipoMensagem.Text;
             string imagem = linkImagem.Text;
 
-            var builder = new MySqlConnectionStringBuilder
-            {
-                Server = "mysql.gueppardo.net",
-                Database = "gueppardo",
-                UserID = "gueppardo",
-                Password = "gpd1664",
-                CharacterSet = "utf8mb4"
-            };
-
             try
             {
-                //Cadastra a mensagem no BD, se alguma linha for afetada, limpa o formulário para evitar registros duplicados
-                bdConn = new MySqlConnection(builder.ConnectionString);
-                bdConn.Open();
-
-                string criarMensagem = "INSERT INTO cadastro_mensagens(Mensagem, Tipo, Imagem) VALUES (@Mensagem, @Tipo, @Imagem)";
-                using (MySqlCommand insertCmd = new MySqlCommand(criarMensagem, bdConn))
+                using (var context = new MyDbContext())
                 {
-                    insertCmd.Parameters.AddWithValue("@Mensagem", mensagem);
-                    insertCmd.Parameters.AddWithValue("@Tipo", tipo);
-                    insertCmd.Parameters.AddWithValue("@Imagem", imagem);
-
-                    int linhasAfetadas = insertCmd.ExecuteNonQuery();
-
-                    if (linhasAfetadas > 0)
+                    var novaMensagem = new Mensagem
                     {
-                        textoMensagem.Clear();
-                        linkImagem.Clear();
-                        tipoMensagem.Clear();
-                        MessageBox.Show("Mensagem gravada com sucesso!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("A mensagem não foi gravada!");
-                    }
+                        MensagemTexto = mensagemTexto,
+                        Tipo = tipo,
+                        Imagem = imagem
+                    };
 
+                    context.Mensagens.Add(novaMensagem);
+                    context.SaveChanges();
+
+                    textoMensagem.Clear();
+                    linkImagem.Clear();
+                    tipoMensagem.Clear();
+                    MessageBox.Show("Mensagem gravada com sucesso!");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
 
+        // Evento de carregamento do combo box
+        private void boxIdMensagem_DropDown_1(object sender, EventArgs e)
+        {
+            using (var context = new MyDbContext())
+            {
+                try
+                {
+                    var mensagens = context.Mensagens.ToList();
+                    boxIdMensagens.Items.Clear();
+
+                    foreach (var mensagem in mensagens)
+                    {
+                        MensagemItem item = new MensagemItem
+                        {
+                            Id = mensagem.Id,
+                            Mensagem = mensagem.MensagemTexto
+                        };
+                        boxIdMensagens.Items.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro: {ex.Message}");
+                }
+            }
         }
     }
 }

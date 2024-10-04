@@ -1,0 +1,52 @@
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Disparador de mensagens.exe
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Disparador de mensagens.deps.json
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Disparador de mensagens.runtimeconfig.json
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Disparador de mensagens.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Disparador de mensagens.pdb
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\PhoneNumbers.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\MaterialSkin.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\RestSharp.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\ZstdNet.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\BouncyCastle.Crypto.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Ubiety.Dns.Core.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\MySql.Data.xml
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.csproj.AssemblyReference.cache
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.Forms.ContatosTabControl.resources
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.FormUnderChat.resources
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.Forms.GerenciarContato.resources
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.Forms.ListarContatos.resources
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.Forms.MensagensTabControl.resources
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.Properties.Resources.resources
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.csproj.GenerateResource.cache
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.AssemblyInfoInputs.cache
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.AssemblyInfo.cs
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.csproj.CoreCompileInputs.cache
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.sourcelink.json
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.Wha.ED09C985.Up2Date
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Disparador de mensagens.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\refint\Disparador de mensagens.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Disparador de mensagens.pdb
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.genruntimeconfig.cache
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\ref\Disparador de mensagens.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Disparador de mensagens.dll.config
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\MySqlConnector.dll
+C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-windows\Pomelo.EntityFrameworkCore.MySql.dll

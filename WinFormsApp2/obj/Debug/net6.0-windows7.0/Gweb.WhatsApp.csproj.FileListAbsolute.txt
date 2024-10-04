@@ -320,7 +320,6 @@ C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-window
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\K4os.Hash.xxHash.dll
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net6.0-windows7.0\MySql.Data.xml
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.csproj.AssemblyReference.cache
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.CriarMensagem.resources
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\WinFormsApp2.FormUnderChat.resources
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.GerenciarContato.resources
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net6.0-windows7.0\Gweb.WhatsApp.Forms.ListarContatos.resources
