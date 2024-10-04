@@ -3,10 +3,11 @@
 [Table("contatos_underchat")]
 public class ContatoUnderchat
 {
-    public ContatoUnderchat(string nome, int id)
+    public ContatoUnderchat(string nome, int id, string telefone)
     {
         Nome = nome;
         Id = id;
+        Telefone = telefone;
     }
 
     public int Id { get; set; }
@@ -20,5 +21,9 @@ public class ContatoUnderchat
 
     public ICollection<EnvioMensagem> Envios { get; set; } // Relacionamento com envio de mensagens
 
+    public override string ToString()
+    {
+        return $"{Id}: {Nome}";
+    }
 
 }

@@ -111,7 +111,8 @@ namespace Gweb.WhatsApp.Forms
                     var contatos = context.Contatos.ToList();
                     foreach (var contato in contatos)
                     {
-                        listContatos.Items.Add(new ContatoUnderchat(contato.Nome, contato.Id));
+                        // Adiciona o contato na lista com o formato "ID - Nome"
+                        listContatos.Items.Add(new ContatoUnderchat(contato.Nome, contato.Id, contato.Telefone));
                     }
                 }
             }
@@ -120,6 +121,7 @@ namespace Gweb.WhatsApp.Forms
                 MessageBox.Show($"Erro ao carregar contatos: {ex.Message}");
             }
         }
+
 
         // Evento para criar uma nova mensagem
         private void btnCriarMensagem_Click(object sender, EventArgs e)
