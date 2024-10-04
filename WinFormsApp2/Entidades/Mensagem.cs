@@ -13,4 +13,9 @@ public class Mensagem
     public string Imagem { get; set; }
 
     public ICollection<EnvioMensagem> Envios { get; set; } // Relacionamento com envio de mensagens
+
+    public override string ToString()
+    {
+        return $"{Id}: {MensagemTexto}";
+    }
 }

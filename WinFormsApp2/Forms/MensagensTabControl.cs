@@ -1,11 +1,11 @@
-﻿using Gweb.WhatsApp.Entidades;
-using MaterialSkin.Controls;
+﻿using MaterialSkin.Controls;
 using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using Gweb.WhatsApp.Dados;
+using Gweb.WhatsApp.Util;
 
 namespace Gweb.WhatsApp.Forms
 {
@@ -40,76 +40,63 @@ namespace Gweb.WhatsApp.Forms
             }
         }
 
-        // Evento de carregamento do combo box com as mensagens
-        private void boxIdMensagem_DropDown(object sender, EventArgs e)
-        {
-            using (var context = new MyDbContext())
-            {
-                try
-                {
-                    var mensagens = context.Mensagens.ToList();
-                    boxIdMensagens.Items.Clear();
-
-                    foreach (var mensagem in mensagens)
-                    {
-                        MensagemItem item = new MensagemItem
-                        {
-                            Id = mensagem.Id,
-                            Mensagem = mensagem.MensagemTexto
-                        };
-                        boxIdMensagens.Items.Add(item);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Erro: {ex.Message}");
-                }
-            }
-        }
-
         // Evento de agendamento de mensagens
         private void btnAgendarMensagem_Click(object sender, EventArgs e)
         {
+            // Certifique-se de que uma mensagem foi selecionada
+            Mensagem mensagemSelecionada = boxIdMensagens.SelectedItem as Mensagem;
+            if (mensagemSelecionada == null)
+            {
+                MessageBox.Show("Por favor, selecione uma mensagem.");
+                return;
+            }
+
+            DateTime dataSelecionada = dataEnvioMensagem.Value;
+
+            // Lista de envios de mensagens a serem criadas
+            List<EnvioMensagem> envios = new List<EnvioMensagem>();
+
+            // Coleta todos os contatos selecionados no CheckedListBox
+            foreach (var item in listContatos.CheckedItems)
+            {
+                ContatoUnderchat contatoSelecionado = item as ContatoUnderchat;  // `Contato` do banco de dados, não da API
+                if (contatoSelecionado == null) continue;
+
+                // Cria um novo envio de mensagem para cada contato
+                var envioMensagem = new EnvioMensagem
+                {
+                    IdContato = contatoSelecionado.Id,
+                    IdMensagem = mensagemSelecionada.Id,
+                    DataEnvio = dataSelecionada,
+                    NomeContato = contatoSelecionado.Nome,
+                    Telefone = contatoSelecionado.Telefone,
+                    Mensagem = mensagemSelecionada.MensagemTexto,  // Atribui a mensagem correspondente
+                    Imagem = mensagemSelecionada.Imagem
+                };
+
+                envios.Add(envioMensagem);  // Adiciona o envio à lista
+            }
+
+            // Verifica se há pelo menos um contato selecionado
+            if (envios.Count == 0)
+            {
+                MessageBox.Show("Por favor, selecione ao menos um contato.");
+                return;
+            }
+
+            // Insere todos os envios de mensagens de uma só vez no banco de dados
             using (var context = new MyDbContext())
             {
-                Mensagem mensagemSelecionada = boxIdMensagens.SelectedItem as Mensagem;
-                if (mensagemSelecionada == null)
-                {
-                    MessageBox.Show("Por favor, selecione uma mensagem.");
-                    return;
-                }
-
-                int idMensagem = mensagemSelecionada.Id;
-                DateTime dataSelecionada = dataEnvioMensagem.Value;
-
-                List<int> idsContatos = new List<int>();
-
-                // Inserção de mensagens agendadas para os contatos selecionados
-                foreach (var item in listContatos.CheckedItems)
-                {
-                    ContatoUnderchat contato = item as ContatoUnderchat;
-                    if (contato == null) continue;
-
-                    var envioMensagem = new EnvioMensagem
-                    {
-                        IdContato = contato.Id,
-                        IdMensagem = idMensagem,
-                        DataEnvio = dataSelecionada,
-                        NomeContato = contato.Nome,  // Simulação do nome do contato
-                        Telefone = contato.Telefone  // Simulação do telefone do contato
-                    };
-
-                    context.EnvioMensagens.Add(envioMensagem);
-                }
-
                 try
                 {
-                    context.SaveChanges();
+                    context.EnvioMensagens.AddRange(envios);  // Adiciona todos os envios em lote
+                    context.SaveChanges();  // Salva todas as mudanças no banco de dados
+
                     MessageBox.Show("Mensagens agendadas com sucesso!");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Erro: {ex.Message}");
+                    MessageBox.Show($"Erro ao agendar mensagens: {ex.Message}");
                 }
             }
         }
@@ -124,7 +111,7 @@ namespace Gweb.WhatsApp.Forms
                     var contatos = context.Contatos.ToList();
                     foreach (var contato in contatos)
                     {
-                        listContatos.Items.Add(new ListItem(contato.Nome, contato.Id));
+                        listContatos.Items.Add(new ContatoUnderchat(contato.Nome, contato.Id));
                     }
                 }
             }
@@ -174,17 +161,15 @@ namespace Gweb.WhatsApp.Forms
             {
                 try
                 {
+                    // Obtém todas as mensagens do banco de dados
                     var mensagens = context.Mensagens.ToList();
                     boxIdMensagens.Items.Clear();
 
+                    // Adiciona cada mensagem diretamente no ComboBox
                     foreach (var mensagem in mensagens)
                     {
-                        MensagemItem item = new MensagemItem
-                        {
-                            Id = mensagem.Id,
-                            Mensagem = mensagem.MensagemTexto
-                        };
-                        boxIdMensagens.Items.Add(item);
+                        // Adiciona o objeto Mensagem diretamente
+                        boxIdMensagens.Items.Add(mensagem);
                     }
                 }
                 catch (Exception ex)
