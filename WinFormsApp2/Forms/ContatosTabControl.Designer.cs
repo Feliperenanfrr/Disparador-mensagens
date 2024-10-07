@@ -30,7 +30,13 @@
         {
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             tabPage1 = new TabPage();
-            btnCadastrarContato = new MaterialSkin.Controls.MaterialButton();
+            contatosListView = new MaterialSkin.Controls.MaterialListView();
+            Id = new ColumnHeader();
+            IdUnderchat = new ColumnHeader();
+            Nome = new ColumnHeader();
+            Telefone = new ColumnHeader();
+            btnListarContatos = new MaterialSkin.Controls.MaterialButton();
+            btnCadastrarContatos = new MaterialSkin.Controls.MaterialButton();
             tabPage2 = new TabPage();
             materialTabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -47,46 +53,110 @@
             materialTabControl1.Multiline = true;
             materialTabControl1.Name = "materialTabControl1";
             materialTabControl1.SelectedIndex = 0;
-            materialTabControl1.Size = new Size(1246, 517);
+            materialTabControl1.Size = new Size(1260, 627);
             materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(btnCadastrarContato);
+            tabPage1.Controls.Add(contatosListView);
+            tabPage1.Controls.Add(btnListarContatos);
+            tabPage1.Controls.Add(btnCadastrarContatos);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1238, 484);
+            tabPage1.Size = new Size(1252, 594);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "Controle";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnCadastrarContato
+            // contatosListView
             // 
-            btnCadastrarContato.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnCadastrarContato.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnCadastrarContato.Depth = 0;
-            btnCadastrarContato.HighEmphasis = true;
-            btnCadastrarContato.Icon = null;
-            btnCadastrarContato.Location = new Point(458, 171);
-            btnCadastrarContato.Margin = new Padding(4, 6, 4, 6);
-            btnCadastrarContato.MouseState = MaterialSkin.MouseState.HOVER;
-            btnCadastrarContato.Name = "btnCadastrarContato";
-            btnCadastrarContato.NoAccentTextColor = Color.Empty;
-            btnCadastrarContato.Size = new Size(158, 36);
-            btnCadastrarContato.TabIndex = 0;
-            btnCadastrarContato.Text = "materialButton1";
-            btnCadastrarContato.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnCadastrarContato.UseAccentColor = false;
-            btnCadastrarContato.UseVisualStyleBackColor = true;
-            btnCadastrarContato.Click += btnCadastrarContato_Click;
+            contatosListView.AutoSizeTable = false;
+            contatosListView.BackColor = Color.FromArgb(255, 255, 255);
+            contatosListView.BorderStyle = BorderStyle.None;
+            contatosListView.Columns.AddRange(new ColumnHeader[] { Id, IdUnderchat, Nome, Telefone });
+            contatosListView.Depth = 0;
+            contatosListView.Font = new Font("Segoe UI", 9F);
+            contatosListView.FullRowSelect = true;
+            contatosListView.Location = new Point(281, 88);
+            contatosListView.MinimumSize = new Size(200, 100);
+            contatosListView.MouseLocation = new Point(-1, -1);
+            contatosListView.MouseState = MaterialSkin.MouseState.OUT;
+            contatosListView.Name = "contatosListView";
+            contatosListView.OwnerDraw = true;
+            contatosListView.Size = new Size(525, 453);
+            contatosListView.TabIndex = 2;
+            contatosListView.UseCompatibleStateImageBehavior = false;
+            contatosListView.View = View.Details;
+            // 
+            // Id
+            // 
+            Id.Text = "Id";
+            Id.Width = 100;
+            // 
+            // IdUnderchat
+            // 
+            IdUnderchat.Text = "Telefone";
+            IdUnderchat.Width = 100;
+            // 
+            // Nome
+            // 
+            Nome.Text = "Nome";
+            Nome.Width = 150;
+            // 
+            // Telefone
+            // 
+            Telefone.Text = "Telefone";
+            Telefone.Width = 150;
+            // 
+            // btnListarContatos
+            // 
+            btnListarContatos.AutoSize = false;
+            btnListarContatos.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnListarContatos.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnListarContatos.Depth = 0;
+            btnListarContatos.HighEmphasis = true;
+            btnListarContatos.Icon = null;
+            btnListarContatos.Location = new Point(891, 407);
+            btnListarContatos.Margin = new Padding(4, 6, 4, 6);
+            btnListarContatos.MouseState = MaterialSkin.MouseState.HOVER;
+            btnListarContatos.Name = "btnListarContatos";
+            btnListarContatos.NoAccentTextColor = Color.Empty;
+            btnListarContatos.Size = new Size(279, 45);
+            btnListarContatos.TabIndex = 1;
+            btnListarContatos.Text = "Listar contatos";
+            btnListarContatos.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnListarContatos.UseAccentColor = false;
+            btnListarContatos.UseVisualStyleBackColor = true;
+            btnListarContatos.Click += btnListarContatos_Click;
+            // 
+            // btnCadastrarContatos
+            // 
+            btnCadastrarContatos.AutoSize = false;
+            btnCadastrarContatos.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnCadastrarContatos.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnCadastrarContatos.Depth = 0;
+            btnCadastrarContatos.HighEmphasis = true;
+            btnCadastrarContatos.Icon = null;
+            btnCadastrarContatos.Location = new Point(891, 496);
+            btnCadastrarContatos.Margin = new Padding(4, 6, 4, 6);
+            btnCadastrarContatos.MouseState = MaterialSkin.MouseState.HOVER;
+            btnCadastrarContatos.Name = "btnCadastrarContatos";
+            btnCadastrarContatos.NoAccentTextColor = Color.Empty;
+            btnCadastrarContatos.Size = new Size(279, 45);
+            btnCadastrarContatos.TabIndex = 0;
+            btnCadastrarContatos.Text = "Cadastrar novos contatos";
+            btnCadastrarContatos.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnCadastrarContatos.UseAccentColor = false;
+            btnCadastrarContatos.UseVisualStyleBackColor = true;
+            btnCadastrarContatos.Click += btnCadastrarContatos_Click;
             // 
             // tabPage2
             // 
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1238, 484);
+            tabPage2.Size = new Size(1252, 594);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -95,13 +165,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1252, 584);
+            ClientSize = new Size(1266, 694);
             Controls.Add(materialTabControl1);
             Name = "ContatosTabControl";
             Text = "Gerenciar Contatos";
             materialTabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -110,6 +179,12 @@
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private MaterialSkin.Controls.MaterialButton btnCadastrarContato;
+        private MaterialSkin.Controls.MaterialButton btnListarContatos;
+        private MaterialSkin.Controls.MaterialButton btnCadastrarContatos;
+        private MaterialSkin.Controls.MaterialListView contatosListView;
+        private ColumnHeader Id;
+        private ColumnHeader IdUnderchat;
+        private ColumnHeader Nome;
+        private ColumnHeader Telefone;
     }
 }

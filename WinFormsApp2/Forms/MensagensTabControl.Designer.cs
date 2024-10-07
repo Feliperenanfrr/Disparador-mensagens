@@ -117,6 +117,17 @@ namespace Gweb.WhatsApp.Forms
             dataGridMensagens.RowTemplate.Height = 29;
             dataGridMensagens.Size = new Size(550, 501);
             dataGridMensagens.TabIndex = 0;
+            dataGridMensagens.BorderStyle = BorderStyle.None;
+            dataGridMensagens.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridMensagens.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridMensagens.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215);
+            dataGridMensagens.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridMensagens.BackgroundColor = Color.White;
+
+            dataGridMensagens.EnableHeadersVisualStyles = false;
+            dataGridMensagens.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridMensagens.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 39, 40);
+            dataGridMensagens.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             // 
             // tabAgendarMensagem
             // 
