@@ -1,6 +1,7 @@
 ﻿using Gweb.WhatsApp.Dados;
 using Gweb.WhatsApp.Util;
 using MaterialSkin.Controls;
+using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -18,104 +19,72 @@ namespace Gweb.WhatsApp.Forms
 {
     public partial class ContatosTabControl : MaterialForm
     {
-        operacoesBD operacoesBD = new operacoesBD();
-        private MySqlConnection bdConn;
         FormUnderChat formUnderChat = new FormUnderChat();
-        private DataSet bdDataSet;
         ConexaoAPI conexaoAPI = new ConexaoAPI();
-
-        private int idMensagem;
-        private string server;
-        private string user;
-        private string senha;
-        private string banco;
-
         string idLoja = "832";
         string email = "felipeferreira3146@gmail.com";
 
         public ContatosTabControl()
         {
             InitializeComponent();
-            this.server = formUnderChat.txtServer.Text;
-            this.user = formUnderChat.txtUsuario.Text;
-            this.senha = formUnderChat.txtSenha.Text;
-            this.banco = formUnderChat.txtBanco.Text;
         }
 
-        private void btnCadastrarContato_Click(object sender, EventArgs e)
+        private async void btnCadastrarContatos_Click(object sender, EventArgs e)
         {
-            var builder = new MySqlConnectionStringBuilder
+            using (var context = new MyDbContext())
             {
-                Server = server,
-                Database = banco,
-                UserID = user,
-                Password = senha,
-                CharacterSet = "utf8"
-            };
-
-            try
-            {
-                // Faz um GET na API do UnderChat cria uma instância da classe Contato(Util/Contato.cs) para cada contato cadastrado
-                // Adiciona todos os contatos a uma lista do tipo Contato
-                bdDataSet = new DataSet();
-                bdConn = new MySqlConnection(builder.ConnectionString);
-                bdConn.Open();
-
-                string token = conexaoAPI.ObterToken(email, "1664");
-                RootContato listaDeContatos = conexaoAPI.BuscarTodosContatos(idLoja, token);
-
-                List<Contato> contatosLista = listaDeContatos.data;
-                //textContatos.Text = listaDeContatos.ToString();
-
-                int contatosCadastrados = 0;
-
-                foreach (Contato contato in contatosLista)
+                try
                 {
-                    // Cadastra apenas os contatos com os prefixos e que não estejam cadastrados no BD
-                    Person pessoa = contato.person;
-                    string nome = pessoa.name;
-                    if (nome.StartsWith("Gpd") || nome.StartsWith("Cli-") || nome.StartsWith("Parc-"))
+                    // Faz um GET na API do UnderChat e cria uma instância da classe Contato para cada contato
+                    string token = conexaoAPI.ObterToken(email, "1664");
+                    RootContato listaDeContatos = conexaoAPI.BuscarTodosContatos(idLoja, token);
+
+                    List<Contato> contatosLista = listaDeContatos.data;
+                    int contatosCadastrados = 0;
+
+                    foreach (Contato contato in contatosLista)
                     {
-                        string checkContato = "SELECT COUNT(*) FROM contatos_underchat WHERE Id_Underchat = @Id_Underchat AND Telefone = @Telefone";
-                        using (MySqlCommand checkCmd = new MySqlCommand(checkContato, bdConn))
+                        // Cadastra apenas os contatos com os prefixos desejados
+                        Person pessoa = contato.person;
+                        string nome = pessoa.name;
+
+                        if (nome.StartsWith("Gpd") || nome.StartsWith("Cli-") || nome.StartsWith("Parc-"))
                         {
-                            checkCmd.Parameters.AddWithValue("@Id_Underchat", contato.id);
-                            checkCmd.Parameters.AddWithValue("@Telefone", contato.value);
+                            // Verifica de forma assíncrona se o contato já existe no banco de dados
+                            bool contatoExistente = await context.Contatos
+                                .AnyAsync(c => c.IdUnderchat == contato.id && c.Telefone == contato.value);
 
-                            int count = Convert.ToInt32(checkCmd.ExecuteScalar());
-
-                            if (count == 0)
+                            if (!contatoExistente)
                             {
-                                string insertQuery = "INSERT INTO contatos_underchat (Id_Underchat, Telefone, Nome) VALUES (@Id_Underchat, @Telefone, @Nome)";
-                                using (MySqlCommand insertCmd = new MySqlCommand(insertQuery, bdConn))
+                                // Cria uma nova instância de ContatoUnderchat, sem definir o campo Id (autoincremento)
+                                var novoContato = new ContatoUnderchat
+                                (
+                                    nome: pessoa.name,
+                                    telefone: contato.value
+                                )
                                 {
-                                    insertCmd.Parameters.AddWithValue("@Id_Underchat", contato.id);
-                                    insertCmd.Parameters.AddWithValue("@Telefone", contato.value);
-                                    insertCmd.Parameters.AddWithValue("@Nome", pessoa.name);
+                                    IdUnderchat = contato.id // Define o IdUnderchat (vindo da API)
+                                };
 
-                                    insertCmd.ExecuteNonQuery();
-                                }
+                                // Adiciona o novo contato ao contexto
+                                context.Contatos.Add(novoContato);
                                 contatosCadastrados++;
                             }
-
                         }
                     }
+
+                    // Salva as mudanças no banco de dados de forma assíncrona
+                    await context.SaveChangesAsync();
+
+                    MaterialMessageBox.Show($"Total de contatos cadastrados: {contatosCadastrados}", "Contatos Cadastrados");
                 }
-
-                MaterialMessageBox.Show($"Total de contatos cadastrados: {contatosCadastrados}", "Contatos Cadastrados");
+                catch (Exception ex)
+                {
+                    MaterialMessageBox.Show($"Erro: {ex.Message}");
+                }
             }
-            catch (Exception ex)
-            {
-                MaterialMessageBox.Show("Erro");
-                //textContatos.Text = ex.Message;
-            }
-            bdConn.Close();
         }
 
-        private void btnCadastrarContatos_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnListarContatos_Click(object sender, EventArgs e)
         {

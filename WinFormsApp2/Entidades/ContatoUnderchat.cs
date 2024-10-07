@@ -10,6 +10,12 @@ public class ContatoUnderchat
         Telefone = telefone;
     }
 
+    public ContatoUnderchat(string nome, string telefone)
+    {
+        Nome = nome;
+        Telefone = telefone;
+    }
+
     public int Id { get; set; }
  
     [Column("Id_Underchat")]

@@ -84,7 +84,7 @@
             contatosListView.MouseState = MaterialSkin.MouseState.OUT;
             contatosListView.Name = "contatosListView";
             contatosListView.OwnerDraw = true;
-            contatosListView.Size = new Size(525, 453);
+            contatosListView.Size = new Size(536, 453);
             contatosListView.TabIndex = 2;
             contatosListView.UseCompatibleStateImageBehavior = false;
             contatosListView.View = View.Details;
@@ -96,8 +96,8 @@
             // 
             // IdUnderchat
             // 
-            IdUnderchat.Text = "Telefone";
-            IdUnderchat.Width = 100;
+            IdUnderchat.Text = "Id Underchat";
+            IdUnderchat.Width = 120;
             // 
             // Nome
             // 
