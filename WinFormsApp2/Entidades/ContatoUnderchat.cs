@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 [Table("contatos_underchat")]
 public class ContatoUnderchat
@@ -16,6 +17,8 @@ public class ContatoUnderchat
         Telefone = telefone;
     }
 
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
  
     [Column("Id_Underchat")]
