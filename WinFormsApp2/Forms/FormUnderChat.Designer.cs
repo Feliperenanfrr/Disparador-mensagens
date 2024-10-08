@@ -75,7 +75,7 @@ namespace WinFormsApp2
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             groupBox1.Location = new Point(15, 405);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(633, 274);
@@ -89,7 +89,7 @@ namespace WinFormsApp2
             btnAtivar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnAtivar.Density = MaterialButton.MaterialButtonDensity.Default;
             btnAtivar.Depth = 0;
-            btnAtivar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAtivar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnAtivar.HighEmphasis = true;
             btnAtivar.Icon = null;
             btnAtivar.Location = new Point(295, 30);
@@ -108,7 +108,7 @@ namespace WinFormsApp2
             // txtBanco
             // 
             txtBanco.Enabled = false;
-            txtBanco.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBanco.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtBanco.Location = new Point(97, 146);
             txtBanco.Name = "txtBanco";
             txtBanco.Size = new Size(182, 27);
@@ -210,7 +210,7 @@ namespace WinFormsApp2
             textMensagens.AnimateReadOnly = false;
             textMensagens.BorderStyle = BorderStyle.None;
             textMensagens.Depth = 0;
-            textMensagens.Font = new Font("Roboto", 9.6F, FontStyle.Regular, GraphicsUnit.Point);
+            textMensagens.Font = new Font("Roboto", 9.6F);
             textMensagens.LeadingIcon = null;
             textMensagens.Location = new Point(740, 118);
             textMensagens.MaxLength = 50;

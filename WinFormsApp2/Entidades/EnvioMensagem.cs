@@ -14,6 +14,8 @@ public class EnvioMensagem
     [Column("data_envio")]
     public DateTime DataEnvio { get; set; }
 
+    public int Envio {  get; set; }
+
     [Column("Nome_Contato")]
     public string NomeContato { get; set; }
 

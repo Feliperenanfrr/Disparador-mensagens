@@ -1,26 +1,25 @@
 using System.Data;
-using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Gweb.WhatsApp.Util;
 using Gweb.WhatsApp.Forms;
 using MaterialSkin.Controls;
-
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Gweb.WhatsApp.Dados;
 
 namespace WinFormsApp2
 {
     public partial class FormUnderChat : MaterialForm
     {
-        private MySqlConnection bdConn; //MySQL
-        private MySqlDataAdapter bdAdapter;
-        private DataSet bdDataSet; //MySQL
+        private MyDbContext _dbContext;
         private string CNPJ;
-
         ConexaoAPI conexaoAPI;
         operacoesBD operacoesBD;
 
         public FormUnderChat()
         {
             InitializeComponent();
+            _dbContext = new MyDbContext();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -35,32 +34,19 @@ namespace WinFormsApp2
                 btnAtivar.Text = "Ativar";
                 btnSair.Enabled = true;
                 tmMonitora.Enabled = false;
-                bdConn.Close();
                 return;
             }
 
-            var builder = new MySqlConnectionStringBuilder
-            {
-                Server = txtServer.Text,
-                Database = "gueppardo",
-                UserID = txtUsuario.Text,
-                Password = txtSenha.Text,
-                CharacterSet = "utf8"
-            };
-
-            bdDataSet = new DataSet();
-            bdConn = new MySqlConnection(builder.ConnectionString);
-
             try
             {
-                bdConn.Open();
+                _dbContext.Database.OpenConnection();
                 btnAtivar.Text = "Desativar";
                 btnSair.Enabled = false;
                 tmMonitora.Enabled = true;
             }
             catch
             {
-                if (bdConn.State != ConnectionState.Open)
+                if (!_dbContext.Database.CanConnect())
                 {
                     MessageBox.Show("Impossível estabelecer uma conexão");
                     Close();
@@ -72,32 +58,27 @@ namespace WinFormsApp2
 
         private void tmMonitora_Tick(object sender, EventArgs e)
         {
-            if (bdConn.State != System.Data.ConnectionState.Open)
-            {
-                bdConn.Open();
-            }
-
             var emailUnderChat = textEmail.Text;
             var senhaUnderChat = textSenha.Text;
             var idLojaUnderChat = textIdLoja.Text;
             var idCanalUnderChat = textIdCanal.Text;
             var idSetorUnderChat = int.Parse(textIdSetor.Text);
 
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM gueppardo.envio_mensagens WHERE envio = 0 AND data_envio <= NOW()", bdConn);
-            MySqlDataReader reader = cmd.ExecuteReader();
+            // Recupera as mensagens que ainda não foram enviadas
+            var mensagensPendentes = _dbContext.EnvioMensagens
+                .Include(em => em.ContatoUnderchat)
+                .Include(em => em.MensagemObj)
+                .Where(em => em.Envio == 0 && em.DataEnvio <= DateTime.Now)
+                .ToList();
 
-            while (reader.Read())
+            foreach (var envioMensagem in mensagensPendentes)
             {
-                //Captura dados das mensagens retornadas pelo BD
-                var idEnvioMensagem = reader["id"].ToString();
-                var mensagem = reader["Mensagem"].ToString();
-                var telefone = reader["telefone"].ToString();
-                var imagem = reader["imagem"].ToString();
-                var nomeContato = reader["Nome_contato"].ToString();
+                var mensagem = envioMensagem.Mensagem;
+                var telefone = envioMensagem.Telefone;
+                var imagem = envioMensagem.Imagem;
+                var nomeContato = envioMensagem.NomeContato;
 
-                // Utiliza a classe ConexaoApi criada na pasta Util para fazer requisições HTTP para a API do UnderChat
-                // Utiliza a classe Contato criada na pasta Util para receber os dados retornados pela API
-                // Utiliza a biblioteca Newtonsoft.Json para desserializar e manipular JSON
+                // Utiliza a API do UnderChat
                 conexaoAPI = new ConexaoAPI();
                 dynamic token = conexaoAPI.ObterToken(emailUnderChat, senhaUnderChat);
                 string respostaAPI = conexaoAPI.buscarContatoPorNumero(idLojaUnderChat, telefone, token);
@@ -105,7 +86,7 @@ namespace WinFormsApp2
                 Contato contato = listaDeContatos.data[0];
                 int idAtendimento = conexaoAPI.criarAtendimento(idLojaUnderChat, contato, idSetorUnderChat, idCanalUnderChat, mensagem, token);
 
-                if (imagem == "")
+                if (string.IsNullOrEmpty(imagem))
                 {
                     conexaoAPI.enviarMensagem(mensagem, idLojaUnderChat, idAtendimento, token);
                 }
@@ -114,23 +95,14 @@ namespace WinFormsApp2
                     conexaoAPI.enviarMensagemComImagem(mensagem, idLojaUnderChat, idAtendimento, imagem, token);
                 }
 
-                reader.Close();
+                // Atualiza a mensagem como enviada
+                envioMensagem.Envio = 1;
+                _dbContext.SaveChanges();
 
                 // Insere os dados das mensagens enviadas em uma caixa de texto
                 textMensagens.Clear();
-                textMensagens.Text = textMensagens.Text + " ";
-                textMensagens.Text = textMensagens.Text + $"Código: {idEnvioMensagem} - Número: {telefone} - Cliente: {nomeContato}";
-
-                using (MySqlCommand marcarComoEnviada = new MySqlCommand("UPDATE gueppardo.envio_mensagens SET envio = 1 WHERE id = @idEnvioMensagem AND telefone = @telefone AND Nome_Contato = @nomeContato", bdConn))
-                {
-                    marcarComoEnviada.Parameters.AddWithValue("@idEnvioMensagem", idEnvioMensagem);
-                    marcarComoEnviada.Parameters.AddWithValue("@telefone", telefone);
-                    marcarComoEnviada.Parameters.AddWithValue("@nomeContato", nomeContato);
-                    marcarComoEnviada.ExecuteNonQuery();
-                }
-                return;
+                textMensagens.AppendText($"Código: {envioMensagem.Id} - Número: {telefone} - Cliente: {nomeContato}\n");
             }
-            bdConn.Close();
         }
 
         private void btnContatos_Click(object sender, EventArgs e)
@@ -138,14 +110,11 @@ namespace WinFormsApp2
             ContatosTabControl contatosTabControl = new ContatosTabControl();
             contatosTabControl.Show();
         }
-        
+
         private void btnMensagens_Click(object sender, EventArgs e)
         {
             MensagensTabControl mensagensTabControl = new MensagensTabControl();
             mensagensTabControl.Show();
-            //GerenciarMensagens gerenciarMensagens = new GerenciarMensagens();
-            //gerenciarMensagens.Show();
         }
     }
-
 }
