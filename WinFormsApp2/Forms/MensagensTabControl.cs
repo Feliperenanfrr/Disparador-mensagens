@@ -180,5 +180,101 @@ namespace Gweb.WhatsApp.Forms
                 }
             }
         }
+
+        private void chkEnviarParaClientes_CheckedChanged(object sender, EventArgs e)
+        {
+            // Verifica se o checkbox foi marcado ou desmarcado
+            if (chkEnviarParaClientes.Checked)
+            {
+                // Itera sobre todos os contatos na listContatos
+                for (int i = 0; i < listContatos.Items.Count; i++)
+                {
+                    // Recupera o item como ContatoUnderchat
+                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
+                    if (contato != null && contato.Nome.StartsWith("Cli-"))
+                    {
+                        // Marca o contato na CheckedListBox
+                        listContatos.SetItemChecked(i, true);
+                    }
+                }
+            }
+            else
+            {
+                // Se o checkbox for desmarcado, remove a marcação dos contatos "Cli-"
+                for (int i = 0; i < listContatos.Items.Count; i++)
+                {
+                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
+                    if (contato != null && contato.Nome.StartsWith("Cli-"))
+                    {
+                        // Desmarca o contato na CheckedListBox
+                        listContatos.SetItemChecked(i, false);
+                    }
+                }
+            }
+        }
+
+        private void chkEnviarParaParceiros_CheckedChanged(object sender, EventArgs e)
+        {
+            // Verifica se o checkbox foi marcado ou desmarcado
+            if (chkEnviarParaParceiros.Checked)
+            {
+                // Itera sobre todos os contatos na listContatos
+                for (int i = 0; i < listContatos.Items.Count; i++)
+                {
+                    // Recupera o item como ContatoUnderchat
+                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
+                    if (contato != null && contato.Nome.StartsWith("Parc-"))
+                    {
+                        // Marca o contato na CheckedListBox
+                        listContatos.SetItemChecked(i, true);
+                    }
+                }
+            }
+            else
+            {
+                // Se o checkbox for desmarcado, remove a marcação dos contatos "Cli-"
+                for (int i = 0; i < listContatos.Items.Count; i++)
+                {
+                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
+                    if (contato != null && contato.Nome.StartsWith("Parc-"))
+                    {
+                        // Desmarca o contato na CheckedListBox
+                        listContatos.SetItemChecked(i, false);
+                    }
+                }
+            }
+        }
+
+        private void chkEnviarParaColaboradores_CheckedChanged(object sender, EventArgs e)
+        {
+            // Verifica se o checkbox foi marcado ou desmarcado
+            if (chkEnviarParaColaboradores.Checked)
+            {
+                // Itera sobre todos os contatos na listContatos
+                for (int i = 0; i < listContatos.Items.Count; i++)
+                {
+                    // Recupera o item como ContatoUnderchat
+                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
+                    if (contato != null && contato.Nome.StartsWith("Gpd-"))
+                    {
+                        // Marca o contato na CheckedListBox
+                        listContatos.SetItemChecked(i, true);
+                    }
+                }
+            }
+            else
+            {
+                // Se o checkbox for desmarcado, remove a marcação dos contatos "Cli-"
+                for (int i = 0; i < listContatos.Items.Count; i++)
+                {
+                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
+                    if (contato != null && contato.Nome.StartsWith("Gpd-"))
+                    {
+                        // Desmarca o contato na CheckedListBox
+                        listContatos.SetItemChecked(i, false);
+                    }
+                }
+            }
+        }
     }
 }

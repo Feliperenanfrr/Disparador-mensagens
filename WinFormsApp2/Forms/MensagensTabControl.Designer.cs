@@ -31,12 +31,19 @@ namespace Gweb.WhatsApp.Forms
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MensagensTabControl));
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             tabListarMensagens = new TabPage();
             btnPesquisarMensagem = new MaterialSkin.Controls.MaterialButton();
             dataGridMensagens = new DataGridView();
             tabAgendarMensagem = new TabPage();
+            checkBox4 = new CheckBox();
+            chkEnviarParaColaboradores = new CheckBox();
+            chkEnviarParaParceiros = new CheckBox();
+            chkEnviarParaClientes = new CheckBox();
             listContatos = new CheckedListBox();
             btnAgendarMensagem = new MaterialSkin.Controls.MaterialButton();
             labelData = new Label();
@@ -110,27 +117,42 @@ namespace Gweb.WhatsApp.Forms
             // 
             // dataGridMensagens
             // 
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridMensagens.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridMensagens.BackgroundColor = Color.White;
+            dataGridMensagens.BorderStyle = BorderStyle.None;
+            dataGridMensagens.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridMensagens.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(41, 39, 40);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridMensagens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridMensagens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(0, 120, 215);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridMensagens.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridMensagens.EnableHeadersVisualStyles = false;
             dataGridMensagens.Location = new Point(313, 42);
             dataGridMensagens.Name = "dataGridMensagens";
             dataGridMensagens.RowHeadersWidth = 51;
-            dataGridMensagens.RowTemplate.Height = 29;
             dataGridMensagens.Size = new Size(550, 501);
             dataGridMensagens.TabIndex = 0;
-            dataGridMensagens.BorderStyle = BorderStyle.None;
-            dataGridMensagens.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridMensagens.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridMensagens.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215);
-            dataGridMensagens.DefaultCellStyle.SelectionForeColor = Color.White;
-            dataGridMensagens.BackgroundColor = Color.White;
-
-            dataGridMensagens.EnableHeadersVisualStyles = false;
-            dataGridMensagens.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridMensagens.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 39, 40);
-            dataGridMensagens.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             // 
             // tabAgendarMensagem
             // 
+            tabAgendarMensagem.Controls.Add(checkBox4);
+            tabAgendarMensagem.Controls.Add(chkEnviarParaColaboradores);
+            tabAgendarMensagem.Controls.Add(chkEnviarParaParceiros);
+            tabAgendarMensagem.Controls.Add(chkEnviarParaClientes);
             tabAgendarMensagem.Controls.Add(listContatos);
             tabAgendarMensagem.Controls.Add(btnAgendarMensagem);
             tabAgendarMensagem.Controls.Add(labelData);
@@ -145,12 +167,55 @@ namespace Gweb.WhatsApp.Forms
             tabAgendarMensagem.Text = "Agendar envio";
             tabAgendarMensagem.UseVisualStyleBackColor = true;
             // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(936, 431);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(237, 24);
+            checkBox4.TabIndex = 13;
+            checkBox4.Text = "Envio de mensagem recorrente";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // chkEnviarParaColaboradores
+            // 
+            chkEnviarParaColaboradores.AutoSize = true;
+            chkEnviarParaColaboradores.Location = new Point(936, 240);
+            chkEnviarParaColaboradores.Name = "chkEnviarParaColaboradores";
+            chkEnviarParaColaboradores.Size = new Size(205, 24);
+            chkEnviarParaColaboradores.TabIndex = 12;
+            chkEnviarParaColaboradores.Text = "Enviar para colaboradores";
+            chkEnviarParaColaboradores.UseVisualStyleBackColor = true;
+            chkEnviarParaColaboradores.CheckedChanged += chkEnviarParaColaboradores_CheckedChanged;
+            // 
+            // chkEnviarParaParceiros
+            // 
+            chkEnviarParaParceiros.AutoSize = true;
+            chkEnviarParaParceiros.Location = new Point(936, 210);
+            chkEnviarParaParceiros.Name = "chkEnviarParaParceiros";
+            chkEnviarParaParceiros.Size = new Size(170, 24);
+            chkEnviarParaParceiros.TabIndex = 11;
+            chkEnviarParaParceiros.Text = "Enviar para parceiros";
+            chkEnviarParaParceiros.UseVisualStyleBackColor = true;
+            chkEnviarParaParceiros.CheckedChanged += chkEnviarParaParceiros_CheckedChanged;
+            // 
+            // chkEnviarParaClientes
+            // 
+            chkEnviarParaClientes.AutoSize = true;
+            chkEnviarParaClientes.Location = new Point(936, 180);
+            chkEnviarParaClientes.Name = "chkEnviarParaClientes";
+            chkEnviarParaClientes.Size = new Size(159, 24);
+            chkEnviarParaClientes.TabIndex = 10;
+            chkEnviarParaClientes.Text = "Enviar para clientes";
+            chkEnviarParaClientes.UseVisualStyleBackColor = true;
+            chkEnviarParaClientes.CheckedChanged += chkEnviarParaClientes_CheckedChanged;
+            // 
             // listContatos
             // 
             listContatos.BackColor = Color.WhiteSmoke;
             listContatos.BorderStyle = BorderStyle.None;
             listContatos.CheckOnClick = true;
-            listContatos.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            listContatos.Font = new Font("Segoe UI", 10F);
             listContatos.ForeColor = Color.Black;
             listContatos.FormattingEnabled = true;
             listContatos.Location = new Point(667, 180);
@@ -204,7 +269,7 @@ namespace Gweb.WhatsApp.Forms
             // 
             boxIdMensagens.BackColor = Color.White;
             boxIdMensagens.FlatStyle = FlatStyle.Flat;
-            boxIdMensagens.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            boxIdMensagens.Font = new Font("Roboto", 12F);
             boxIdMensagens.ForeColor = Color.Black;
             boxIdMensagens.FormattingEnabled = true;
             boxIdMensagens.Location = new Point(87, 106);
@@ -394,5 +459,9 @@ namespace Gweb.WhatsApp.Forms
         private MaterialSkin.Controls.MaterialTextBox tipoMensagem;
         private MaterialSkin.Controls.MaterialButton btnCriarMensagem;
         private CheckedListBox listContatos;
+        private CheckBox chkEnviarParaClientes;
+        private CheckBox chkEnviarParaColaboradores;
+        private CheckBox chkEnviarParaParceiros;
+        private CheckBox checkBox4;
     }
 }
