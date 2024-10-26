@@ -23,15 +23,22 @@ namespace Gweb.WhatsApp.Forms
             {
                 try
                 {
+                    // Limpa os itens existentes no ListView
+                    mensagensListView.Items.Clear();
+
                     // Busca todas as mensagens cadastradas
                     var mensagens = context.Mensagens.ToList();
-                    dataGridMensagens.DataSource = mensagens.Select(m => new
+
+                    // Preenche o ListView com os dados das mensagens
+                    foreach (var mensagem in mensagens)
                     {
-                        m.Id,
-                        m.MensagemTexto,
-                        m.Tipo,
-                        m.Imagem
-                    }).ToList();
+                        var item = new ListViewItem(mensagem.Id.ToString()); // ID como primeiro item
+                        item.SubItems.Add(mensagem.MensagemTexto);            // MensagemTexto como subitem
+                        item.SubItems.Add(mensagem.Tipo);                     // Tipo como subitem
+                        item.SubItems.Add(mensagem.Imagem);                   // Imagem como subitem
+
+                        mensagensListView.Items.Add(item);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -39,6 +46,7 @@ namespace Gweb.WhatsApp.Forms
                 }
             }
         }
+
 
         // Evento de agendamento de mensagens
         private void btnAgendarMensagem_Click(object sender, EventArgs e)

@@ -31,14 +31,15 @@ namespace Gweb.WhatsApp.Forms
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MensagensTabControl));
             materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             tabListarMensagens = new TabPage();
+            mensagensListView = new MaterialSkin.Controls.MaterialListView();
+            ID = new ColumnHeader();
+            Mensagem = new ColumnHeader();
+            Tipo = new ColumnHeader();
+            Imagem = new ColumnHeader();
             btnPesquisarMensagem = new MaterialSkin.Controls.MaterialButton();
-            dataGridMensagens = new DataGridView();
             tabAgendarMensagem = new TabPage();
             checkBox4 = new CheckBox();
             chkEnviarParaColaboradores = new CheckBox();
@@ -61,7 +62,6 @@ namespace Gweb.WhatsApp.Forms
             imageList1 = new ImageList(components);
             materialTabControl1.SuspendLayout();
             tabListarMensagens.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridMensagens).BeginInit();
             tabAgendarMensagem.SuspendLayout();
             tabCriarMensagem.SuspendLayout();
             SuspendLayout();
@@ -85,8 +85,8 @@ namespace Gweb.WhatsApp.Forms
             // tabListarMensagens
             // 
             tabListarMensagens.BackColor = Color.White;
+            tabListarMensagens.Controls.Add(mensagensListView);
             tabListarMensagens.Controls.Add(btnPesquisarMensagem);
-            tabListarMensagens.Controls.Add(dataGridMensagens);
             tabListarMensagens.ImageKey = "list.png";
             tabListarMensagens.Location = new Point(4, 39);
             tabListarMensagens.Name = "tabListarMensagens";
@@ -94,6 +94,44 @@ namespace Gweb.WhatsApp.Forms
             tabListarMensagens.Size = new Size(1252, 584);
             tabListarMensagens.TabIndex = 1;
             tabListarMensagens.Text = "Listar mensagens ";
+            // 
+            // mensagensListView
+            // 
+            mensagensListView.AutoSizeTable = false;
+            mensagensListView.BackColor = Color.FromArgb(255, 255, 255);
+            mensagensListView.BorderStyle = BorderStyle.None;
+            mensagensListView.Columns.AddRange(new ColumnHeader[] { ID, Mensagem, Tipo, Imagem });
+            mensagensListView.Depth = 0;
+            mensagensListView.FullRowSelect = true;
+            mensagensListView.Location = new Point(339, 48);
+            mensagensListView.MinimumSize = new Size(200, 100);
+            mensagensListView.MouseLocation = new Point(-1, -1);
+            mensagensListView.MouseState = MaterialSkin.MouseState.OUT;
+            mensagensListView.Name = "mensagensListView";
+            mensagensListView.OwnerDraw = true;
+            mensagensListView.Size = new Size(574, 495);
+            mensagensListView.TabIndex = 2;
+            mensagensListView.UseCompatibleStateImageBehavior = false;
+            mensagensListView.View = View.Details;
+            // 
+            // ID
+            // 
+            ID.Text = "ID";
+            // 
+            // Mensagem
+            // 
+            Mensagem.Text = "Mensagem";
+            Mensagem.Width = 200;
+            // 
+            // Tipo
+            // 
+            Tipo.Text = "Tipo";
+            Tipo.Width = 100;
+            // 
+            // Imagem
+            // 
+            Imagem.Text = "Imagem";
+            Imagem.Width = 100;
             // 
             // btnPesquisarMensagem
             // 
@@ -114,38 +152,6 @@ namespace Gweb.WhatsApp.Forms
             btnPesquisarMensagem.UseAccentColor = false;
             btnPesquisarMensagem.UseVisualStyleBackColor = true;
             btnPesquisarMensagem.Click += btnPesquisarMensagem_Click;
-            // 
-            // dataGridMensagens
-            // 
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridMensagens.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridMensagens.BackgroundColor = Color.White;
-            dataGridMensagens.BorderStyle = BorderStyle.None;
-            dataGridMensagens.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridMensagens.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(41, 39, 40);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridMensagens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridMensagens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(0, 120, 215);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridMensagens.DefaultCellStyle = dataGridViewCellStyle6;
-            dataGridMensagens.EnableHeadersVisualStyles = false;
-            dataGridMensagens.Location = new Point(313, 42);
-            dataGridMensagens.Name = "dataGridMensagens";
-            dataGridMensagens.RowHeadersWidth = 51;
-            dataGridMensagens.Size = new Size(550, 501);
-            dataGridMensagens.TabIndex = 0;
             // 
             // tabAgendarMensagem
             // 
@@ -269,12 +275,12 @@ namespace Gweb.WhatsApp.Forms
             // 
             boxIdMensagens.BackColor = Color.White;
             boxIdMensagens.FlatStyle = FlatStyle.Flat;
-            boxIdMensagens.Font = new Font("Roboto", 12F);
+            boxIdMensagens.Font = new Font("Microsoft Sans Serif", 12F);
             boxIdMensagens.ForeColor = Color.Black;
             boxIdMensagens.FormattingEnabled = true;
             boxIdMensagens.Location = new Point(87, 106);
             boxIdMensagens.Name = "boxIdMensagens";
-            boxIdMensagens.Size = new Size(328, 32);
+            boxIdMensagens.Size = new Size(328, 33);
             boxIdMensagens.TabIndex = 1;
             boxIdMensagens.DropDown += boxIdMensagem_DropDown_1;
             // 
@@ -429,7 +435,6 @@ namespace Gweb.WhatsApp.Forms
             materialTabControl1.ResumeLayout(false);
             tabListarMensagens.ResumeLayout(false);
             tabListarMensagens.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridMensagens).EndInit();
             tabAgendarMensagem.ResumeLayout(false);
             tabAgendarMensagem.PerformLayout();
             tabCriarMensagem.ResumeLayout(false);
@@ -444,7 +449,6 @@ namespace Gweb.WhatsApp.Forms
         private TabPage tabListarMensagens;
         private ImageList imageList1;
         private TabPage tabAgendarMensagem;
-        private DataGridView dataGridMensagens;
         private MaterialSkin.Controls.MaterialButton btnPesquisarMensagem;
         private Label labelMensagem;
         private ComboBox boxIdMensagens;
@@ -463,5 +467,10 @@ namespace Gweb.WhatsApp.Forms
         private CheckBox chkEnviarParaColaboradores;
         private CheckBox chkEnviarParaParceiros;
         private CheckBox checkBox4;
+        private MaterialSkin.Controls.MaterialListView mensagensListView;
+        private ColumnHeader ID;
+        private ColumnHeader Mensagem;
+        private ColumnHeader Tipo;
+        private ColumnHeader Imagem;
     }
 }
