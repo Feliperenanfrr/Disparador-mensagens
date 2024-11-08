@@ -16,8 +16,5 @@
     <Compile Update="Forms\MensagensTabControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserContols\GerenciarContato.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

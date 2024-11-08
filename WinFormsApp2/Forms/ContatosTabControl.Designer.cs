@@ -168,6 +168,7 @@
             ClientSize = new Size(1266, 694);
             Controls.Add(materialTabControl1);
             Name = "ContatosTabControl";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciar Contatos";
             materialTabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

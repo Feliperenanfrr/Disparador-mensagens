@@ -176,6 +176,15 @@ namespace Gweb.WhatsApp.Util
             request.AddHeader("Authorization", "Bearer " + token);
             client.Execute(request);
 
+            // Finaliza o atendimento automaticamente
+            var requestFinalizar = new RestRequest($"/store/{idLoja}/conversation/{idAtendimento}/finish", Method.POST);
+            var bodyFinalizar = new
+            {
+                sendFinishMessage = false
+            };
+            requestFinalizar.AddJsonBody(bodyFinalizar);
+            requestFinalizar.AddHeader("Authorization", "Bearer " + token);
+            client.Execute(requestFinalizar);
         }
 
         public void finalizarAtendimento(string idLoja, int idAtendimento, string token)
@@ -213,6 +222,16 @@ namespace Gweb.WhatsApp.Util
 
                 // Remover o arquivo temporário depois de usar
                 File.Delete(tempFilePath);
+
+                // Finaliza o atendimento automaticamente
+                var requestFinalizar = new RestRequest($"/store/{idLoja}/conversation/{idAtendimento}/finish", Method.POST);
+                var bodyFinalizar = new
+                {
+                    sendFinishMessage = false
+                };
+                requestFinalizar.AddJsonBody(bodyFinalizar);
+                requestFinalizar.AddHeader("Authorization", "Bearer " + token);
+                client.Execute(requestFinalizar);
             }
             catch (Exception ex)
             {

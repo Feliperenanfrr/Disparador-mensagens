@@ -1,16 +1,11 @@
 ﻿using MaterialSkin.Controls;
-using System;
-using System.Data;
-using System.Linq;
-using System.Windows.Forms;
-using System.Collections.Generic;
 using Gweb.WhatsApp.Dados;
-using Gweb.WhatsApp.Util;
 
 namespace Gweb.WhatsApp.Forms
 {
     public partial class MensagensTabControl : MaterialForm
     {
+
         public MensagensTabControl()
         {
             InitializeComponent();

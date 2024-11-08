@@ -849,24 +849,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\felipe\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\guepp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\felipe\\OneDrive\\Área de Trabalho\\Disparador-mensagens\\WinFormsApp2\\Gweb.WhatsApp.csproj",
+      "projectUniqueName": "C:\\Users\\guepp\\Desktop\\Disparador-mensagens\\WinFormsApp2\\Gweb.WhatsApp.csproj",
       "projectName": "Disparador de mensagens",
-      "projectPath": "C:\\Users\\felipe\\OneDrive\\Área de Trabalho\\Disparador-mensagens\\WinFormsApp2\\Gweb.WhatsApp.csproj",
-      "packagesPath": "C:\\Users\\felipe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\felipe\\OneDrive\\Área de Trabalho\\Disparador-mensagens\\WinFormsApp2\\obj\\",
+      "projectPath": "C:\\Users\\guepp\\Desktop\\Disparador-mensagens\\WinFormsApp2\\Gweb.WhatsApp.csproj",
+      "packagesPath": "C:\\Users\\guepp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\guepp\\Desktop\\Disparador-mensagens\\WinFormsApp2\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\guepp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -874,6 +869,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -941,7 +937,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -950,7 +946,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'RestSharp' 106.3.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-9pq7-rcxv-47vq",
+      "message": "O pacote 'RestSharp' 106.3.1 tem uma alta vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-9pq7-rcxv-47vq",
       "libraryId": "RestSharp",
       "targetGraphs": [
         "net8.0-windows7.0"
