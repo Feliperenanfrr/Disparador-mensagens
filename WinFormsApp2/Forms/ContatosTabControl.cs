@@ -24,7 +24,6 @@ namespace Gweb.WhatsApp.Forms
             {
                 try
                 {
-                    // Faz um GET na API do UnderChat e cria uma instância da classe Contato para cada contato
                     string token = conexaoAPI.ObterToken(email, "1664");
                     RootContato listaDeContatos = conexaoAPI.BuscarTodosContatos(idLoja, token);
 
@@ -33,36 +32,40 @@ namespace Gweb.WhatsApp.Forms
 
                     foreach (Contato contato in contatosLista)
                     {
-                        // Cadastra apenas os contatos com os prefixos desejados
                         Person pessoa = contato.person;
                         string nome = pessoa.name;
 
                         if (nome.StartsWith("Gpd") || nome.StartsWith("Cli-") || nome.StartsWith("Parc-"))
                         {
-                            // Verifica de forma assíncrona se o contato já existe no banco de dados
-                            bool contatoExistente = await context.Contatos
-                                .AnyAsync(c => c.IdUnderchat == contato.id && c.Telefone == contato.value);
+                            string numeroPadronizado = PadronizarTelefone.PadronizaTelefone(contato.value);
 
-                            if (!contatoExistente)
+                            if (!string.IsNullOrEmpty(numeroPadronizado))
                             {
-                                // Cria uma nova instância de ContatoUnderchat, sem definir o campo Id (autoincremento)
-                                var novoContato = new ContatoUnderchat
-                                (
-                                    nome: pessoa.name,
-                                    telefone: contato.value
-                                )
-                                {
-                                    IdUnderchat = contato.id // Define o IdUnderchat (vindo da API)
-                                };
+                                bool contatoExistente = await context.Contatos
+                                    .AnyAsync(c => c.IdUnderchat == contato.id && c.Telefone == numeroPadronizado);
 
-                                // Adiciona o novo contato ao contexto
-                                context.Contatos.Add(novoContato);
-                                contatosCadastrados++;
+                                if (!contatoExistente)
+                                {
+                                    var novoContato = new ContatoUnderchat
+                                    (
+                                        nome: pessoa.name,
+                                        telefone: numeroPadronizado
+                                    )
+                                    {
+                                        IdUnderchat = contato.id
+                                    };
+
+                                    context.Contatos.Add(novoContato);
+                                    contatosCadastrados++;
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Número descartado por não estar no formato correto: {contato.value}");
                             }
                         }
                     }
 
-                    // Salva as mudanças no banco de dados de forma assíncrona
                     await context.SaveChangesAsync();
 
                     MaterialMessageBox.Show($"Total de contatos cadastrados: {contatosCadastrados}", "Contatos Cadastrados");

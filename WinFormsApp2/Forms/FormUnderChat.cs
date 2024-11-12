@@ -100,7 +100,6 @@ namespace WinFormsApp2
                 _dbContext.SaveChanges();
 
                 // Insere os dados das mensagens enviadas em uma caixa de texto
-                textMensagens.Clear();
                 textMensagens.AppendText($"Código: {envioMensagem.Id} - Número: {telefone} - Cliente: {nomeContato}\n");
             }
         }
