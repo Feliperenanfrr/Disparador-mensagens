@@ -127,40 +127,50 @@ namespace Gweb.WhatsApp.Util
 
         public int criarAtendimento(string idLoja, Contato contato, int idSetor, string idCanal, string mensagem, string token)
         {
-            // Abre um novo atendimento usando o id do contato no corpo da requisição
-            var client = new RestClient("https://api.underchat.com.br/");
-            var request = new RestRequest($"/store/{idLoja}/conversation/new", Method.POST);
-            var body = new
-            {
-                contact = contato.id,
-                sector = idSetor,
-                channel = idCanal
-            };
-            request.AddJsonBody(body);
-            request.AddHeader("Authorization", "Bearer " + token);
-            IRestResponse response = client.Execute(request);
+            try
+            { // Abre um novo atendimento usando o id do contato no corpo da requisição
+                var client = new RestClient("https://api.underchat.com.br/");
+                var request = new RestRequest($"/store/{idLoja}/conversation/new", Method.POST);
+                var body = new
+                {
+                    contact = contato.id,
+                    sector = idSetor,
+                    channel = idCanal
+                };
+                request.AddJsonBody(body);
+                request.AddHeader("Authorization", "Bearer " + token);
+                IRestResponse response = client.Execute(request);
 
-            int idAtendimento = 0;
+                int idAtendimento = 0;
 
-            // Se o atendimento for aberto, retorna o ID do atendimento
-            // Se o atendimento já estiver aberto, finaliza ele e tenta novamente
-            if (response.IsSuccessful)
-            {
-                dynamic dadosDaResposta = JsonConvert.DeserializeObject<dynamic>(response.Content);
-                idAtendimento = dadosDaResposta.data.id;
+                // Se o atendimento for aberto, retorna o ID do atendimento
+                // Se o atendimento já estiver aberto, finaliza ele e tenta novamente
+                if (response.IsSuccessful)
+                {
+                    dynamic dadosDaResposta = JsonConvert.DeserializeObject<dynamic>(response.Content);
+                    idAtendimento = dadosDaResposta.data.id;
+                }
+                else
+                {
+                    Atendimento.RootAtendimento dadosDaResposta = JsonConvert.DeserializeObject<Atendimento.RootAtendimento>(response.Content);
+                    idAtendimento = dadosDaResposta.meta;
+                    finalizarAtendimento(idLoja, idAtendimento, token);
+                    response = client.Execute(request);
+
+                    dynamic respostaAPI = JsonConvert.DeserializeObject<dynamic>(response.Content);
+                    idAtendimento = respostaAPI.data.id;
+                }
+
+                return idAtendimento;
             }
-            else
+            catch(Exception ex) 
             {
-                Atendimento.RootAtendimento dadosDaResposta = JsonConvert.DeserializeObject<Atendimento.RootAtendimento>(response.Content);
-                idAtendimento = dadosDaResposta.meta;
-                finalizarAtendimento(idLoja, idAtendimento, token);
-                response = client.Execute(request);
-
-                dynamic respostaAPI = JsonConvert.DeserializeObject<dynamic>(response.Content);
-                idAtendimento = respostaAPI.data.id;
+                // Log da exceção para verificação, se necessário
+                Console.WriteLine($"Erro ao criar atendimento para o contato {contato.id}: {ex.Message}");
+                // Retorna 0 ou qualquer valor que indique que o atendimento não foi criado com sucesso
+                return 0;
             }
-
-            return idAtendimento;
+            
 
         }
 

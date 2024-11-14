@@ -73,34 +73,41 @@ namespace WinFormsApp2
 
             foreach (var envioMensagem in mensagensPendentes)
             {
-                var mensagem = envioMensagem.Mensagem;
-                var telefone = envioMensagem.Telefone;
-                var imagem = envioMensagem.Imagem;
-                var nomeContato = envioMensagem.NomeContato;
-
-                // Utiliza a API do UnderChat
-                conexaoAPI = new ConexaoAPI();
-                dynamic token = conexaoAPI.ObterToken(emailUnderChat, senhaUnderChat);
-                string respostaAPI = conexaoAPI.buscarContatoPorNumero(idLojaUnderChat, telefone, token);
-                RootContato listaDeContatos = JsonConvert.DeserializeObject<RootContato>(respostaAPI);
-                Contato contato = listaDeContatos.data[0];
-                int idAtendimento = conexaoAPI.criarAtendimento(idLojaUnderChat, contato, idSetorUnderChat, idCanalUnderChat, mensagem, token);
-
-                if (string.IsNullOrEmpty(imagem))
+                try
                 {
-                    conexaoAPI.enviarMensagem(mensagem, idLojaUnderChat, idAtendimento, token);
+                    var mensagem = envioMensagem.Mensagem;
+                    var telefone = envioMensagem.Telefone;
+                    var imagem = envioMensagem.Imagem;
+                    var nomeContato = envioMensagem.NomeContato;
+
+                    // Utiliza a API do UnderChat
+                    conexaoAPI = new ConexaoAPI();
+                    dynamic token = conexaoAPI.ObterToken(emailUnderChat, senhaUnderChat);
+                    string respostaAPI = conexaoAPI.buscarContatoPorNumero(idLojaUnderChat, telefone, token);
+                    RootContato listaDeContatos = JsonConvert.DeserializeObject<RootContato>(respostaAPI);
+                    Contato contato = listaDeContatos.data[0];
+                    int idAtendimento = conexaoAPI.criarAtendimento(idLojaUnderChat, contato, idSetorUnderChat, idCanalUnderChat, mensagem, token);
+
+                    if (string.IsNullOrEmpty(imagem))
+                    {
+                        conexaoAPI.enviarMensagem(mensagem, idLojaUnderChat, idAtendimento, token);
+                    }
+                    else
+                    {
+                        conexaoAPI.enviarMensagemComImagem(mensagem, idLojaUnderChat, idAtendimento, imagem, token);
+                    }
+
+                    // Atualiza a mensagem como enviada
+                    envioMensagem.Envio = 1;
+                    _dbContext.SaveChanges();
+
+                    // Insere os dados das mensagens enviadas em uma caixa de texto
+                    textMensagens.AppendText($"Código: {envioMensagem.Id} - Número: {telefone} - Cliente: {nomeContato}\n");
                 }
-                else
+                catch (Exception ex)
                 {
-                    conexaoAPI.enviarMensagemComImagem(mensagem, idLojaUnderChat, idAtendimento, imagem, token);
+                    Console.WriteLine(ex.ToString());
                 }
-
-                // Atualiza a mensagem como enviada
-                envioMensagem.Envio = 1;
-                _dbContext.SaveChanges();
-
-                // Insere os dados das mensagens enviadas em uma caixa de texto
-                textMensagens.AppendText($"Código: {envioMensagem.Id} - Número: {telefone} - Cliente: {nomeContato}\n");
             }
         }
 
