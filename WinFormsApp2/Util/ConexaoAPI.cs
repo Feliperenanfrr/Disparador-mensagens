@@ -10,6 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using static Gweb.WhatsApp.Util.Atendimento;
+using static Gweb.WhatsApp.Util.Grupo;
 
 namespace Gweb.WhatsApp.Util
 {
@@ -265,6 +266,23 @@ namespace Gweb.WhatsApp.Util
                 if (contato != null) return ListaDeContatos;
             }
 
+            return null;
+        }
+
+        public DadosGrupo BuscarContatosPorGrupo(string token, string idGrupo, string idLoja = "832")
+        {
+            var client = new RestClient("https://api.underchat.com.br/");
+            var request = new RestRequest($"store/{idLoja}/group/{idGrupo}", Method.GET);
+            request.AddHeader("Authorization", "Bearer" + token);
+
+            var response = client.Execute(request);
+
+            if (response.IsSuccessful)
+            {
+                string contato = response.Content;
+                DadosGrupo contatosDoGrupo = JsonConvert.DeserializeObject<DadosGrupo>(contato);
+                if(contato != null) return contatosDoGrupo;
+            }
             return null;
         }
 
