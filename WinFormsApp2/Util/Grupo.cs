@@ -2,14 +2,14 @@
 {
     class Grupo
     {
-        public class ApiResponse<T>
+        public class DadosGrupo
         {
             public int Code { get; set; }
             public string Status { get; set; }
-            public T Data { get; set; }
+            public Grupo.Data Data { get; set; }
         }
 
-        public class DadosGrupo
+        public class Data
         {
             public int Id { get; set; }
             public string Name { get; set; }

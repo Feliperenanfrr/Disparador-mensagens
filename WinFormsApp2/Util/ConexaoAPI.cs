@@ -273,19 +273,16 @@ namespace Gweb.WhatsApp.Util
         {
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"store/{idLoja}/group/{idGrupo}", Method.GET);
-            request.AddHeader("Authorization", "Bearer" + token);
+            request.AddHeader("Authorization", token);
 
             var response = client.Execute(request);
 
             if (response.IsSuccessful)
             {
-                string contato = response.Content;
-                DadosGrupo contatosDoGrupo = JsonConvert.DeserializeObject<DadosGrupo>(contato);
-                if(contato != null) return contatosDoGrupo;
+                string jsonResponse = response.Content;
+                return JsonConvert.DeserializeObject<DadosGrupo>(jsonResponse); // Certifique-se de usar o tipo correto
             }
             return null;
         }
-
-
     }
 }

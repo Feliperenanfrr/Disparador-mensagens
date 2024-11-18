@@ -1,11 +1,12 @@
 ﻿using MaterialSkin.Controls;
 using Gweb.WhatsApp.Dados;
+using Gweb.WhatsApp.Util;
 
 namespace Gweb.WhatsApp.Forms
 {
     public partial class MensagensTabControl : MaterialForm
     {
-
+        ConexaoAPI conexaoAPI = new ConexaoAPI();
         public MensagensTabControl()
         {
             InitializeComponent();
@@ -250,34 +251,49 @@ namespace Gweb.WhatsApp.Forms
 
         private void chkEnviarParaColaboradores_CheckedChanged(object sender, EventArgs e)
         {
-            // Verifica se o checkbox foi marcado ou desmarcado
-            if (chkEnviarParaColaboradores.Checked)
+            string idGrupo = "759"; // ID do grupo "Sistemas"
+            string token = conexaoAPI.ObterToken("felipeferreira3146@gmail.com", "1664");
+            // Busca os dados do grupo pela API
+            var dadosGrupo = conexaoAPI.BuscarContatosPorGrupo(token, idGrupo);
+
+            if (dadosGrupo != null && dadosGrupo.Data != null)
             {
-                // Itera sobre todos os contatos na listContatos
-                for (int i = 0; i < listContatos.Items.Count; i++)
+                // Obtém os nomes das pessoas no grupo
+                var nomesGrupo = dadosGrupo.Data.Contacts
+                    .Select(contact => contact.Person.Name)
+                    .ToList();
+
+                // Marca ou desmarca os contatos na lista
+                if (chkEnviarParaColaboradores.Checked)
                 {
-                    // Recupera o item como ContatoUnderchat
-                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
-                    if (contato != null && contato.Nome.StartsWith("Gpd-"))
+                    // Marca os contatos que pertencem ao grupo
+                    for (int i = 0; i < listContatos.Items.Count; i++)
                     {
-                        // Marca o contato na CheckedListBox
-                        listContatos.SetItemChecked(i, true);
+                        ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
+                        if (contato != null && nomesGrupo.Contains(contato.Nome))
+                        {
+                            listContatos.SetItemChecked(i, true);
+                        }
+                    }
+                }
+                else
+                {
+                    // Desmarca os contatos que pertencem ao grupo
+                    for (int i = 0; i < listContatos.Items.Count; i++)
+                    {
+                        ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
+                        if (contato != null && nomesGrupo.Contains(contato.Nome))
+                        {
+                            listContatos.SetItemChecked(i, false);
+                        }
                     }
                 }
             }
             else
             {
-                // Se o checkbox for desmarcado, remove a marcação dos contatos "Cli-"
-                for (int i = 0; i < listContatos.Items.Count; i++)
-                {
-                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
-                    if (contato != null && contato.Nome.StartsWith("Gpd-"))
-                    {
-                        // Desmarca o contato na CheckedListBox
-                        listContatos.SetItemChecked(i, false);
-                    }
-                }
+                MessageBox.Show("Não foi possível carregar os contatos do grupo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
