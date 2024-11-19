@@ -1,16 +1,9 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Gweb.WhatsApp.Entidades;
+using Newtonsoft.Json;
 using PhoneNumbers;
 using RestSharp;
-using RestSharp.Deserializers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using static Gweb.WhatsApp.Util.Atendimento;
-using static Gweb.WhatsApp.Util.Grupo;
+using static Gweb.WhatsApp.Entidades.Grupo;
 
 namespace Gweb.WhatsApp.Util
 {

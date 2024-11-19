@@ -1,4 +1,4 @@
-﻿namespace Gweb.WhatsApp.Util
+﻿namespace Gweb.WhatsApp.Entidades
 {
     class Grupo
     {
@@ -6,7 +6,7 @@
         {
             public int Code { get; set; }
             public string Status { get; set; }
-            public Grupo.Data Data { get; set; }
+            public Data Data { get; set; }
         }
 
         public class Data

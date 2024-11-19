@@ -1,4 +1,5 @@
 ﻿using Gweb.WhatsApp.Dados;
+using Gweb.WhatsApp.Entidades;
 using Gweb.WhatsApp.Util;
 using MaterialSkin.Controls;
 using Microsoft.EntityFrameworkCore;
@@ -10,8 +11,8 @@ namespace Gweb.WhatsApp.Forms
     {
         FormUnderChat formUnderChat = new FormUnderChat();
         ConexaoAPI conexaoAPI = new ConexaoAPI();
-        string idLoja = "832";
-        string email = "felipeferreira3146@gmail.com";
+        string idLoja = Configuracoes.IdLoja;
+        string email = Configuracoes.APIEmail;
 
         public ContatosTabControl()
         {

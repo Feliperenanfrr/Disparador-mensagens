@@ -217,7 +217,7 @@ namespace WinFormsApp2
             textMensagens.MouseState = MaterialSkin.MouseState.OUT;
             textMensagens.Multiline = false;
             textMensagens.Name = "textMensagens";
-            textMensagens.Size = new Size(501, 50);
+            textMensagens.Size = new Size(461, 50);
             textMensagens.TabIndex = 12;
             textMensagens.Text = "Area de Mensagens";
             textMensagens.TrailingIcon = null;

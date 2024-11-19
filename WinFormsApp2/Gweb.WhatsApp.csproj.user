@@ -7,12 +7,6 @@
     <Compile Update="Forms\ContatosTabControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\GerenciarContato.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\ListarContatos.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\MensagensTabControl.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -41,6 +41,7 @@ namespace Gweb.WhatsApp.Forms
             Imagem = new ColumnHeader();
             btnPesquisarMensagem = new MaterialSkin.Controls.MaterialButton();
             tabAgendarMensagem = new TabPage();
+            label1 = new Label();
             cmbGrupos = new ComboBox();
             listContatos = new CheckedListBox();
             btnAgendarMensagem = new MaterialSkin.Controls.MaterialButton();
@@ -152,6 +153,7 @@ namespace Gweb.WhatsApp.Forms
             // 
             // tabAgendarMensagem
             // 
+            tabAgendarMensagem.Controls.Add(label1);
             tabAgendarMensagem.Controls.Add(cmbGrupos);
             tabAgendarMensagem.Controls.Add(listContatos);
             tabAgendarMensagem.Controls.Add(btnAgendarMensagem);
@@ -166,6 +168,15 @@ namespace Gweb.WhatsApp.Forms
             tabAgendarMensagem.TabIndex = 2;
             tabAgendarMensagem.Text = "Agendar envio";
             tabAgendarMensagem.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(959, 142);
+            label1.Name = "label1";
+            label1.Size = new Size(114, 20);
+            label1.TabIndex = 15;
+            label1.Text = "Grupo de envio:";
             // 
             // cmbGrupos
             // 
@@ -429,5 +440,6 @@ namespace Gweb.WhatsApp.Forms
         private ColumnHeader Tipo;
         private ColumnHeader Imagem;
         private ComboBox cmbGrupos;
+        private Label label1;
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gweb.WhatsApp.Util
+namespace Gweb.WhatsApp.Entidades
 {
     internal class Atendimento
     {

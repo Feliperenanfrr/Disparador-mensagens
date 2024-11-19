@@ -3,18 +3,18 @@ using Newtonsoft.Json;
 using Gweb.WhatsApp.Util;
 using Gweb.WhatsApp.Forms;
 using MaterialSkin.Controls;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Gweb.WhatsApp.Dados;
+using Gweb.WhatsApp.Entidades;
 
 namespace WinFormsApp2
 {
     public partial class FormUnderChat : MaterialForm
     {
         private MyDbContext _dbContext;
-        private string CNPJ;
         ConexaoAPI conexaoAPI;
-        operacoesBD operacoesBD;
+
+       
 
         public FormUnderChat()
         {
@@ -103,6 +103,8 @@ namespace WinFormsApp2
 
                     // Insere os dados das mensagens enviadas em uma caixa de texto
                     textMensagens.AppendText($"Código: {envioMensagem.Id} - Número: {telefone} - Cliente: {nomeContato}\n");
+                    textMensagens.AppendText("");
+
                 }
                 catch (Exception ex)
                 {

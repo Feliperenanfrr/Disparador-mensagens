@@ -19,8 +19,6 @@ C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\bin\Debug\net8.0-window
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.csproj.AssemblyReference.cache
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.Forms.ContatosTabControl.resources
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.FormUnderChat.resources
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.Forms.GerenciarContato.resources
-C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.Forms.ListarContatos.resources
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.Forms.MensagensTabControl.resources
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.Properties.Resources.resources
 C:\Users\guepp\Desktop\Disparador-mensagens\WinFormsApp2\obj\Debug\net8.0-windows\Gweb.WhatsApp.csproj.GenerateResource.cache
