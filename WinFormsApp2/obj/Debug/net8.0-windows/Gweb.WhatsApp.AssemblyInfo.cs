@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Disparador de mensagens")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d48274be3fb2d38b3cd7562c53151d5da3c6000")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a6d99aa713ef295a1002ce495eb7ad6c6702528")]
 [assembly: System.Reflection.AssemblyProductAttribute("Disparador de mensagens")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Disparador de mensagens")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

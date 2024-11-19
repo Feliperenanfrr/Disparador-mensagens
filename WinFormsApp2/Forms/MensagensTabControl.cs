@@ -124,6 +124,15 @@ namespace Gweb.WhatsApp.Forms
             {
                 MessageBox.Show($"Erro ao carregar contatos: {ex.Message}");
             }
+
+            var grupos = new Dictionary<int, string>()
+            {
+                {759, "Sistemas"}, {760, "Simples Nacional"}, {762, "Gueppardo"}, {819, "Real Presumido"}, {820, "Parceiros"}
+            };
+
+            cmbGrupos.DataSource = new BindingSource(grupos, null);
+            cmbGrupos.DisplayMember = "Value";
+            cmbGrupos.ValueMember = "Key";
         }
 
 
@@ -185,113 +194,50 @@ namespace Gweb.WhatsApp.Forms
             }
         }
 
-        private void chkEnviarParaClientes_CheckedChanged(object sender, EventArgs e)
+        private void cmbGrupos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Verifica se o checkbox foi marcado ou desmarcado
-            if (chkEnviarParaClientes.Checked)
+            // Verifica se um item foi selecionado
+            if (cmbGrupos.SelectedValue == null)
             {
-                // Itera sobre todos os contatos na listContatos
-                for (int i = 0; i < listContatos.Items.Count; i++)
-                {
-                    // Recupera o item como ContatoUnderchat
-                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
-                    if (contato != null && contato.Nome.StartsWith("Cli-"))
-                    {
-                        // Marca o contato na CheckedListBox
-                        listContatos.SetItemChecked(i, true);
-                    }
-                }
+                MessageBox.Show("Por favor, selecione um grupo válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
-            {
-                // Se o checkbox for desmarcado, remove a marcação dos contatos "Cli-"
-                for (int i = 0; i < listContatos.Items.Count; i++)
-                {
-                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
-                    if (contato != null && contato.Nome.StartsWith("Cli-"))
-                    {
-                        // Desmarca o contato na CheckedListBox
-                        listContatos.SetItemChecked(i, false);
-                    }
-                }
-            }
-        }
 
-        private void chkEnviarParaParceiros_CheckedChanged(object sender, EventArgs e)
-        {
-            // Verifica se o checkbox foi marcado ou desmarcado
-            if (chkEnviarParaParceiros.Checked)
-            {
-                // Itera sobre todos os contatos na listContatos
-                for (int i = 0; i < listContatos.Items.Count; i++)
-                {
-                    // Recupera o item como ContatoUnderchat
-                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
-                    if (contato != null && contato.Nome.StartsWith("Parc-"))
-                    {
-                        // Marca o contato na CheckedListBox
-                        listContatos.SetItemChecked(i, true);
-                    }
-                }
-            }
-            else
-            {
-                // Se o checkbox for desmarcado, remove a marcação dos contatos "Cli-"
-                for (int i = 0; i < listContatos.Items.Count; i++)
-                {
-                    ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
-                    if (contato != null && contato.Nome.StartsWith("Parc-"))
-                    {
-                        // Desmarca o contato na CheckedListBox
-                        listContatos.SetItemChecked(i, false);
-                    }
-                }
-            }
-        }
-
-        private void chkEnviarParaColaboradores_CheckedChanged(object sender, EventArgs e)
-        {
-            string idGrupo = "759"; // ID do grupo "Sistemas"
+            // Obtém o ID do grupo selecionado (Key do dicionário)
+            string idGrupo = cmbGrupos.SelectedValue.ToString();
             string token = conexaoAPI.ObterToken("felipeferreira3146@gmail.com", "1664");
-            // Busca os dados do grupo pela API
-            var dadosGrupo = conexaoAPI.BuscarContatosPorGrupo(token, idGrupo);
 
-            if (dadosGrupo != null && dadosGrupo.Data != null)
+            try
             {
-                // Obtém os nomes das pessoas no grupo
-                var nomesGrupo = dadosGrupo.Data.Contacts
-                    .Select(contact => contact.Person.Name)
-                    .ToList();
+                // Busca os dados do grupo pela API
+                var dadosGrupo = conexaoAPI.BuscarContatosPorGrupo(token, idGrupo);
 
-                // Marca ou desmarca os contatos na lista
-                if (chkEnviarParaColaboradores.Checked)
+                if (dadosGrupo != null && dadosGrupo.Data != null)
                 {
-                    // Marca os contatos que pertencem ao grupo
+                    // Obtém os nomes das pessoas no grupo
+                    var nomesGrupo = dadosGrupo.Data.Contacts
+                        .Select(contact => contact.Person.Name)
+                        .ToList();
+
+                    // Atualiza a lista de contatos no CheckedListBox
                     for (int i = 0; i < listContatos.Items.Count; i++)
                     {
                         ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
-                        if (contato != null && nomesGrupo.Contains(contato.Nome))
+                        if (contato != null)
                         {
-                            listContatos.SetItemChecked(i, true);
+                            // Marca o contato se ele pertence ao grupo
+                            listContatos.SetItemChecked(i, nomesGrupo.Contains(contato.Nome));
                         }
                     }
                 }
                 else
                 {
-                    // Desmarca os contatos que pertencem ao grupo
-                    for (int i = 0; i < listContatos.Items.Count; i++)
-                    {
-                        ContatoUnderchat contato = listContatos.Items[i] as ContatoUnderchat;
-                        if (contato != null && nomesGrupo.Contains(contato.Nome))
-                        {
-                            listContatos.SetItemChecked(i, false);
-                        }
-                    }
+                    MessageBox.Show("Não foi possível carregar os contatos do grupo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Não foi possível carregar os contatos do grupo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao buscar contatos do grupo: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

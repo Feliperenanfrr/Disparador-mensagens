@@ -41,10 +41,7 @@ namespace Gweb.WhatsApp.Forms
             Imagem = new ColumnHeader();
             btnPesquisarMensagem = new MaterialSkin.Controls.MaterialButton();
             tabAgendarMensagem = new TabPage();
-            checkBox4 = new CheckBox();
-            chkEnviarParaColaboradores = new CheckBox();
-            chkEnviarParaParceiros = new CheckBox();
-            chkEnviarParaClientes = new CheckBox();
+            cmbGrupos = new ComboBox();
             listContatos = new CheckedListBox();
             btnAgendarMensagem = new MaterialSkin.Controls.MaterialButton();
             labelData = new Label();
@@ -155,10 +152,7 @@ namespace Gweb.WhatsApp.Forms
             // 
             // tabAgendarMensagem
             // 
-            tabAgendarMensagem.Controls.Add(checkBox4);
-            tabAgendarMensagem.Controls.Add(chkEnviarParaColaboradores);
-            tabAgendarMensagem.Controls.Add(chkEnviarParaParceiros);
-            tabAgendarMensagem.Controls.Add(chkEnviarParaClientes);
+            tabAgendarMensagem.Controls.Add(cmbGrupos);
             tabAgendarMensagem.Controls.Add(listContatos);
             tabAgendarMensagem.Controls.Add(btnAgendarMensagem);
             tabAgendarMensagem.Controls.Add(labelData);
@@ -173,48 +167,14 @@ namespace Gweb.WhatsApp.Forms
             tabAgendarMensagem.Text = "Agendar envio";
             tabAgendarMensagem.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // cmbGrupos
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(936, 431);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(237, 24);
-            checkBox4.TabIndex = 13;
-            checkBox4.Text = "Envio de mensagem recorrente";
-            checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // chkEnviarParaColaboradores
-            // 
-            chkEnviarParaColaboradores.AutoSize = true;
-            chkEnviarParaColaboradores.Location = new Point(936, 240);
-            chkEnviarParaColaboradores.Name = "chkEnviarParaColaboradores";
-            chkEnviarParaColaboradores.Size = new Size(205, 24);
-            chkEnviarParaColaboradores.TabIndex = 12;
-            chkEnviarParaColaboradores.Text = "Enviar para colaboradores";
-            chkEnviarParaColaboradores.UseVisualStyleBackColor = true;
-            chkEnviarParaColaboradores.CheckedChanged += chkEnviarParaColaboradores_CheckedChanged;
-            // 
-            // chkEnviarParaParceiros
-            // 
-            chkEnviarParaParceiros.AutoSize = true;
-            chkEnviarParaParceiros.Location = new Point(936, 210);
-            chkEnviarParaParceiros.Name = "chkEnviarParaParceiros";
-            chkEnviarParaParceiros.Size = new Size(170, 24);
-            chkEnviarParaParceiros.TabIndex = 11;
-            chkEnviarParaParceiros.Text = "Enviar para parceiros";
-            chkEnviarParaParceiros.UseVisualStyleBackColor = true;
-            chkEnviarParaParceiros.CheckedChanged += chkEnviarParaParceiros_CheckedChanged;
-            // 
-            // chkEnviarParaClientes
-            // 
-            chkEnviarParaClientes.AutoSize = true;
-            chkEnviarParaClientes.Location = new Point(936, 180);
-            chkEnviarParaClientes.Name = "chkEnviarParaClientes";
-            chkEnviarParaClientes.Size = new Size(159, 24);
-            chkEnviarParaClientes.TabIndex = 10;
-            chkEnviarParaClientes.Text = "Enviar para clientes";
-            chkEnviarParaClientes.UseVisualStyleBackColor = true;
-            chkEnviarParaClientes.CheckedChanged += chkEnviarParaClientes_CheckedChanged;
+            cmbGrupos.FormattingEnabled = true;
+            cmbGrupos.Location = new Point(959, 180);
+            cmbGrupos.Name = "cmbGrupos";
+            cmbGrupos.Size = new Size(205, 28);
+            cmbGrupos.TabIndex = 14;
+            cmbGrupos.SelectedIndexChanged += cmbGrupos_SelectedIndexChanged;
             // 
             // listContatos
             // 
@@ -463,14 +423,11 @@ namespace Gweb.WhatsApp.Forms
         private MaterialSkin.Controls.MaterialTextBox tipoMensagem;
         private MaterialSkin.Controls.MaterialButton btnCriarMensagem;
         private CheckedListBox listContatos;
-        private CheckBox chkEnviarParaClientes;
-        private CheckBox chkEnviarParaColaboradores;
-        private CheckBox chkEnviarParaParceiros;
-        private CheckBox checkBox4;
         private MaterialSkin.Controls.MaterialListView mensagensListView;
         private ColumnHeader ID;
         private ColumnHeader Mensagem;
         private ColumnHeader Tipo;
         private ColumnHeader Imagem;
+        private ComboBox cmbGrupos;
     }
 }
