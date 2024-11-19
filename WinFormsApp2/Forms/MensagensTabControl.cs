@@ -204,7 +204,8 @@ namespace Gweb.WhatsApp.Forms
             }
 
             // Obtém o ID do grupo selecionado (Key do dicionário)
-            string idGrupo = cmbGrupos.SelectedValue.ToString();
+            //string idGrupo = cmbGrupos.SelectedValue.Key.ToString();
+            string idGrupo = ((KeyValuePair<int, string>)cmbGrupos.SelectedItem).Key.ToString();
             string token = conexaoAPI.ObterToken("felipeferreira3146@gmail.com", "1664");
 
             try

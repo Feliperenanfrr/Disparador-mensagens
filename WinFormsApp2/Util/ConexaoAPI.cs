@@ -273,7 +273,7 @@ namespace Gweb.WhatsApp.Util
         {
             var client = new RestClient("https://api.underchat.com.br/");
             var request = new RestRequest($"store/{idLoja}/group/{idGrupo}", Method.GET);
-            request.AddHeader("Authorization", token);
+            request.AddHeader("Authorization", "Bearer " + token);
 
             var response = client.Execute(request);
 
